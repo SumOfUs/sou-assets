@@ -1,0 +1,39 @@
+fr:
+  branding:
+    tagline: L’humain avant le profit
+    license: Creative Commons Attribution 3.0 Unported License.
+    description: "SumOfUs est un mouvement mondial de personnes comme vous, qui travaillent ensemble afin de responsabiliser les entreprises et de tracer une nouvelle voie durable pour l’économie mondiale."
+  fundraiser:
+    fine_print: "SumOfUs est une ONG déclarée 501(c)4 à Washington DC, USA. Les contributions ou dons ne sont pas déductibles des impôts. Pour plus d’informations, veuillez nous contacter à cette adresse: info@sumofus.org"
+    debit:
+      recurring: "Vous souhaitez faire un don mensuel de %{amount} à SumOfUs."
+      one_time: "Vous souhaitez donner %{amount} à SumOfUs."
+    generic:
+      title: "Merci d’avoir agi ! Pouvez-vous faire un don afin de faire progresser le combat? "
+      target: Vous
+      ask: "Pouvez-vous faire un don afin d’aider SumOfUs à continuer de combattre le pouvoir grandissant des grandes entreprises dans le monde ?"
+      body: "Merci d’avoir agi avec SumOfUs ! Votre action aide à combattre le pouvoir des grandes entreprises dans le monde. Il reste cependant beaucoup à faire. SumOfUs dépend presque entièrement de petits dons faits par des personnes comme vous. Chaque petit don compte.Votre don signifie que nous pouvons défier les multinationales les plus puissantes et les plus malveillantes ainsi que leur faire rendre des comptes. Pourriez-vous faire un don afin de nous aider à continuer le combat aujourd’hui?"
+  petition:
+    sign_it: Signez la pétition
+    target_prefix: Pétition adressée à
+    confirmation: Nom envoyé
+    excited_confirmation: Nom envoyé!
+    thank_you: 'Merci d’avoir ajouté votre nom à la pétition "%{petition_title}"!'
+    fine_print: "SumOfUs protège %{privacy_link} et vous tiendra au courant de campagnes similaires."
+    privacy_link: vos informations personnelles
+  share:
+    cta: Partagez la campagne avec vos ami(e)s afin de tripler votre impact!
+    send_email: Envoyer un courriel
+    share: Partagez
+    tweet: Tweetez
+    twitter_handle: '@sumofus_fr'
+  footer:
+    home: Accueil
+    about: Nous Connaitre
+    privacy_policy: Mentions Légales
+    contact: Contact
+    controlshift: Lancez votre propre pétition
+    home_url: http://fr.sumofus.org/
+    about_url: http://fr.sumofus.org/a-propos
+    privacy_policy_url: http://fr.sumofus.org/politique-de-confidentialite
+    contact_url: http://fr.sumofus.org/contact
