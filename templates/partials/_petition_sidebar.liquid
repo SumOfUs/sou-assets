@@ -52,9 +52,10 @@
 
         chmp.myPetition      = new chmp.Petition({followUpUrl: "{{ follow_up_url }}"});
         chmp.myOverlayToggle = new chmp.OverlayToggle();
-        chmp.mySticky        = new chmp.DesktopSticky({extra_class: 'petition'});
         chmp.myThermometer   = new chmp.Thermometer(window.champaign.personalization.thermometer);
         chmp.mySidebar       = new chmp.Sidebar({petitionTextMinHeight: 120, baseClass: 'petition-bar'});
+        
+        window.sumofus.mySticky = new window.sumofus.DesktopSticky({extra_class: 'petition'});
       });
     </script>
   </div>

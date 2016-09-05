@@ -16,9 +16,15 @@
     </div>
   </div>
   <div class="center-content__small-column">
-    {% include 'Fundraiser' %}
+    {% include 'Fundraiser', extra_class: 'overlay-toggle desktop-sticky' %}
   </div>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    window.sumofus.mySticky      = new window.sumofus.DesktopSticky({extraClass: 'fundraiser'});
+  });
+</script>
 
 {% include 'Fundraiser Mobile Footer' %}
 {% include 'Simple Footer' %}
