@@ -1,7 +1,7 @@
-require("javascripts/check_top");
-require("javascripts/ga_event_reporting");
+require("./check_top");
+require("./ga_event_reporting");
 
 window.sumofus = window.sumofus || {};
-window.sumofus.ActionCounter = require('javascripts/backbone/action_counter');
-window.sumofus.DesktopSticky = require('javascripts/backbone/desktop_sticky');
-window.sumofus.SimpleCarousel = require('javascripts/backbone/simple_carousel');
+window.sumofus.ActionCounter = require('./backbone/action_counter');
+window.sumofus.DesktopSticky = require('./backbone/desktop_sticky');
+window.sumofus.SimpleCarousel = require('./backbone/simple_carousel');
