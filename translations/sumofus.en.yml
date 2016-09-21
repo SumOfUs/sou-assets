@@ -27,7 +27,7 @@ en:
     tweet: Tweet
     twitter_handle: '@sumofus'
     two_step:
-      cta: "Now, %{firstname} will you share the campaign to triple your impact?"
+      cta: "Now, %{first_name} will you share the campaign to triple your impact?"
       accept: 'Yes'
       decline: 'No'
       declined: "Not a sharer? No problem. Thanks for your support!"
