@@ -1,4 +1,13 @@
 de:
+  member_registration:
+    form:
+      password: Password
+      confirm_password: Confirm Password
+      your_email: Your email
+      register: Register
+    enter_password_message: "Just enter a password to get started"
+    create_account: "Now, create an account to finalize your donation."
+    create_account_explanation: "Creating an account takes 30 seconds, and allows you to securely manage your donations and payment information with SumOfUs, and allows you to cancel a donation at any time (or decide to chip in again!)"
   branding:
     tagline: Menschen vor Profit!
     license: Creative Commons Namensnennung 3.0 Unported Lizenz
