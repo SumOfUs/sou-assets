@@ -1,4 +1,26 @@
 fr:
+  member_registration:
+    form:
+      password: Password
+      confirm_password: Confirm Password
+      your_email: Your email
+      register: Register
+    thanks: 'Thank you for your donation'
+    enter_password_message: "Just enter a password to get started"
+    create_account: "Now, create an account to finalize your donation."
+    create_account_description: "Creating an account takes 30 seconds, and allows you to securely manage your donations and payment information with SumOfUs, and allows you to cancel a donation at any time."
+  confirmation_mailer:
+    confirmation_email:
+      subject: "E-mail confirmation for signing up for express donations with SumOfUs"
+      headline: "Thank you for your donation!"
+      body_html: "To confirm your registration, please <a href='%{confirmation_url}'>follow this link</a>"
+      body_text: "To confirm your registration, please follow this link: %{confirmation_url}"
+    follow_up_page:
+      account_not_found: 'No account was found with this token'
+      account_already_confirmed: 'Your account has already been confirmed'
+      failure: 'There was an issue signing up for express donations.'
+      success: 'You have successfully signed up for express donations!'
+      member_management: "To manage your payment methods, you can visit our <a href='%{url}'>member management application</a> at any time."
   branding:
     tagline: L’humain avant le profit
     license: Creative Commons Attribution 3.0 Unported License.
