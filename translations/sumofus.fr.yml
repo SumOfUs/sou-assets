@@ -11,16 +11,16 @@ fr:
     create_account_description: "Creating an account takes 30 seconds, and allows you to securely manage your donations and payment information with SumOfUs, and allows you to cancel a donation at any time."
   confirmation_mailer:
     confirmation_email:
-      subject: "E-mail confirmation for signing up for express donations with SumOfUs"
+      subject: "Confirm your account with SumOfUs"
       headline: "Thank you for your donation!"
-      body_html: "To confirm your registration, please <a href='%{confirmation_url}'>follow this link</a>"
+      body_html: "To confirm your account with SumOfUs, please <a href='%{confirmation_url}'>follow this link.</a><br/><br/>Thanks,</b>The whole team at SumOfUs"
       body_text: "To confirm your registration, please follow this link: %{confirmation_url}"
     follow_up_page:
-      account_not_found: 'No account was found with this token'
-      account_already_confirmed: 'Your account has already been confirmed'
-      failure: 'There was an issue signing up for express donations.'
-      success: 'You have successfully signed up for express donations!'
-      member_management: "To manage your payment methods, you can visit our <a href='%{url}'>member management application</a> at any time."
+      account_not_found: 'Sorry, no account was found associated with this link. Please email donations@sumofus.org for assistance.'
+      account_already_confirmed: 'Your account has already been confirmed!'
+      failure: 'Sorry, there was an issue confirming your account. Please email donations@sumofus.org for assistance.'
+      success: 'You have successfully confirmed your account with SumOfUs. Thanks!'
+      member_management: "To manage your payment methods and details, you can visit the <a href='%{url}'>SumOfUs members dashboard</a> at any time."
   branding:
     tagline: L’humain avant le profit
     license: Creative Commons Attribution 3.0 Unported License.
