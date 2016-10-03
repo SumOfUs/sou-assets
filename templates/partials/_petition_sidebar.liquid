@@ -41,11 +41,13 @@
       $(document).ready(function(){
         var chmp = window.champaign; // convenience binding
         chmp.myActionForm  = new chmp.ActionForm({
-          member:           window.champaign.personalization.member,
-          outstandingFields:window.champaign.personalization.outstandingFields,
-          location:         window.champaign.personalization.location,
-          akid:             window.champaign.personalization.urlParams.akid,
-          source:           window.champaign.personalization.urlParams.source,
+          member:           chmp.personalization.member,
+          outstandingFields:chmp.personalization.outstandingFields,
+          location:         chmp.personalization.location,
+          akid:             chmp.personalization.urlParams.akid,
+          source:           chmp.personalization.urlParams.source,
+          referrer_id:      chmp.personalization.urlParams.referrer_id,
+          bucket:           chmp.personalization.urlParams.bucket,
           prefill:          true
         });
 
