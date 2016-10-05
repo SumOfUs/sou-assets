@@ -1,5 +1,6 @@
 en:
   member_registration:
+    title: "Member Registration - SumOfUs.org"
     form:
       password: Password
       confirm_password: Confirm Password
@@ -10,6 +11,7 @@ en:
     create_account: "Now, create an account to finalize your donation."
     create_account_description: "Creating an account takes 30 seconds, and allows you to securely manage your donations and payment information with SumOfUs, and allows you to cancel a donation at any time."
   confirmation_mailer:
+    title: "Account Confirmation - SumOfUs.org"
     confirmation_email:
       subject: "Confirm your account with SumOfUs"
       headline: "Thank you for your donation!"
