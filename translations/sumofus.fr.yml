@@ -10,6 +10,7 @@ fr:
     enter_password_message: "Just enter a password to get started"
     create_account: "Now, create an account to finalize your donation."
     create_account_description: "Creating an account takes 30 seconds, and allows you to securely manage your donations and payment information with SumOfUs, and allows you to cancel a donation at any time."
+    check_email: "<strong>Thanks for registering.</strong> <span>Now, check your email and click the confirmation link</span>"
   confirmation_mailer:
     title: "Account Confirmation - SumOfUs.org"
     confirmation_email:

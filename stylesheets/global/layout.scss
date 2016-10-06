@@ -107,3 +107,27 @@ html {
   display: none;
   visibility: hidden;
 }
+
+.notification {
+  position: fixed;
+  z-index: 1000;
+  background: #00c0cf;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 -0.0625rem 0.125rem rgba(0,0,0,0.2);
+  span.message {
+    padding: 35px;
+    display: inline-block;
+    font-size: 140%;
+    color: white;
+    margin-right: 30px;
+  }
+  span.close {
+    position: absolute;
+    right: 35px;
+    top: 35px;
+    font-size: 140%;
+    cursor: pointer;
+  }
+}
