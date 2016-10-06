@@ -14,7 +14,7 @@ en:
     title: "Account Confirmation - SumOfUs.org"
     confirmation_email:
       subject: "Confirm your account with SumOfUs"
-      headline: "Thank you for your donation!"
+      headline: "Thank you for registering an account with SumOfUs"
       body_html: "To confirm your account with SumOfUs, please <a href='%{confirmation_url}'>follow this link.</a><br/><br/>Thanks,<br/>The whole team at SumOfUs"
       body_text: "To confirm your registration, please follow this link: %{confirmation_url}"
     follow_up_page:

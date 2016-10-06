@@ -13,10 +13,10 @@ fr:
   confirmation_mailer:
     title: "Account Confirmation - SumOfUs.org"
     confirmation_email:
-      subject: "Confirm your account with SumOfUs"
-      headline: "Thank you for your donation!"
-      body_html: "To confirm your account with SumOfUs, please <a href='%{confirmation_url}'>follow this link.</a><br/><br/>Thanks,<br/>The whole team at SumOfUs"
-      body_text: "To confirm your registration, please follow this link: %{confirmation_url}"
+      subject: "Confirm your account with SumOfUs.org"
+      headline: "Thank you for registering an account with SumOfUs.org"
+      body_html: "To confirm your registration, please <a href='%{confirmation_url}'>follow this link.</a><br/><br/>Thanks,<br/>The whole team at SumOfUs.org"
+      body_text: "To confirm your registration, please follow this link: %{confirmation_url}\n\nThanks,\nThe whole team at SumOfUs.org"
     follow_up_page:
       account_not_found: 'Sorry, no account was found associated with this link. Please email donations@sumofus.org for assistance.'
       account_already_confirmed: 'Your account has already been confirmed!'
