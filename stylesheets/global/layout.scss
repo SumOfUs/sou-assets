@@ -111,23 +111,26 @@ html {
 .notification {
   position: fixed;
   z-index: 1000;
-  background: #00c0cf;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  box-shadow: 0 -0.0625rem 0.125rem rgba(0,0,0,0.2);
-  span.message {
-    padding: 35px;
-    display: inline-block;
-    font-size: 140%;
-    color: white;
-    margin-right: 30px;
+  background: white;
+  left: 15px;
+  top: 80px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  font-size: 16px;
+  color: $chalkboard;
+  font-weight: normal;
+  @include box-sizing(border-box);
+  max-width: calc(100% - 30px);
+  @media(min-width: 530px) {
+    max-width: 500px
   }
-  span.close {
-    position: absolute;
-    right: 35px;
-    top: 35px;
-    font-size: 140%;
+  @include transition(transform 0.4s ease-in-out);
+  &--hidden {
+    transform: translateX(-1000px);
+  }
+
+  &__close {
+    margin-left: 10px;
     cursor: pointer;
   }
 }
