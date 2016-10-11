@@ -1,0 +1,15 @@
+{
+  "name": "sou-assets",
+  "version": "1.0.0",
+  "description": "Assets shared by our Champaign install and other websites.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumofus/sou-assets.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sumofus/sou-assets/issues"
+  },
+  "homepage": "https://github.com/sumofus/sou-assets#readme"
+}
