@@ -1,29 +1,29 @@
 de:
   member_registration:
-    title: "Member Registration - SumOfUs.org"
+    title: "Mitglieder-Registrierung - SumOfUs.org"
     form:
-      password: Password
-      confirm_password: Confirm Password
-      your_email: Your email
-      register: Register
-    thanks: 'Thank you for your donation'
-    enter_password_message: "Just enter a password to get started"
-    create_account: "Now, create an account to finalize your donation."
-    create_account_description: "Creating an account takes 30 seconds, and allows you to securely manage your donations and payment information with SumOfUs, and allows you to cancel a donation at any time."
-    check_email: "<strong>Thanks for registering.</strong> <span>Now, check your email and click the confirmation link</span>"
+      password: Passwort
+      confirm_password: Passwort bestätigen
+      your_email: Ihre E-mail-Adresse
+      register: Registrieren
+    thanks: 'Vielen Dank für Ihre Spende'
+    enter_password_message: "Geben Sie bitte ein Passwort ein"
+    create_account: "Erstellen Sie jetzt einen Account, um den Spendenvorgang erfolgreich abzuschließen."
+    create_account_description: "Einen Account zu erstellen, dauert nur ca. 30 Sekunden. Ein Account erlaubt Ihnen, Ihre Spenden und Zahlungsdetails sicher zu verwalten und gibt Ihnen die Möglichkeit, Spenden jederzeit rückgängig zu machen.  "
+    check_email: "<strong>Vielen Dank, dass Sie sich registriert haben.</strong> <span>Bitte überprüfen Sie Ihre E-mail-Postfach. Dort sollten Sie eine e-mail mit einem Bestätigungs-Link finden.</span>"
   confirmation_mailer:
-    title: "Account Confirmation - SumOfUs.org"
+    title: "Account-Bestätigung - SumOfUs.org"
     confirmation_email:
-      subject: "Confirm your account with SumOfUs.org"
-      headline: "Thank you for registering an account with SumOfUs.org"
-      body_html: "To confirm your registration, please <a href='%{confirmation_url}'>follow this link.</a><br/><br/>Thanks,<br/>The whole team at SumOfUs.org"
-      body_text: "To confirm your registration, please follow this link: %{confirmation_url}\n\nThanks,\nThe whole team at SumOfUs.org"
+      subject: "Bitte bestätigen Sie Ihren SumOfUs-Account"
+      headline: "Vielen Dank, dass Sie einen SumOfUs-Account eingerichtet haben"
+      body_html: "Um Ihren SumOfUs-Account zu bestätigen, klicken Sie bitte auf <a href='%{confirmation_url}'>diesen Link</a><br/><br/>Vielen Dank<br/>Das Team von SumOfUs"
+      body_text: "Um Ihre Registrierung zu bestätigen, klicken Sie bitte auf diesen Link: %{confirmation_url} "
     follow_up_page:
-      account_not_found: 'Sorry, no account was found associated with this link. Please email donations@sumofus.org for assistance.'
-      account_already_confirmed: 'Your account has already been confirmed!'
-      failure: 'Sorry, there was an issue confirming your account. Please email donations@sumofus.org for assistance.'
-      success: 'You have successfully confirmed your account with SumOfUs. Thanks!'
-      member_management: "To manage your payment methods and details, you can visit the <a href='%{url}'>SumOfUs members dashboard</a> at any time."
+      account_not_found: 'Leider konnten wir keinen passenden Account zu diesem Link finden. Bitte senden Sie uns eine Nachricht an donations@sumofus.org, damit wir das Problem für Sie lösen können. '
+      account_already_confirmed: 'Ihr Account wurde bereits bestätigt!'
+      failure: 'Leider gab es bei der Einrichtung Ihres Accounts ein Problem. Bitte schreiben Sie uns eine Nachricht an donations@sumofus.org, damit wir das Problem für Sie lösen können. '
+      success: 'Sie haben Ihren SumOfUs-Account erfolgreich bestätigt. Vielen Dank!'
+      member_management: "Um Ihre Zahlungsoptionen und -details zu verwalten, können Sie jederzeit die <a href='%{url}'>Seite für SumOfUs-Mitglieder</a> besuchen."
   branding:
     tagline: Menschen vor Profit!
     license: Creative Commons Namensnennung 3.0 Unported Lizenz
