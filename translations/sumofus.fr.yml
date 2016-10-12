@@ -1,35 +1,35 @@
 fr:
   member_registration:
-    title: "Member Registration - SumOfUs.org"
+    title: "Inscription - SumOfUs.org"
     form:
-      password: Password
-      confirm_password: Confirm Password
-      your_email: Your email
-      register: Register
-    thanks: 'Thank you for your donation'
-    enter_password_message: "Just enter a password to get started"
-    create_account: "Now, create an account to finalize your donation."
-    create_account_description: "Creating an account takes 30 seconds, and allows you to securely manage your donations and payment information with SumOfUs, and allows you to cancel a donation at any time."
-    check_email: "<strong>Thanks for registering.</strong> <span>Now, check your email and click the confirmation link</span>"
+      password: Mot de passe
+      confirm_password: Confirmez votre mot de passe
+      your_email: Adresse e-mail
+      register: S'inscrire
+    thanks: 'Merci pour votre don.'
+    enter_password_message: "Entrez un mot de passe pour commencer"
+    create_account: "À présent, créez un compte afin de finaliser votre donation."
+    create_account_description: "Créer un compte ne vous prendra que 30 secondes et vous permettra de gérer en toute sécurité vos dons et informations de paiement avec SumOfUs. Vous pourrez aussi annuler votre donation à tout moment."
+    check_email: "<strong>Merci pour votre inscription.</strong> <span>Pour activer votre compte, cliquez sur le lien de confirmation qui vient de vous être envoyé par mail.</span>"
   confirmation_mailer:
-    title: "Account Confirmation - SumOfUs.org"
+    title: "Confirmation du compte - SumOfUs.org"
     confirmation_email:
-      subject: "Confirm your account with SumOfUs.org"
-      headline: "Thank you for registering an account with SumOfUs.org"
-      body_html: "To confirm your registration, please <a href='%{confirmation_url}'>follow this link.</a><br/><br/>Thanks,<br/>The whole team at SumOfUs.org"
-      body_text: "To confirm your registration, please follow this link: %{confirmation_url}\n\nThanks,\nThe whole team at SumOfUs.org"
+      subject: "Confirmez votre compte SumOfUs"
+      headline: "Merci d'avoir créé un compte avec SumOfUs"
+      body_html: "Pour activer votre compte, <a href='%{confirmation_url}'>cliquez sur le lien de confirmation qui vient de vous être envoyé.</a><br/><br/>Merci,<br/>L'équipe SumOfUs"
+      body_text: "Pour valider votre inscription, veuillez cliquer sur le lien suivant : %{confirmation_url}"
     follow_up_page:
-      account_not_found: 'Sorry, no account was found associated with this link. Please email donations@sumofus.org for assistance.'
-      account_already_confirmed: 'Your account has already been confirmed!'
-      failure: 'Sorry, there was an issue confirming your account. Please email donations@sumofus.org for assistance.'
-      success: 'You have successfully confirmed your account with SumOfUs. Thanks!'
-      member_management: "To manage your payment methods and details, you can visit the <a href='%{url}'>SumOfUs members dashboard</a> at any time."
+      account_not_found: 'Désolé, aucun compte n''est associé à ce lien. Si vous rencontrez des difficultés, n''hésitez pas à nous contacter ici : donations@sumofus.org.'
+      account_already_confirmed: 'Votre compte a déjà été confirmé !'
+      failure: 'Désolé, nous n''avons pas pu confirmer votre compte. Si vous rencontrez des difficultés, n''hésitez pas à nous contacter ici : donations@sumofus.org.'
+      success: 'Félicitations, votre compte SumOfUs a bien été confirmé. Merci !'
+      member_management: "Pour gérer vos modalités de paiement, vous pouvez à tout moment visiter le <a href='%{url}'>tableau de bord des membres</a> de SumOfUs."
   branding:
     tagline: L’humain avant le profit
-    license: Creative Commons Attribution 3.0 Unported License.
+    license: Licence Creative Commons Attribution 3.0
     description: "SumOfUs est un mouvement mondial de personnes comme vous, qui travaillent ensemble afin de responsabiliser les entreprises et de tracer une nouvelle voie durable pour l’économie mondiale."
   fundraiser:
-    fine_print: "SumOfUs est une ONG déclarée 501(c)4 à Washington DC, USA. Les contributions ou dons ne sont pas déductibles des impôts. Pour plus d’informations, veuillez nous contacter à cette adresse: info@sumofus.org"
+    fine_print: "SumOfUs est une ONG déclarée 501(c)4 à Washington DC, USA. Les contributions ou dons ne sont pas déductibles des impôts. Pour plus d’informations, veuillez nous contacter à cette adresse : info@sumofus.org"
     debit:
       recurring: "Vous souhaitez faire un don mensuel de %{amount} à SumOfUs."
       one_time: "Vous souhaitez donner %{amount} à SumOfUs."
@@ -37,7 +37,7 @@ fr:
       title: "Merci d’avoir agi ! Pouvez-vous faire un don afin de faire progresser le combat? "
       target: Vous
       ask: "Pouvez-vous faire un don afin d’aider SumOfUs à continuer de combattre le pouvoir grandissant des grandes entreprises dans le monde ?"
-      body: "Merci d’avoir agi avec SumOfUs ! Votre action aide à combattre le pouvoir des grandes entreprises dans le monde. Il reste cependant beaucoup à faire. SumOfUs dépend presque entièrement de petits dons faits par des personnes comme vous. Chaque petit don compte.Votre don signifie que nous pouvons défier les multinationales les plus puissantes et les plus malveillantes ainsi que leur faire rendre des comptes. Pourriez-vous faire un don afin de nous aider à continuer le combat aujourd’hui?"
+      body: "Merci d’avoir agi avec SumOfUs ! Votre action aide à combattre le pouvoir des grandes entreprises dans le monde. Il reste cependant beaucoup à faire. SumOfUs dépend presque entièrement de petits dons faits par des personnes comme vous. Chaque petit don compte. Vos contributions nous permettent de défier les multinationales les plus puissantes, les plus malveillantes et de leur faire rendre des comptes. Pourriez-vous faire un don afin de nous aider à continuer le combat aujourd’hui ?"
   petition:
     sign_it: Signez la pétition
     target_prefix: Pétition adressée à
@@ -46,20 +46,20 @@ fr:
     thank_you: 'Merci d’avoir ajouté votre nom à la pétition "%{petition_title}"!'
     fine_print: "SumOfUs protège <a href='https://sumofus.org/privacy'>vos informations personnelles</a> et vous tiendra au courant de campagnes similaires."
   share:
-    cta: Partagez la campagne avec vos ami(e)s afin de tripler votre impact!
+    cta: Partagez la campagne avec vos ami-e-s afin de tripler votre impact!
     send_email: Envoyer un courriel
-    share: Partagez
-    tweet: Tweetez
+    share: Partager
+    tweet: Tweeter
     twitter_handle: '@sumofus_fr'
     two_step:
-      cta: 'Pouvez-vous partager maintenant la campagne avec vos ami-e-s afin de nous aider à gagner ?'
+      cta: "Pouvez-vous partager maintenant la campagne avec vos ami-e-s afin de nous aider à gagner ?"
       accept: 'Oui'
       decline: 'Non'
       declined: "Vous ne souhaitez pas partager ? Aucun problème. Merci de votre soutien !"
       accepted: "Merci beaucoup ! Plus nous serons nombreux à nous mobiliser, plus notre mouvement sera fort."
   footer:
     home: Accueil
-    about: Nous Connaitre
+    about: Nous connaître
     privacy_policy: Mentions Légales
     contact: Contact
     controlshift: Lancez votre propre pétition
