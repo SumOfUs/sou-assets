@@ -39,6 +39,21 @@
       background-color: $slate-gray;
     }
   }
+  &--inverted {
+    @include box-shadow(0 0 0 2px $orange inset);
+    color: $orange;
+    background: white;
+    &:hover {
+      background: lighten($orange, 38%);
+    }
+    &:active {
+      outline: none;
+      @include box-shadow(0 0 1px 2px $orange inset);
+    }
+    &.button--disabled {
+      @include filter(grayscale(100%));
+    }
+  }
 }
 
 button.button {
