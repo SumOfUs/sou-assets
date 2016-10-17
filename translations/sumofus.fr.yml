@@ -55,7 +55,6 @@ fr:
       cta: "Pouvez-vous partager maintenant la campagne avec vos ami-e-s afin de nous aider à gagner ?"
       accept: 'Oui'
       decline: 'Non'
-      declined: "Vous ne souhaitez pas partager ? Aucun problème. Merci de votre soutien !"
       accepted: "Merci beaucoup ! Plus nous serons nombreux à nous mobiliser, plus notre mouvement sera fort."
   footer:
     home: Accueil
