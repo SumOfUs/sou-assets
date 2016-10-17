@@ -55,7 +55,6 @@ de:
       cta: "Würden Sie die Kampagne jetzt auch mit Ihren Freunden teilen?"
       accept: 'Ja'
       decline: 'Nein'
-      declined: "Sie möchten die Kampagne nicht teilen? Kein Problem. Vielen Dank für Ihre Unterstützung!"
       accepted: "Herzlichen Dank! Je mehr Menschen sich engagieren, desto mehr können wir bewegen!"
   footer:
     home: Start
