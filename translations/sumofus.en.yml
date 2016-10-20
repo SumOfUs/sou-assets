@@ -55,7 +55,7 @@ en:
       cta: "Now, will you share the campaign to triple your impact?"
       accept: 'Yes'
       decline: 'No'
-      declined: "Not a sharer? No problem. Thanks for your support!"
+      declined: "No problem. Thanks for your support!"
       accepted: "Thanks! Share now in just a couple of clicks:"
   footer:
     home: Home
