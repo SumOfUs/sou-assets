@@ -10,7 +10,7 @@ de:
     enter_password_message: "Geben Sie bitte ein Passwort ein"
     create_account: "Erstellen Sie jetzt ein Konto – so können Sie beim nächsten Mal noch einfacher spenden."
     create_account_description: "Ein Konto zu erstellen, dauert nur 30 Sekunden. Sie können damit Ihre Spenden und Zahlungsdetails sicher verwalten und Spenden jederzeit rückgängig machen."
-    check_email: "<strong>Vielen Dank, dass Sie sich registriert haben.</strong> <span>Bitte überprüfen Sie Ihre E-mail-Postfach. Dort sollten Sie eine e-mail mit einem Bestätigungs-Link finden.</span>"
+    check_email: "<strong>Vielen Dank, dass Sie sich registriert haben.</strong> <span>Bitte überprüfen Sie Ihr E-mail-Postfach. Dort sollten Sie eine E-mail</span>"
   confirmation_mailer:
     title: "Account-Bestätigung - SumOfUs.org"
     confirmation_email:
