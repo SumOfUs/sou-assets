@@ -8,7 +8,7 @@ de:
       register: Registrieren
     thanks: 'Vielen Dank für Ihre Spende'
     enter_password_message: "Geben Sie bitte ein Passwort ein"
-    create_account: "Erstellen Sie jetzt einen Account, um den Spendenvorgang erfolgreich abzuschließen."
+    create_account: "Erstellen Sie jetzt im nächsten Schritt einen Account."
     create_account_description: "Einen Account zu erstellen, dauert nur ca. 30 Sekunden. Ein Account erlaubt Ihnen, Ihre Spenden und Zahlungsdetails sicher zu verwalten und gibt Ihnen die Möglichkeit, Spenden jederzeit rückgängig zu machen.  "
     check_email: "<strong>Vielen Dank, dass Sie sich registriert haben.</strong> <span>Bitte überprüfen Sie Ihre E-mail-Postfach. Dort sollten Sie eine e-mail mit einem Bestätigungs-Link finden.</span>"
   confirmation_mailer:
