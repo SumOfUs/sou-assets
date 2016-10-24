@@ -8,7 +8,7 @@ fr:
       register: S'inscrire
     thanks: 'Merci pour votre don.'
     enter_password_message: "Entrez un mot de passe pour commencer"
-    create_account: "À présent, créez un compte afin de finaliser votre donation."
+    create_account: "Passez maintenant à l'étape supérieure et créez un compte."
     create_account_description: "Créer un compte ne vous prendra que 30 secondes et vous permettra de gérer en toute sécurité vos dons et informations de paiement avec SumOfUs. Vous pourrez aussi annuler votre donation à tout moment."
     check_email: "<strong>Merci pour votre inscription.</strong> <span>Pour activer votre compte, cliquez sur le lien de confirmation qui vient de vous être envoyé par mail.</span>"
   confirmation_mailer:
