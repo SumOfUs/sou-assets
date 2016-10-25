@@ -5,6 +5,9 @@
   $padding: 26px;
   position: relative;
   z-index: 600;
+  &.survey__form {
+    z-index: 300;
+  }
 
   &.petition-bar.stuck-right {
     margin-top: 17px;
