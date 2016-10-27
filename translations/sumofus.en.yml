@@ -124,4 +124,9 @@ en:
         tweet: "A Bayer-Monsanto merger violates the law and is a disaster for our birds, bees and farmers @vestager @LorettaLynch"
         tweet_link: https://bayermonsantomerger.com
         cta: "Tweet now"
-
+  donation_mailer:
+    subscription_email:
+      subject: "Your recurring donation with SumOfUs"
+      headline: "We're afraid there have been some issues charging your recurring donation."
+      body_html: "We'd like to thank you for your ongoing support on our mission to hold corporations accountable. We're sorry to inform you, however, that the charges on your recurring donations have not been going through recently, and we've therefore cancelled the subscription. If you'd like to continue to support our work, you can set up a new subscription by <a href='%{subscription_url}'>following this link.</a><br/><br/>Thanks,<br/>The whole team at SumOfUs."
+      body_text: "We'd like to thank you for your ongoing support on our mission to hold corporations accountable. We're sorry to inform you, however, that the charges on your recurring donations have not been going through recently, and we've therefore cancelled the subscription. If you'd like to continue to support our work, you can set up a new subscription at this address: %{subscription_url}"
