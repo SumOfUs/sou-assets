@@ -33,6 +33,9 @@
         <div class="two-step__accepted hidden-closed">
           {% include 'Share' %}
         </div>
+        <div class="two-step__after-donation hidden-closed">
+          <span> Thank you for donating </span>
+        </div>
       </div>
     </div>
 
@@ -51,6 +54,33 @@
       $('.two-step__accepted').addClass('hidden-closed');
       $('.two-step__declined').removeClass('hidden-closed');
     });
+
+    $.subscribe('fundraiser:transaction_success', function(event, responseData, formData) {
+      var followUpUrl, redirected;
+
+      followUpUrl = new URI(responseData.follow_up_url || "{{ follow_up_url }}");
+      followUpUrl.addQuery('donated', 'true');
+      redirected = formData.storeInVault && window.champaign.redirectors.RegisterMemberRedirector.attemptRedirect(followUpUrl.toString(), formData.member)
+
+      if(!redirected) {
+        showThankYouMessage();
+      }
+    });
+
+    checkIfAlreadyDonated();
+
+    function checkIfAlreadyDonated() {
+      var regex = /donated/i;
+      if(regex.test(window.location.search.substring(1))) {
+        showThankYouMessage();
+      }
+    }
+
+    function showThankYouMessage() {
+      $('.thank-you__cta').addClass('hidden-closed');
+      $('.two-step__after-donation').removeClass('hidden-closed');
+      $('.two-step__question').addClass('hidden-closed');
+    }
   });
 </script>
 
