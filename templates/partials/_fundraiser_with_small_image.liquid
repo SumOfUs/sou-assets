@@ -21,6 +21,11 @@
 <script type="text/javascript">
   $(document).ready(function(){
     window.sumofus.mySticky = new window.sumofus.DesktopSticky({extraClass: 'fundraiser'});
+    $.subscribe('fundraiser:transaction_success', function(event, responseData, formData) {
+      console.log("here");
+      var followUpUrl = responseData.follow_up_url || "{{ follow_up_url }}"
+      window.champaign.redirectors.AfterDonationRedirector.attemptRedirect(followUpUrl, formData)
+    });
   });
 </script>
 
