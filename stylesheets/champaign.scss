@@ -9,3 +9,13 @@
 @import "components/**/*";
 @import "pages/**/*";
 
+// Hot fix for multiple choice on Surveys (iphone)
+@media only screen
+and (max-device-width : 737px) {
+  .survey .action-form__field-container .radio-container {
+    label {
+      line-height: 2.2em;
+    }
+  }
+}
+
