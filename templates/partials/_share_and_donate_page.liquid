@@ -4,7 +4,7 @@
   </a>
 </div>
 
-<div class="center-content">
+<div class="center-content share-and-donate">
   <div class="center-content__one-column">
 
     <div class="center-content__central-square">
@@ -53,6 +53,9 @@
       $('.two-step__question').addClass('hidden-closed');
       $('.two-step__accepted').addClass('hidden-closed');
       $('.two-step__declined').removeClass('hidden-closed');
+      if($(window).width() < 701) {
+        revealMobileFundraiser();
+      }
     });
 
     $.subscribe('fundraiser:transaction_success', function(event, responseData, formData) {
@@ -80,6 +83,12 @@
       $('.thank-you__cta').addClass('hidden-closed');
       $('.two-step__after-donation').removeClass('hidden-closed');
       $('.two-step__question').addClass('hidden-closed');
+    }
+
+    function revealMobileFundraiser() {
+      $('.overlay-toggle__mobile-view')
+        .removeClass('overlay-toggle__mobile-view--closed')
+        .addClass('overlay-toggle__mobile-view--open');
     }
   });
 </script>
