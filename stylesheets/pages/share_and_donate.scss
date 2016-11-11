@@ -1,4 +1,12 @@
-.share-and-donate .overlay-toggle__close-button {
-  display: none;
+.share-and-donate {
+  label.checkbox-label input[type='checkbox'] {
+    position: relative;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  .overlay-toggle__close-button {
+    display: none;
+  }
 }
 
