@@ -4,7 +4,7 @@
   </a>
 </div>
 
-<div class="center-content share-and-donate">
+<div class="center-content center-content--share-and-donate">
   <div class="center-content__one-column">
 
     <div class="center-content__central-square">
@@ -13,7 +13,7 @@
       <div class="thank-you__cta">
         <span class="two-step__question">{{ 'share.two_step.cta' | t }}</span>
         <span class="two-step__declined hidden-closed">
-          {% include 'Fundraiser', ref: 'post-action-donate', extra_class: 'two-step-share' %}
+          {% include 'Fundraiser', ref: 'post-action-donate', extra_class: 'share-and-donate' %}
         </span>
         <span class="two-step__accepted hidden-closed">{{ 'share.two_step.accepted' | t }}</span>
       </div>
