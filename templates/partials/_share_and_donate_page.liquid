@@ -13,7 +13,7 @@
       <div class="thank-you__cta">
         <span class="two-step__question">{{ 'share.two_step.cta' | t }}</span>
         <span class="two-step__declined hidden-closed">
-          {% include 'Fundraiser', ref: 'post-action-donate', extra_class: 'share-and-donate' %}
+          {% include 'Fundraiser', ref: 'post-action-donate', freestanding: true %}
         </span>
         <span class="two-step__accepted hidden-closed">{{ 'share.two_step.accepted' | t }}</span>
       </div>
