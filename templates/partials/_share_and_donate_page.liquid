@@ -74,7 +74,7 @@
 
     function checkIfAlreadyDonated() {
       var regex = /donated/i;
-      if(regex.test(window.location.search.substring(1))) {
+      if(window.champaign.personalization.urlParams['donated'] !== undefined) {
         showThankYouMessage();
       }
     }
