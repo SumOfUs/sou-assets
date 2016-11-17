@@ -56,6 +56,7 @@ fr:
       accept: 'Oui'
       decline: 'Non'
       accepted: "Merci beaucoup ! Plus nous serons nombreux à nous mobiliser, plus notre mouvement sera fort."
+    thanks: 'Merci pour votre don.'
   footer:
     home: Accueil
     about: Nous connaître

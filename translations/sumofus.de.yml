@@ -56,6 +56,7 @@ de:
       accept: 'Ja'
       decline: 'Nein'
       accepted: "Herzlichen Dank! Je mehr Menschen sich engagieren, desto mehr können wir bewegen!"
+    thanks: 'Vielen Dank für Ihre Spende'
   footer:
     home: Start
     about: Über Uns
