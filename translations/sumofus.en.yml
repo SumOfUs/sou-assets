@@ -56,6 +56,7 @@ en:
       accept: 'Yes'
       decline: 'No'
       accepted: "Thanks! Share now in just a couple of clicks:"
+      declined: "No problem. Thanks for your support!"
     thanks: 'Thank you for your donation'
   footer:
     home: Home
