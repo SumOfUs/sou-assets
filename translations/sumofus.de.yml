@@ -58,6 +58,8 @@ de:
       accepted: "Herzlichen Dank! Je mehr Menschen sich engagieren, desto mehr können wir bewegen!"
       declined: "Sie möchten die Kampagne nicht teilen? Kein Problem. Vielen Dank für Ihre Unterstützung!"
     thanks: 'Vielen Dank für Ihre Spende'
+  share_and_donate:
+    fundraiser_title: 'Can you chip in to help fund SumOfUs’ campaigning? <Missing translation>'
   footer:
     home: Start
     about: Über Uns

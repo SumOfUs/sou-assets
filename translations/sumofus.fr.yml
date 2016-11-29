@@ -58,6 +58,8 @@ fr:
       accepted: "Merci beaucoup ! Plus nous serons nombreux à nous mobiliser, plus notre mouvement sera fort."
       declined: "Vous ne souhaitez pas partager ? Aucun problème. Merci de votre soutien !"
     thanks: 'Merci pour votre don.'
+  share_and_donate:
+    fundraiser_title: 'Can you chip in to help fund SumOfUs’ campaigning? <Missing translation>'
   footer:
     home: Accueil
     about: Nous connaître
