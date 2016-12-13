@@ -6,7 +6,7 @@ en:
       confirm_password: Confirm Password
       your_email: Your email
       register: Register
-    thanks: 'Thanks. Just one more step:'
+    thanks: 'Thanks! Just one more step:'
     enter_password_message: "Just enter a password to get started"
     create_account: "We're processing your donation."
     create_account_description: "Now, create an account to securely manage your donations with SumOfUs, and cancel a donation at any time."
