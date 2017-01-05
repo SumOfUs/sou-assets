@@ -83,6 +83,23 @@
 <script type="text/javascript">
   $(document).ready(function(){
 
+    var updateMailto = function() {
+      var content = $('.action-center__email-content')[0].innerText;
+      var subject = window.champaign.emailSubject || '';
+      var $links = $('.action-center__instruction--email').find('a');
+      $links.each(function(ii, el) {
+        var $el = $(el);
+        var href = $el.attr('href');
+        if (href.indexOf('mailto:') === 0) {
+          var email = href.split('mailto:')[1].split('?')[0];
+          var newHref = 'mailto:'+email+'?body='+encodeURIComponent(content);
+          if (subject.length) newHref = newHref + '&subject=' + encodeURIComponent(subject);
+          $el.attr('href', newHref);
+        }
+      });
+      $('.action-center__to-print').html(content);
+    }
+
     var disable = function() {
       var selectors = [
         ['.action-center__instruction--letter, .action-center__letter-content', '[data-target="letter"], #letter-panel'],
@@ -130,6 +147,7 @@
       reveal(first);
       $('.action-center__tweet-preview').detach().appendTo('.action-center__page--twitter');
       addTwitterButton();
+      updateMailto();
     }
 
     $('.action-center__tab').on('click', function(e){
@@ -142,6 +160,7 @@
       $('.action-center__to-print').html(content);
     });
 
+    $('.action-center__email-content').on('input', updateMailto);
     window.setTimeout(initialize, 50);
   });
 </script>
