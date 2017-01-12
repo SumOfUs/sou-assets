@@ -83,6 +83,38 @@
 <script type="text/javascript">
   $(document).ready(function(){
 
+    var updateMailto = function() {
+      var content = $('.action-center__email-content')[0].innerText;
+      var subject = window.champaign.emailSubject || '';
+      var $links = $('.action-center__instruction--email').find('a');
+      $links.each(function(ii, el) {
+        var $el = $(el);
+        var href = $el.attr('href');
+        if (href.indexOf('mailto:') === 0) {
+          var email = href.split('mailto:')[1].split('?')[0];
+          var newHref = 'mailto:'+email+'?body='+encodeURIComponent(content);
+          if (subject.length) newHref = newHref + '&subject=' + encodeURIComponent(subject);
+          $el.attr('href', newHref);
+        }
+      });
+    }
+
+    var disable = function() {
+      var selectors = [
+        ['.action-center__instruction--letter, .action-center__letter-content', '[data-target="letter"], #letter-panel'],
+        ['.action-center__instruction--email, .action-center__email-content', '[data-target="email"], #email-panel'],
+        ['.action-center__instruction--twitter, .action-center__twitter-body', '[data-target="twitter"], #twitter-panel'],
+        ['.action-center__instruction--facebook, .action-center__facebook-body', '[data-target="facebook"], #facebook-panel']
+      ];
+    for (var ii = 0; ii < selectors.length; ii++) {
+        var $indicator = $(selectors[ii][0]);
+        var $content = $(selectors[ii][1]);
+        if ($indicator.text().trim().length === 0) {
+          $content.addClass('hidden-irrelevant');
+        }
+      }
+    }
+    
     var reveal = function(id) {
       $('.action-center__tab--active').removeClass('action-center__tab--active');
       $('[data-target="'+id+'"]').addClass('action-center__tab--active');
@@ -98,11 +130,23 @@
       $('#twitter-panel').append(tag);
     }
 
+    var notHidden = function() {
+      var channels = ['email', 'letter', 'facebook', 'twitter'];
+      for (var ii = 0; ii < channels.length; ii++) {
+        var $panel = $('#'+channels[ii]+'-panel');
+        if ($panel.length > 0 && !$panel.hasClass('hidden-irrelevant')){
+          return channels[ii];
+        }
+      }
+    }
+    
     var initialize = function() {
-      var first = window.location.hash.slice(1) || window.champaign.openingAction || 'email';
+      disable();
+      var first = window.location.hash.slice(1) || window.champaign.openingAction || notHidden();
       reveal(first);
       $('.action-center__tweet-preview').detach().appendTo('.action-center__page--twitter');
       addTwitterButton();
+      updateMailto();
     }
 
     $('.action-center__tab').on('click', function(e){
@@ -115,6 +159,7 @@
       $('.action-center__to-print').html(content);
     });
 
+    $('.action-center__email-content').on('input', updateMailto);
     window.setTimeout(initialize, 50);
   });
 </script>
