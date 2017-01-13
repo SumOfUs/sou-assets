@@ -42,5 +42,8 @@
       border-color: #f8492e;
     }
 
+    button[type='submit']:disabled {
+      background-color: #dbdbdb;
+    }
   }
 }
