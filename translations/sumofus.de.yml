@@ -6,23 +6,23 @@ de:
       confirm_password: Passwort bestätigen
       your_email: Ihre E-mail-Adresse
       register: Registrieren
-    thanks: 'Vielen Dank für Ihre Spende'
+    thanks: 'Vielen Dank! Noch ein letzter Schritt:'
     enter_password_message: "Geben Sie bitte ein Passwort ein"
-    create_account: "Erstellen Sie jetzt ein Konto – so können Sie beim nächsten Mal noch einfacher spenden."
-    create_account_description: "Ein Konto zu erstellen, dauert nur 30 Sekunden. Sie können damit Ihre Spenden und Zahlungsdetails sicher verwalten und Spenden jederzeit rückgängig machen."
-    check_email: "<strong>Vielen Dank, dass Sie sich registriert haben.</strong> <span>Bitte überprüfen Sie Ihr E-mail-Postfach. Dort sollten Sie eine E-mail</span>"
+    create_account: "Ihre Spende wird bearbeitet."
+    create_account_description: "Bitte registrieren Sie sich. So können Sie Ihre Spenden an SumOfUs sicher verwalten und jederzeit wieder kündigen."
+    check_email: "<strong>Vielen Dank, dass Sie sich registriert haben.</strong> <span>Bitte überprüfen Sie Ihre E-mail-Postfach. Dort sollten Sie eine e-mail mit einem Bestätigungs-Link finden.</span>"
   confirmation_mailer:
-    title: "Account-Bestätigung - SumOfUs.org"
+    title: "Konto-Bestätigung - SumOfUs.org"
     confirmation_email:
-      subject: "Bitte bestätigen Sie Ihren SumOfUs-Account"
-      headline: "Vielen Dank, dass Sie einen SumOfUs-Account eingerichtet haben"
-      body_html: "Um Ihren SumOfUs-Account zu bestätigen, klicken Sie bitte auf <a href='%{confirmation_url}'>diesen Link</a><br/><br/>Vielen Dank<br/>Das Team von SumOfUs"
+      subject: "Bitte bestätigen Sie Ihr SumOfUs-Konto"
+      headline: "Vielen Dank, dass Sie einSumOfUs-Konto eingerichtet haben"
+      body_html: "Um Ihr SumOfUs-Konto zu bestätigen, klicken Sie bitte auf <a href='%{confirmation_url}'>diesen Link</a><br/><br/>Vielen Dank<br/>Das Team von SumOfUs"
       body_text: "Um Ihre Registrierung zu bestätigen, klicken Sie bitte auf diesen Link: %{confirmation_url} "
     follow_up_page:
-      account_not_found: 'Leider konnten wir keinen passenden Account zu diesem Link finden. Bitte senden Sie uns eine Nachricht an donations@sumofus.org, damit wir das Problem für Sie lösen können. '
-      account_already_confirmed: 'Ihr Account wurde bereits bestätigt!'
-      failure: 'Leider gab es bei der Einrichtung Ihres Accounts ein Problem. Bitte schreiben Sie uns eine Nachricht an donations@sumofus.org, damit wir das Problem für Sie lösen können. '
-      success: 'Sie haben Ihren SumOfUs-Account erfolgreich bestätigt. Vielen Dank!'
+      account_not_found: 'Leider konnten wir kein passendes Konto zu diesem Link finden. Bitte senden Sie uns eine Nachricht an donations@sumofus.org, damit wir das Problem für Sie lösen können. '
+      account_already_confirmed: 'Ihr Konto wurde bereits bestätigt!'
+      failure: 'Leider gab es bei der Einrichtung Ihres Kontos ein Problem. Bitte schreiben Sie uns eine Nachricht an donations@sumofus.org, damit wir das Problem für Sie lösen können. '
+      success: 'Sie haben Ihr SumOfUs-Konto erfolgreich bestätigt. Vielen Dank!'
       member_management: "Um Ihre Zahlungsoptionen und -details zu verwalten, können Sie jederzeit die <a href='%{url}'>Seite für SumOfUs-Mitglieder</a> besuchen."
   branding:
     tagline: Menschen vor Profit!
@@ -56,10 +56,10 @@ de:
       accept: 'Ja'
       decline: 'Nein'
       accepted: "Herzlichen Dank! Je mehr Menschen sich engagieren, desto mehr können wir bewegen!"
-      declined: "Sie möchten die Kampagne nicht teilen? Kein Problem. Vielen Dank für Ihre Unterstützung!"
-    thanks: 'Vielen Dank für Ihre Spende'
+      declined: "Kein Problem. Vielen Dank für Ihre Unterstützung!"
+    thanks: 'Vielen Dank für Ihre Spende!'
   share_and_donate:
-    fundraiser_title: 'Can you chip in to help fund SumOfUs’ campaigning? <Missing translation>'
+    fundraiser_title: 'Unterstützen Sie die Kampagnen von SumOfUs jetzt mit einer Spende!'
   footer:
     home: Start
     about: Über Uns
@@ -87,16 +87,16 @@ de:
       title: "Diese Übernahme verstößt nicht nur gegen das Gesetz, sie wäre auch eine Katastrophe für die weltweite Nahrungsmittelversorgung"
       first_reason:
         title: "Anfällige Monokulturen"
-        details: "Ein einzelner Schädling oder eine einzelne Krankheit könnten unsere gesamte Nahrungsversorgung in Gefahr bringen. Wenn wir uns systematisch von Bayer-Monsantos patentiertem Saatgut abhängig machen, ist unsere Landwirtschaft anfälliger und verliert ihre natürliche Widerstandsfähigkeit gegen Krankheiten."
+        details: Ein einzelner Schädling oder eine einzelne Krankheit könnten unsere gesamte Nahrungsversorgung in Gefahr bringen. Wenn wir uns systematisch von Bayer-Monsantos patentiertem Saatgut abhängig machen, ist unsere Landwirtschaft anfälliger und verliert ihre natürliche Widerstandsfähigkeit gegen Krankheiten.
       second_reason:
         title: "Tödliche Pestizide"
-        details: "Bayer’s Pestizide aus der Klasse der Neonikotinoide werden mit dem Massensterben von Bienen in Verbindung gebracht. Monsantos Glyphosat zerstört die Nahrungsgrundlage von Schmetterlingen. Beide Spezies sind aber für uns Menschen überlebenswichtig: Sie bestäuben die Pflanzen, von denen wir uns ernähren. Und es kommt noch schlimmer: Glyphosat steht unter dem dringenden Verdacht, Krebs zu verursachen."
+        details: 'Bayer’s Pestizide aus der Klasse der Neonikotinoide werden mit dem Massensterben von Bienen in Verbindung gebracht. Monsantos Glyphosat zerstört die Nahrungsgrundlage von Schmetterlingen. Beide Spezies sind aber für uns Menschen überlebenswichtig: Sie bestäuben die Pflanzen, von denen wir uns ernähren. Und es kommt noch schlimmer: Glyphosat steht unter dem dringenden Verdacht, Krebs zu verursachen.'
       third_reason:
         title: "Der größte Agrochemie-Konzern der Welt"
-        details: "Unsere Auswahl an Lebensmitteln und deren Preise könnten bald von der Willkür des Bayer-Monsanto-Konzerns abhängen. Steigende Saatgut- und Düngerpreise führen zu höheren Preisen für uns Verbraucher -- gerade Familien mit niedrigem Einkommen würden besonders darunter leiden. Auch die Auswahl im Obst- und Gemüseregal könnte kleiner werden, wenn Bayer-Monsanto mit seinen Massenprodukten aus industrieller Landwirtschaft kleine Bio-Bauern vom Markt drängt."
+        details: Unsere Auswahl an Lebensmitteln und deren Preise könnten bald von der Willkür des Bayer-Monsanto-Konzerns abhängen. Steigende Saatgut- und Düngerpreise führen zu höheren Preisen für uns Verbraucher -- gerade Familien mit niedrigem Einkommen würden besonders darunter leiden. Auch die Auswahl im Obst- und Gemüseregal könnte kleiner werden, wenn Bayer-Monsanto mit seinen Massenprodukten aus industrieller Landwirtschaft kleine Bio-Bauern vom Markt drängt.
     shareholder:
       title: "Nur 7 Prozent der<br> Bayer-Aktionäre halten die Monsanto-Übernahme für strategisch sinnvoll"
-      details: 'Laut einer unabhängigen Umfrage der Investmentfirma Bernstein and Company unterstützen nur 7% der Bayer-Aktionäre  den Monsanto-Deal. Bernstein hat keine Verbindungen zu SumOfUs oder anderen Interessengruppen.<br><br> Das Investment-Portal Motley Fool schreibt: “[Bayer-Investoren] kritisierten das Übernahmeangebot bereits unmittelbar nach der Bekanntgabe als eine “massive Wertvernichtung” für Bayer-Anteilseigner. Die von Bernstein befragten Investoren scheinen diese Ansicht zu teilen, sind sie doch mehrheitlich der Ansicht, Bayer sollte sich besser auf die Sparten Gesundheit (so 50% der Befragten), bzw. Pharma (39%) konzentrieren.”' 
+      details: "Laut einer unabhängigen Umfrage der Investmentfirma Bernstein and Company unterstützen nur 7% der Bayer-Aktionäre  den Monsanto-Deal. Bernstein hat keine Verbindungen zu SumOfUs oder anderen Interessengruppen.<br><br> Das Investment-Portal Motley Fool schreibt: “[Bayer-Investoren] kritisierten das Übernahmeangebot bereits unmittelbar nach der Bekanntgabe als eine “massive Wertvernichtung” für Bayer-Anteilseigner. Die von Bernstein befragten Investoren scheinen diese Ansicht zu teilen, sind sie doch mehrheitlich der Ansicht, Bayer sollte sich besser auf die Sparten Gesundheit (so 50% der Befragten), bzw. Pharma (39%) konzentrieren.”"
       quotes:
         first:
           quote: "Sehr geehrter Herr Baumann, im Sinne von uns allen kann ich nur an Ihr gewissen appellieren, den Menschen und der Umwelt nicht weiter so einen Schaden zuzumuten in dem Sie jetzt auch noch Monsanto (zB. als Hersteller von Glyphosat) als Unternehmen aufkaufen. Ich werde im Falle der Umsetzung in jedem Fall meine Aktion von Bayer veräussern."
@@ -118,7 +118,7 @@ de:
       cta_blurb: "Machen Sie mit -- rufen Sie die Kartellbehörden in Europa und den USA auf, Bayer und Monsanto zu stoppen und einen gefährlichen Mega-Konzern zu verhindern."
       petition_title: "Jetzt unterschreiben"
       tweet_title: "Tweeten Sie an die Kartellbehörden"
-      thanks_for_signing: 'Vielen Dank, dass Sie "Bayer: Stoppen Sie die Übernahme von Monsanto!" mit Ihrer Unterschrift unterstützen.'
+      thanks_for_signing: "Vielen Dank, dass Sie \"Bayer: Stoppen Sie die Übernahme von Monsanto!\" mit Ihrer Unterschrift unterstützen."
       petition_link: 'Klicken Sie <a href="//actions.sumofus.org/a/bayer-stoppen-sie-die-uebernahme-von-monsanto">hier</a> um die ursprüngliche Petition zu lesen.'
       share:
         link_preview_1: "Bayers Übernahme von Monsanto verstößt gegen das Kartellrecht"
