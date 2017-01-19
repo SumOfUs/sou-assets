@@ -1,25 +1,20 @@
 {% comment %} Description: A page with the call tool widget. {% endcomment %}
 {% comment %} Primary layout: true {% endcomment %}
 
-{% include 'Top Bar', no_fade: true %}
+{% include 'Full Width Header' %}
 
 <div class="caller">
-  <div class="imageless-title">
-    <div class="typography__highlight-wrapper">
-      <h1 class="typography__highlight">
-        <span>{{ title }}</span>
-      </h1>
+  <div class="content">
+    <div class="body-text text-top">
+      {{ content }}
     </div>
-  </div>
-  <div class="body-text caller__intro-text">
-    {{ content }}
-  </div>
-  {% include 'Call Tool' %}
+    {% include 'Call Tool' %}
 
-  <div class="body-text caller__bottom-text">
-    {% if plugins.call_tool[ref].active %}
-      {{ plugins.call_tool[ref].description }}
-    {% endif %}
+    <div class="body-text text-bottom">
+      {% if plugins.call_tool[ref].active %}
+        {{ plugins.call_tool[ref].description }}
+      {% endif %}
+    </div>
   </div>
 </div>
 

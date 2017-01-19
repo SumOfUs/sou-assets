@@ -1,24 +1,27 @@
 .caller {
-  $font-size-breakpoint: 600px;
-  @include centered-to-full(500px, 2%);
-  @include legacy-pie-clearfix();
-  min-height: calc(100vh - 300px);
-  margin-top: 100px;
-  margin-bottom: 100px;
+  // $font-size-breakpoint: 600px;
+  @include clearfix();
+  background-color: #ececec;
+  width: 100%;
 
-  &__intro-text {
-    padding-top: 60px;
+  .content {
+    @include legacy-pie-clearfix();
+    @include centered-to-full(900px);
+    background: white;
+    padding-bottom: 60px;
   }
 
-  &__intro-text, &__bottom-text {
-    @media(min-width: $font-size-breakpoint) {
-      font-size: 18px;
-    }
+  .text-top, .text-bottom {
+    // @media(min-width: $font-size-breakpoint) {
+    //   font-size: 18px;
+    // }
+    width: 92%;
+    margin:auto;
+    padding-top: 2em;
+    padding-bottom: 2em;
   }
 
   #call-tool-component {
-    margin: 45px 0;
-
     h1 {
       font-size: 24px;
       text-align: center;
@@ -96,5 +99,5 @@
       margin: 0.5em auto;
     }
 
-  }
+  } // #call-tool-component
 }
