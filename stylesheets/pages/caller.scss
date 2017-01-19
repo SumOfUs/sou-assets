@@ -34,7 +34,7 @@
       }
     }
 
-    input[type='text'], .Select-control {
+    input[type='tel'], .Select-control {
       border: solid 2px #dbdbdb;
     }
 
@@ -45,5 +45,48 @@
     button[type='submit']:disabled {
       background-color: #dbdbdb;
     }
+
+    .selectedTarget {
+      text-align: center;
+      margin: 1em 0;
+      line-height: 1.2em;
+      font-style: italic;  
+      color: rgba(0, 0, 0, 0.4);
+    }
+
+    .form__group.phoneCountryCodeField {
+      width: 25%;
+      margin-bottom: 0px;
+
+      label {
+        left: 10px;
+        max-width: 100%;
+      }
+
+      input {
+        border-right: 0;
+      }
+    }
+    
+    .form__group.phoneNumberField {
+      width: 75%;
+      margin-bottom: 0px;
+    }
+
+    p.selectedPhoneCountryCode {
+      display: block;
+      width: 100%;
+      font-style: italic;
+      margin-left: 0.5em;
+      font-size: 12px;
+      line-height: 1.5em;
+      height: 1.5em;
+      color: #00c0cf;
+    }
+
+    .selectedTargetName {
+      color: #00c0cf;
+    }
+
   }
 }
