@@ -10,14 +10,21 @@
 }
 
 .caller {
+  @include clearfix();
+  background-color: #ececec;
+  width: 100%;
+
   @mixin mobile-full-width() {
     width: 92%;
     margin: auto;    
   }
 
-  @include clearfix();
-  background-color: #ececec;
-  width: 100%;
+  .hidden { display: none }
+  .mobile-hidden {
+    @media(max-width: $mobile-width) {
+      display: none;
+    }
+  }
 
   .content {
     @include legacy-pie-clearfix();
@@ -34,6 +41,29 @@
   }
 
   #call-tool-component {
+
+    .form-row {
+      @include clearfix();
+    }
+
+    .col1, .col3 {
+      width: calc((100% - 350px)/2);
+      float: left;
+    }
+
+    .col2 {
+      float: left
+
+    }
+
+    .col3 p {
+      font-size: 12px;
+      font-style: italic;
+      color: rgba(0, 0, 0, 0.4);
+      width: 66%;
+      margin-top: 28px;
+    }
+
     h1 {
       @include mobile-full-width();
       font-size: 24px;
@@ -57,7 +87,7 @@
       border: solid 2px #dbdbdb;
     }
 
-    .Select.has-error .Select-control, input[type='text'].has-error {
+    .Select.has-error .Select-control, input[type='tel'].has-error {
       border-color: #f8492e;
     }
 
@@ -86,14 +116,19 @@
         border-right: 0;
       }
     }
+
+    .form__group.targetCountryCodeField .error-msg {
+      display: none;
+    }
     
     .form__group.phoneNumberField {
       width: 75%;
       margin-bottom: 0px;
     }
 
-    p.selectedPhoneCountryCode {
-      display: block;
+
+    p.guessed-country-name {
+      @include clearfix();
       width: 100%;
       font-style: italic;
       margin-left: 0.5em;
@@ -114,6 +149,10 @@
       color: $slate-gray;
       line-height: 16px;
       margin: 0.5em auto;
+    }
+    
+    .select-target-text.has-error {
+      color: #f8492e;
     }
 
   } // #call-tool-component
