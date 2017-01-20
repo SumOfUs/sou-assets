@@ -73,7 +73,7 @@
     }
 
     form {
-      margin: 0 auto 0 auto;
+      margin: 0 auto;
       max-width: 350px;
       @include legacy-pie-clearfix();
       @include mobile-full-width();
@@ -89,6 +89,16 @@
 
     .Select.has-error .Select-control, input[type='tel'].has-error {
       border-color: #f8492e;
+    }
+
+    .base-errors {
+      max-width: 350px;
+      @include mobile-full-width();
+      color: #f8492e;
+      ul {
+        width: 92%;
+        margin: 0 auto;
+      }
     }
 
     button[type='submit']:disabled {
