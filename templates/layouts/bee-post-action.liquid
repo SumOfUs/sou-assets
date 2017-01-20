@@ -1,0 +1,7 @@
+{% comment %} Description: A follow-up page with info about the bees {% endcomment %}
+{% comment %} Post-action layout: true {% endcomment %}
+
+{% capture message %}{{ 'petition.thank_you' | val: 'petition_title', title | t }}{% endcapture %}
+{% include 'Share Page', message: message %}
+{% include 'Bee History' %}
+{% include 'Simple Footer' %}

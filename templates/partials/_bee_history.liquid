@@ -1,0 +1,162 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+    var cards = [
+      {
+        dateAndLocation: 'December 2015 - Europe',
+        title: 'EU neonic ban extended',
+        body: "Thanks to a huge public outcry and support from members like you, <b>Europe’s ground-breaking ban on 3 types of bee-killing neonics was extended past its original two-year timespan.</b><br />And when pesticide giants like Bayer, Syngenta and BASF sued Europe to drop the ban, <b>SumOfUs members chipped in tens of thousands of dollars so we could hire lawyers to defend the bees.</b>",
+        photoClass: 'bee-card__photo--bayer'
+      },
+      {
+        dateAndLocation: 'December 2015 - North America',
+        title: 'US hardware giants agree to protect bees',
+        body: "After more than a year and a half of consumer pressure, we pushed the two biggest hardware stores in North America, <b>Home Depot and Lowe's, to commit to taking neonics off their shelves!</b> <br />More than a million SumOfUs members signed petitions, took action on social media and donated so we could deliver your messages straight to the stores. ",
+        photoClass: 'bee-card__photo--lowes'
+      },
+      {
+        dateAndLocation: 'April 2016 - United States',
+        title: 'Silenced bee scientist continues his crucial research',
+        body: "Jonathan Lundgren’s research threatened the agrochemical industry so his boss, the the U.S. Department of Agriculture, tried to suppress him. <b>Over 19,000 SumOfUs members worldwide donated</b> to help Jonathan and his work get off to a new start at Blue Dasher Farm, where he leads <b>cutting-edge independent bee research.</b>",
+        photoClass: 'bee-card__photo--lundgren'
+      },
+      {
+        dateAndLocation: 'June 2016 - France',
+        title: 'France bans all neonics',
+        body: '<b>France became the first country in the world to completely ban neonics</b> &em; going beyond temporary EU restrictions and doing what scientists and 550,000 people demanded.<br>This huge victory came right after a big win in the UK, where <b>Ministers rejected an “emergency” application to ignore the EU neonics ban</b> and use bee-killing seeds. Nearly 1,000,000 SumOfUs members spoke out against the industry-driven plan.',
+        photoClass: 'bee-card__photo--france'
+      },
+      {
+        dateAndLocation: 'July 2016 - USA & Europe',
+        title: 'The merger from hell is exposed',
+        body: "After pesticide giant Bayer announced plans to merge with agribusiness corporate conglomerate Monsanto, SumOfUs members chipped in to <b>hire some of the world’s top legal minds to investigate whether the merger would be in violation of antitrust law</b>. Over 100,000 people tweeted our white paper, called U.S. senators, signed open letters and spoke out publicly against the dangerous deal.<br />",
+        photoClass: 'bee-card__photo--grunes'
+      },
+      {
+        dateAndLocation: '2017 - Everywhere',
+        title: "How we'll protect the bees in the year ahead",
+        body: "We’re working around the clock to <b>get Canada to pass a neonic ban, expand European bee protections, and stop U.S. grocery store giants like Kroger from selling bee-killing products.</b> We’ll also continue to support threatened bee scientists and the beekeeper alliance that’s <b>fighting Bayer and Syngenta in court.</b> <br />And finally, we’ll do everything we can to stop the Bayer-Monsanto merger from hell and continue to fight Bayer, the biggest bee-killer of them all.",
+        photoClass: 'bee-card__photo--flower'
+      }
+    ];
+
+    CARD_WIDTH = 400;
+
+    var renderCards = function() {
+      var $track = $('.beeline__track');
+      var template = $('#bee-card-template').html();
+      _.map(cards, function(data) {
+        var $card = $(template);
+        $card.find('.bee-card__title').text(data.title);
+        $card.find('.bee-card__body').html(data.body);
+        $card.find('.bee-card__dateline').text(data.dateAndLocation);
+        $card.find('.bee-card__photo').addClass(data.photoClass);
+        $track.prepend($card);
+      });
+      $track.css('width', (cards.length * CARD_WIDTH )+ 'px');
+    };
+
+    var centerOnCard = function($card) {
+      console.log('centering on ', $card);
+      var offset = $card.index() * CARD_WIDTH;
+      $('.beeline__track').css('transform', 'translateX('+offset+'px)');
+    };
+
+    var bindEvents = function() {
+      $('.bee-card').on('click', function(e) {
+        var $target = $(e.target);
+        if (!$target.hasClass('bee-card')) $target = $target.parents('.bee-card');
+        centerOnCard($target);
+      });
+    };
+
+    renderCards();
+    bindEvents();
+    centerOnCard($('.bee-card').first().next());
+  });
+</script>
+
+<div class="beeline">
+  <div class="beeline__track"></div>
+</div>
+
+{% include 'Bee History Photos' %}
+
+<script type="text/template" id='bee-card-template'>
+  <div class="bee-card">
+    <div class="bee-card__photo">
+      <div class="bee-card__dateline"></div>
+    </div>
+    <div class="bee-card__title"></div>
+    <div class="bee-card__body"></div>
+  </div>
+</script>
+
+<style type="text/css">
+  .beeline {
+    width: 100%;
+    overflow: hidden;
+    height: 530px;
+    margin-bottom: 60px;
+    padding: 10px 0;
+    position: relative;
+  }
+  .beeline__track {
+    position: absolute;
+    overflow: visible;
+    height: 100%;
+    right: calc(50% - 200px);
+    transition: transform 0.3s ease-in-out;
+  }
+  .bee-card {
+    width: 360px;
+    margin: 0 20px;
+    float: right;
+    cursor: pointer;
+    position: relative;
+    outline-color: #00c0cf;
+    outline-style: solid;
+    outline-width: 0px;
+    transition: outline-width 0.1s linear;
+  }
+  .bee-card:hover {
+    outline-width: 10px;
+  }
+  .bee-card__photo {
+    width: 100%;
+    height: 175px;
+    background-size: cover;
+    position: relative;
+  }
+  .bee-card__dateline {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 14px 20px;
+    width: calc(100% - 40px);
+    position: absolute;
+    bottom: 0;
+  }
+  .bee-card__title {
+    background: #00c0cf;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    height: 45px;
+    padding: 15px 20px;
+    line-height: 1.2em;
+    width: calc(100% - 40px);
+  }
+  .bee-card__body {
+    background: #ececec;
+    font-size: 16px;
+    padding: 20px;
+    line-height: 1.2em;
+    width: calc(100% - 40px);
+    min-height: 240px;
+  }
+  .bee-card__body br {
+    line-height: 30px;
+  }
+</style>
