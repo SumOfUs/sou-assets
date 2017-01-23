@@ -1,49 +1,172 @@
-.caller {
-  $font-size-breakpoint: 600px;
-  @include centered-to-full(500px, 2%);
-  @include legacy-pie-clearfix();
-  min-height: calc(100vh - 300px);
-  margin-top: 100px;
-  margin-bottom: 100px;
+.cover-photo__overlay {
+  z-index: 1000;
+}
 
-  &__intro-text {
-    padding-top: 60px;
+.caller-header {
+  @media(max-width: $mobile-width) {
+    display: none;
   }
 
-  &__intro-text, &__bottom-text {
-    @media(min-width: $font-size-breakpoint) {
-      font-size: 18px;
+  .center-content {
+    @include centered-to-full(900px);
+  }
+}
+
+.caller {
+  @include clearfix();
+  background-color: #ececec;
+  width: 100%;
+
+  @mixin mobile-full-width() {
+    width: 92%;
+    margin: auto;    
+  }
+
+  .hidden { display: none }
+  .mobile-hidden {
+    @media(max-width: $mobile-width) {
+      display: none;
     }
+  }
+
+  .content {
+    @include legacy-pie-clearfix();
+    @include centered-to-full(900px);
+    background: white;
+    padding-bottom: 60px;
+  }
+
+  .text-top, .text-bottom {
+    width: 92%;
+    margin:auto;
+    padding-top: 2em;
+    padding-bottom: 2em;
   }
 
   #call-tool-component {
-    margin-top: 45px;
+
+    .form-row {
+      @include clearfix();
+    }
+
+    .col1, .col3 {
+      width: calc((100% - 350px)/2);
+      float: left;
+    }
+
+    .col2 {
+      float: left
+
+    }
+
+    .col3 p {
+      font-size: 12px;
+      font-style: italic;
+      color: rgba(0, 0, 0, 0.4);
+      width: 66%;
+      margin-top: 28px;
+    }
 
     h1 {
+      @include mobile-full-width();
       font-size: 24px;
+      line-height: 1.2em;
       text-align: center;
+      margin-bottom: 1em;
     }
 
     form {
-      margin: 20px auto 80px auto;
+      margin: 0 auto;
       max-width: 350px;
       @include legacy-pie-clearfix();
+      @include mobile-full-width();
 
       .form__group {
         margin-bottom: 15px;
       }
     }
 
-    input[type='text'], .Select-control {
+    input[type='tel'], .Select-control {
       border: solid 2px #dbdbdb;
     }
 
-    .Select.has-error .Select-control, input[type='text'].has-error {
+    .Select.has-error .Select-control, input[type='tel'].has-error {
       border-color: #f8492e;
+    }
+
+    .base-errors {
+      max-width: 350px;
+      @include mobile-full-width();
+      color: #f8492e;
+      ul {
+        width: 92%;
+        margin: 0 auto;
+      }
     }
 
     button[type='submit']:disabled {
       background-color: #dbdbdb;
     }
-  }
+
+    .selectedTarget {
+      text-align: center;
+      margin: 1em 0;
+      line-height: 1.2em;
+      font-style: italic;  
+      color: rgba(0, 0, 0, 0.4);
+    }
+
+    .form__group.phoneCountryCodeField {
+      width: 25%;
+      margin-bottom: 0px;
+
+      label {
+        left: 10px;
+        max-width: 100%;
+      }
+
+      input {
+        border-right: 0;
+      }
+    }
+
+    .form__group.targetCountryCodeField .error-msg {
+      display: none;
+    }
+    
+    .form__group.phoneNumberField {
+      width: 75%;
+      margin-bottom: 0px;
+    }
+
+
+    p.guessed-country-name {
+      @include clearfix();
+      width: 100%;
+      font-style: italic;
+      margin-left: 0.5em;
+      font-size: 12px;
+      line-height: 1.5em;
+      height: 1.5em;
+      color: #00c0cf;
+    }
+
+    .selectedTargetName {
+      color: #00c0cf;
+    }
+
+    .fine-print {
+      @include mobile-full-width();
+      max-width: 350px;
+      font-size: 12px;
+      color: $slate-gray;
+      line-height: 16px;
+      margin: 0.5em auto;
+    }
+    
+    .select-target-text.has-error {
+      color: #f8492e;
+    }
+
+  } // #call-tool-component
 }
