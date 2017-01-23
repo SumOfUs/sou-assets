@@ -124,10 +124,11 @@
         left: 10px;
         max-width: 100%;
       }
+    }
 
-      input {
-        border-right: 0;
-      }
+    .Select.is-focused .Select-control,
+    input[type='tel']:focus {
+      border-color: $teal;
     }
 
     .form__group.targetCountryCodeField .error-msg {
@@ -135,7 +136,8 @@
     }
     
     .form__group.phoneNumberField {
-      width: 75%;
+      width: calc(75% - 4px);
+      margin-left: 4px;
       margin-bottom: 0px;
     }
 
@@ -143,16 +145,16 @@
     p.guessed-country-name {
       @include clearfix();
       width: 100%;
-      font-style: italic;
-      margin-left: 0.5em;
+      margin-left: 2px;
       font-size: 12px;
       line-height: 1.5em;
       height: 1.5em;
-      color: #00c0cf;
+      color: rgba(0, 0, 0, 0.4);
     }
 
     .selectedTargetName {
-      color: #00c0cf;
+      font-weight: bold;
+      color: #414141;
     }
 
     .fine-print {
