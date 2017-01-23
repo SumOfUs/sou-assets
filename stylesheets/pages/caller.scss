@@ -22,12 +22,12 @@
     margin: auto;    
   }
 
-  .hidden { display: none }
-  .mobile-hidden {
-    @media(max-width: $mobile-width) {
-      display: none;
-    }
+  .clearfix {
+    @include clearfix();
+    width: 100%;
   }
+
+  .hidden { display: none }
 
   .content {
     @include legacy-pie-clearfix();
@@ -44,35 +44,12 @@
   }
 
   #call-tool-component {
-
-    .form-row {
-      @include clearfix();
-    }
-
-    .col1, .col3 {
-      width: calc((100% - 350px)/2);
-      float: left;
-    }
-
-    .col2 {
-      float: left
-
-    }
-
-    .col3 p {
-      font-size: 12px;
-      font-style: italic;
-      color: rgba(0, 0, 0, 0.4);
-      width: 66%;
-      margin-top: 28px;
-    }
-
     h1 {
       @include mobile-full-width();
       font-size: 24px;
       line-height: 1.2em;
       text-align: center;
-      margin-bottom: 1em;
+      margin-bottom: 0.5em;
     }
 
     form {
@@ -166,8 +143,10 @@
       margin: 0.5em auto;
     }
     
-    .select-target-text.has-error {
-      color: #f8492e;
+    p.select-home-country {
+      margin-bottom: 1em;
+      line-height: 1.2em;
+      text-align: center;
     }
 
   } // #call-tool-component
