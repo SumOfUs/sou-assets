@@ -6,10 +6,10 @@ fr:
       confirm_password: Confirmez votre mot de passe
       your_email: Adresse e-mail
       register: S'inscrire
-    thanks: 'Merci! Une toute dernière étape:'
+    thanks: 'Merci ! Encore une toute dernière étape :'
     enter_password_message: "Entrez un mot de passe pour commencer"
     create_account: "Nous traitons votre don."
-    create_account_description: "Maintenant, créez un compte afin de gérer vos dons sécurisés avec SumOfUs. Vous pourrez également y annuler un don à tout moment."
+    create_account_description: "Maintenant, créez un compte afin de gérer vos dons sécurisés avec SumOfUs. Cela vous permettra notamment d'annuler un don à tout moment."
     check_email: "<strong>Merci pour votre inscription.</strong> <span>Pour activer votre compte, cliquez sur le lien de confirmation qui vient de vous être envoyé par email.</span>"
   confirmation_mailer:
     title: "Confirmation du compte - SumOfUs.org"
@@ -70,3 +70,60 @@ fr:
     about_url: https://www.sumofus.org/fr/about/
     privacy_policy_url: https://www.sumofus.org/fr/privacy/
     contact_url: https://www.sumofus.org/fr/contact/
+  baysanto:
+    header:
+      tagline: 'l''opposition'
+      translate: 'Allemand'
+      press_room: 'Salle de presse'
+      the_paper: 'Lire le journal'
+      cta: 'Agir'
+      translate_link: '/de'
+      press_link: '/press'
+    intro:
+      title: "En créant la plus grosse entreprise agro-industrielle au monde, la fusion Bayer-Monsanto irait à l'encontre des lois sur la concurrence déloyale."
+      details: "Konkurrenz Group, un important cabinet d'avocats spécialisé dans les fusions et acquisitions, a fait part de ses préoccupations majeures concernant la légalité de la fusion Bayer/Monsanto. Cette dernière serait contraire aux réglementations européennes et étasuniennes en matière de concurrence ; elle aboutirait également à restreindre sévèrement les choix et options s'offrant aux agriculteurs et aux consommateurs dans un marché déjà dominé par quelques grands acteurs."
+      read_the_paper: "Lire le livre blanc"
+    environmental:
+      title: "Cette fusion n'est pas juste contraire à la loi, elle va aussi fragiliser nos systèmes alimentaires."
+      first_reason:
+        title: "Monocultures fragiles"
+        details: Qui dit plus de contrôle des entreprises sur l'agriculture dit disparition progressive de la diversité des semences sur lesquelles reposent les systèmes alimentaires. Aussi, si une maladie venait à toucher une variété de semences brevetées par Bayer-Monsanto, cela pourrait avoir des conséquences catastrophiques sur nos systèmes alimentaires mondiaux.
+      second_reason:
+        title: "Pesticides funestes"
+        details: Les pesticides néonicotinoïdes de Bayer nuisent aux colonies d'abeilles dans le monde entier, et le Roundup de Monsanto détruit la principale source de nourriture des papillons monarques qui sont désormais en voie d'extinction. Or, nous comptons sur ces deux espèces pour polliniser nos cultures. Des experts indépendants de l'OMS ont classé le glyphosate, ingrédient clé du RoundUp, dans la liste des substances cancérogènes probables.
+      third_reason:
+        title: "Hausse du prix des denrées alimentaires"
+        details: Une méga-société type Bayer-Monsanto détiendrait pouvoir sans précédent sur le prix des semences et des engrais. Les consommateurs pourrait aussi avoir moins de choix dans les produits bio et non génétiquement modifiés.
+    shareholder:
+      title: "What’s more, <br>only 7% of Bayer shareholders think the acquisition is a good strategic move"
+      details: "Bernstein and Company conducted an independent poll of Bayer shareholders and found that only 7% supported the acquisition. Bernstein has no connection to SumOfUs or other advocacy groups.<br><br> According to investment magazine the Motley Fool, “[Investors] immediately after the takeover offer was announced, castigated it as an 'immediate destruction' of shareholder value. That view seems to be shared by the investors surveyed by Bernstein, who by and large believe Bayer should focus on either healthcare (50% of respondents) or its pharma pipeline (39%)."
+      quotes:
+        first:
+          quote: "As a financial advisor, I oppose this merger because it centralizes food and prescription drugs so intensely that neither Bayer nor Monsanto will be good incubators for NEW ideas. It will be too big of a company and is likely to stagnate. That's bad for my profits."
+          quoted: J. Gruber, Bayer shareholder
+        second:
+          quote: "As a Bayer shareholder I see much bigger risks and future losses in the mid to long-term from this merger than actual benefits. Monsanto's business model in based on a single product that is going to be banned in the European market, which induces a great risk in shareholder value."
+          quoted: Angelos K., Bayer shareholder
+        third:
+          quote: "I hold Bayer stock but am NOT on board with this merger. Monsanto is a dangerous entity, ruining essential biodiversity. I've done my research and Monsanto is a liability for our entire future's food security. I will be selling my Bayer stock if this merger occurs."
+          quoted: Oliva B., Bayer shareholder
+        fourth:
+          quote: "I oppose this merger because Monsanto has a bad reputation and it would make Bayer's repuation worse. People would be less trusting of this company."
+          quoted: Rob B., Bayer shareholder
+        fifth:
+          quote: "Monsanto will be a toxic burden to Bayer. The public's disdain of Monsanto will taint Bayer's reputation and share prices will drop. I will dump my shares in Bayer if there is a merger, just as I have already done with Monsanto. No merger please!"
+          quoted: Sharon L., Bayer shareholder
+    action:
+      count_explanation: "people have already taken action to stop this deal."
+      cta_blurb: "Join them now, and call on anti-trust authorities in the US and EU to stop Bayer and Monsanto from creating a toxic mega corporation."
+      petition_title: "Signez la pétition"
+      tweet_title: "Tweet the paper"
+      thanks_for_signing: "Thanks for signing! Now multiply your impact by spreading the word!"
+      petition_link: 'Click <a href="//actions.sumofus.org/a/stop-the-bayer-monsanto-mega-merger">here</a> to read the original petition.'
+      share:
+        link_preview_1: "The Bayer Monsanto merger is in clear violation of anti-trust law"
+        link_preview_2: "New research by a leading M&A firm makes it clear"
+        link_preview_url: "bayermonsantomerger.com"
+        tweet: "A Bayer-Monsanto merger violates the law and is a disaster for our birds, bees and farmers @vestager @LorettaLynch"
+        tweet_link: https://bayermonsantomerger.com
+        cta: "Tweet now"
