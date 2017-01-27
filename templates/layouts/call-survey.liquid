@@ -1,0 +1,33 @@
+{% comment %} Description: A page for surveying members after a call. {% endcomment %}
+{% comment %} Primary layout: true {% endcomment %}
+
+{% include 'Top Bar', no_fade: true %}
+
+<div class="survey post-call">
+  <div class="imageless-title">
+    <div class="typography__highlight-wrapper">
+      <h1 class="typography__highlight">
+        <span>{{ title }}</span>
+      </h1>
+    </div>
+  </div>
+  {% include 'Survey' %}
+  <p>
+    <a href="#" class="survey__toggle-button"> {{ 'caller_survey.show_talking_points' | t }} </a>
+  </p>
+
+  <div class="body-text survey__intro" style="display:none">
+    {{ content }}
+  </div>
+</div>
+
+{% include 'Simple Footer', extra_class: 'simple-footer--stuck-to-bottom' %}
+
+<script>
+  $(function() {
+    $('.survey__toggle-button').click(function(){ 
+      $('.survey__intro').slideToggle();
+    });
+  });
+</script>
+
