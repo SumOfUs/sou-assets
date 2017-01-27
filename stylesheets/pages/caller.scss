@@ -52,6 +52,17 @@
       margin-bottom: 0.5em;
     }
 
+    .base-errors {
+      max-width: 350px;
+      @include mobile-full-width();
+      margin-bottom: 1em;
+      color: #f8492e;
+      ul {
+        width: 92%;
+        margin: 0 auto;
+      }
+    }
+
     form {
       margin: 0 auto;
       max-width: 350px;
@@ -71,15 +82,6 @@
       border-color: #f8492e;
     }
 
-    .base-errors {
-      max-width: 350px;
-      @include mobile-full-width();
-      color: #f8492e;
-      ul {
-        width: 92%;
-        margin: 0 auto;
-      }
-    }
 
     button[type='submit']:disabled {
       background-color: #dbdbdb;
