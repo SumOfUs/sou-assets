@@ -127,3 +127,5 @@ fr:
         tweet: "A Bayer-Monsanto merger violates the law and is a disaster for our birds, bees and farmers @vestager @LorettaLynch"
         tweet_link: https://bayermonsantomerger.com
         cta: "Tweet now"
+  caller_survey:
+    show_talking_points: "Click here to show the talking points (missing trans)"
