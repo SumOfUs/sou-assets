@@ -1,0 +1,85 @@
+<form class="spreader-form form--big">
+  <div class="form__group form__group--half-width form__group--half-width--left">
+      <label for="source_mailing_id">ID of mailing to kick and spread</label>
+      <input type="tel" name="source_mailing_id" class="spreader-form__input" />
+  </div>
+  <div class="form__group form__group--half-width">
+      <label for="sample_size">Size of drafts to generate</label>
+      <select name="sample_size" class="spreader-form__input">
+        <option value="10k">10k test</option>
+        <option value="20k">20k test</option>
+        <option value="full">Full list</option>
+      </select>
+  </div>
+  <div class="form__group">
+      <label for="subject_lines">Subject lines to test</label>
+      <textarea name="subject_lines" class="spreader-form__input" placeholder="One subject per line"></textarea>
+  </div>
+  <button type="submit" class="button">Create mailing</button>
+</form>
+
+
+<style type="text/css">
+  .center-content--spreader-bot {
+    max-width: 600px;
+    font-size: 18px;
+    margin: 60px auto;
+    float: none;
+    padding-left: 10px;
+  }
+  body {
+    background: #ececec;
+  }
+  .spreader-form {
+    display: block;
+    margin-top: 30px;
+  }
+  .spreader-form label {
+    font-weight: bold;
+    margin: 10px 0 5px;
+    display: block;
+  }
+  
+</style>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    var hasProp = function(hash, key) {
+      return hash && hash[key] && hash[key].length;
+    }
+
+    var collateData = function() {
+      var list = $('.spreader-form').serializeArray();
+      return _.mapValues(_.keyBy(list, 'name'), 'value');
+    };
+
+    var attemptSubmission = function(data) {
+      console.log('received data', data);
+      var cred = window.champaign.ak_credentials;
+      if (hasProp(cred, 'username') && hasProp(cred, 'password') && hasProp(cred, 'url')) {
+        submitData(data, cred.url, cred.username, cred.password);
+      } else if (hasProp(cred, 'excuse')) {
+        alert(cred.excuse);
+      }
+    }
+
+    var submitData = function(data, baseUrl, username, password) {
+      $.ajax(baseUrl+'/mailer/'+data.source_mailing_id+'/status', {
+        username: username,
+        password: password,
+        method: 'GET'
+      }).done(function(response){
+        console.log(response);
+      }).fail(function(a, b, c){
+        console.error(a, b, c);
+      });
+    };
+
+    $('.spreader-form').on('submit', function(e) {
+      e.preventDefault();
+      attemptSubmission(collateData());
+    });
+  });
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
