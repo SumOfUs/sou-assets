@@ -11,7 +11,8 @@
       </h1>
     </div>
   </div>
-  {% include 'Survey' %}
+  {% capture submit %} {{ 'caller_survey.submit' | t }} {% endcapture %}
+  {% include 'Survey', last_section_submit_text: submit %}
   <p>
     <a href="#" class="survey__toggle-button"> {{ 'caller_survey.show_talking_points' | t }} </a>
   </p>

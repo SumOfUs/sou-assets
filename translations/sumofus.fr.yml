@@ -129,3 +129,4 @@ fr:
         cta: "Tweet now"
   caller_survey:
     show_talking_points: "Click here to show the talking points (missing trans)"
+    submit: "Submit (missing translation)"

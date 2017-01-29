@@ -129,4 +129,5 @@ en:
         cta: "Tweet now"
   caller_survey:
     show_talking_points: "Click here to show the talking points"
+    submit: "Submit"
 
