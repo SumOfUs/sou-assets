@@ -128,5 +128,6 @@ fr:
         tweet_link: https://bayermonsantomerger.com
         cta: "Tweet now"
   caller_survey:
+    intro: "Missing translation"
     show_talking_points: "Click here to show the talking points (missing trans)"
     submit: "Submit (missing translation)"
