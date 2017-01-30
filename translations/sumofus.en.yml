@@ -128,6 +128,8 @@ en:
         tweet_link: https://bayermonsantomerger.com
         cta: "Tweet now"
   caller_survey:
-    show_talking_points: "Click here to show the talking points"
+    intro: "You should receive a call on your phone any second now. Once you pick up, you will first hear a short message from us and then get connected to a the office of a key MEP from your country.<br><br><i>Remember</i>: The call is free of charge for you."
+    show_talking_points: "Click here to show the example conversation, tips and FAQs again"
     submit: "Submit"
+
 

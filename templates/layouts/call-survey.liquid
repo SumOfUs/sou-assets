@@ -11,23 +11,25 @@
       </h1>
     </div>
   </div>
-  {% capture submit %} {{ 'caller_survey.submit' | t }} {% endcapture %}
-  {% include 'Survey', last_section_submit_text: submit %}
-  <p>
-    <a href="#" class="survey__toggle-button"> {{ 'caller_survey.show_talking_points' | t }} </a>
+  <p class="body-text survey__intro post-call__intro">
+    {{ 'caller_survey.intro' | t }}   
   </p>
-
-  <div class="body-text survey__intro" style="display:none">
+  <p>
+    <a href="#" class="post-call__toggle-button"> {{ 'caller_survey.show_talking_points' | t }} </a>
+  </p>
+  <div class="body-text survey__intro post-call__talking-points " style="display:none">
     {{ content }}
   </div>
+  {% capture submit %} {{ 'caller_survey.submit' | t }} {% endcapture %}
+  {% include 'Survey', last_section_submit_text: submit %}
 </div>
 
 {% include 'Simple Footer', extra_class: 'simple-footer--stuck-to-bottom' %}
 
 <script>
   $(function() {
-    $('.survey__toggle-button').click(function(){ 
-      $('.survey__intro').slideToggle();
+    $('.post-call__toggle-button').click(function(){ 
+      $('.post-call__talking-points').slideToggle();
     });
   });
 </script>
