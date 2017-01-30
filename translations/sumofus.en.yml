@@ -128,7 +128,11 @@ en:
         tweet_link: https://bayermonsantomerger.com
         cta: "Tweet now"
   caller_survey:
-    intro: "You should receive a call on your phone any second now. Once you pick up, you will first hear a short message from us and then get connected to a the office of a key MEP from your country.<br><br><i>Remember</i>: The call is free of charge for you."
+    intro: "You should receive a call on your phone any second now. Once you pick up, you will first hear a short message
+            from us and then get connected to a the office of a key MEP from your country.<br><br><i>Remember</i>: 
+            The call is free of charge for you.
+            <br> <br>
+            <b>After the call, can you let us know how it went?&nbsp;</b>You can leave a message below.&nbsp;"
     show_talking_points: "Click here to show the example conversation, tips and FAQs again"
     submit: "Submit"
 
