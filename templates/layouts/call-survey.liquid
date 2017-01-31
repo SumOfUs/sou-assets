@@ -11,8 +11,12 @@
       </h1>
     </div>
   </div>
-  <p class="body-text survey__intro post-call__intro">
+  <p class="body-text survey__intro post-call__intro post-call__intro--default">
     {{ 'caller_survey.intro' | t }}   
+  </p>
+
+  <p class="body-text survey__intro post-call__intro post-call__intro--with-target hidden">
+    {{ 'caller_survey.intro_with_target_info' | t }}   
   </p>
   <p>
     <a href="#" class="post-call__toggle-button"> {{ 'caller_survey.show_talking_points' | t }} </a>
@@ -28,6 +32,18 @@
 
 <script>
   $(function() {
+    var params = window.champaign.personalization.urlParams,
+        introWithTarget = $('.post-call__intro--with-target'),
+        defaultIntro = $('.post-call__intro--default')
+
+    if(params.target && params.target.name && params.target.title) {
+      var newHTML = introWithTarget.html().replace(':target_name:', params.target.name)
+                                          .replace(':target_title:', params.target.title);
+      introWithTarget.html(newHTML);
+      defaultIntro.hide(0);
+      introWithTarget.show(0);
+    }
+
     $('.post-call__toggle-button').click(function(){ 
       $('.post-call__talking-points').slideToggle();
     });
