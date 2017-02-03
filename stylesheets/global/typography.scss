@@ -92,4 +92,35 @@ a {
   ul {
     list-style-type: disc;
   }
+  hr {
+    margin: 40px 0;
+  }
+  &--enforce-styles {
+    * {
+      font-family: $default-fonts !important;
+      font-size: 16px !important;
+      line-height: 1.6em !important;
+      color: $chalkboard !important;
+    }
+    a {
+      color: $teal !important;
+    }
+    p, span, div {
+      line-height: 1.6em !important;
+    }
+    p, ul, ol {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+    ul, ol {
+      padding-left: 40px !important;
+    }
+    ol {
+      list-style-type: decimal !important;
+    }
+    ul {
+      list-style-type: disc !important;
+    }
+  }
 }
+

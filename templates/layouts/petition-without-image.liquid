@@ -12,15 +12,7 @@
       </div>
     </div>
 
-    <div class="body-text main-feature main-feature--close-top">
-      {{ content }}
-
-      {% unless link_list == blank %}
-        <hr class="stubby-hr" />
-        <h3>{{ 'page.more_info' | t }}</h3>
-        {% include 'Links' %}
-      {% endunless %}
-    </div>
+    {% include 'Body Text', extra_class: 'main-feature--close-top' %}
   </div>
   <div class="center-content__fixed-right center-content--push-down">
     {% include 'Petition Sidebar', extra_class: 'stuck-right not-sticky' %}

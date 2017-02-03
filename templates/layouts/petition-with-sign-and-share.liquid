@@ -7,15 +7,7 @@
   <div class="center-content__big-column">
     <div class="mobile-show pre-main-bar">{% include 'Thermometer' %}</div>
 
-    <div class="body-text main-feature">
-      {{ content }}
-
-      {% unless link_list == blank %}
-        <hr class="stubby-hr" />
-        <h3>{{ 'page.more_info' | t }}</h3>
-        {% include 'Links' %}
-      {% endunless %}
-    </div>
+  {% include 'Body Text' %}
   </div>
   <div class="center-content__small-column center-content--push-down">
     {% include 'Petition Sidebar With Sign And Share' %}
