@@ -210,8 +210,14 @@
     outline-width: 0px;
     transition: outline-width 0.1s linear;
   }
+  .bee-card.bee-card--current {
+    cursor: default;
+  }
   .bee-card:hover, .bee-card--hover {
-    outline-width: 10px;
+    outline-width: 5px;
+  }
+  .bee-card.bee-card--current:hover, .bee-card--hover.bee-card--current {
+    outline-width: 0;
   }
   .bee-card--future {
     outline-color: #f8492e;
@@ -256,6 +262,12 @@
   }
   .bee-card__body br {
     line-height: 30px;
+  }
+  .thank-you--compact .thank-you__cta {
+    line-height: 1.3em;
+  }
+  div.center-content__central-square--compact {
+    margin-bottom: 0;
   }
   @media(max-width: 500px) {
     .beeline__arrow {
