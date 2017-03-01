@@ -1,7 +1,3 @@
-.cover-photo__overlay {
-  z-index: 300;
-}
-
 .caller-header {
   @media(max-width: $mobile-width) {
     display: none;
@@ -68,6 +64,7 @@
       @include mobile-full-width();
       max-width: 350px;
       margin: 30px auto 0 auto;
+      z-index: 0;
 
       .form__group {
         margin-bottom: 15px;
