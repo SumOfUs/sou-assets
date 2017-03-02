@@ -1,6 +1,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.18.7/URI.js"></script>
 
 <div class="spreader-bot">
+  <h1>Spreader generator</h1>
+
   <form class="spreader-form form--big spreader-bot__left">
     <div class="form__group">
       <label>What do you want to generate?</label>
@@ -55,6 +57,10 @@
     <div class="form__group output-dependent output-dependent--full-email">
       <label for="share_email_body">Email for the member to share</label>
       <textarea name="share_email_body" class="spreader-form__input"></textarea>
+    </div>
+    <div class="form__group output-dependent output-dependent--full-email">
+      <label for="share_email_cta">Text for the link in the email to forward</label>
+      <input type="text" name="share_email_cta" class="spreader-form__input" placeholder="e.g. Click here to sign the petition">
     </div>
     <div class="form__group output-dependent output-dependent--full-email">
       <label for="prompt_email_signoff">Email signers</label>
@@ -132,6 +138,7 @@
     var $spreaderPrompt = $('[name="prompt_email_body"]');
     var $spreaderShare = $('[name="share_email_body"]');
     var $spreaderSignoff = $('[name="prompt_email_signoff"]');
+    var $shareEmailCta = $('[name="share_email_cta"]');
     var akButtonTemplate = $('#ak-button-template').html();
 
     var $outputs = {}
@@ -142,14 +149,17 @@
         code: $('.output-dependent--'+category+' .output__code'),
       }
     });
-    console.log($outputs);
 
     var $linkOutput = $('[name="link_output"');
 
-    var shareHref = function(usesAk) {
+    var shareHref = function(usesAk, medium) {
       var href = new URI($shareHref.val());
       var mailingId = $mailingId.val();
-      var source = mailingId.length ? 'fb-spread-'+mailingId : 'fb-spread';
+      if (medium === 'email') {
+        var source = 'taf';
+      } else {
+        var source = mailingId.length ? 'fb-spread-'+mailingId : 'fb-spread';
+      }
       href = href.addSearch('source', source);
       if (usesAk) href = href.addSearch('referring_akid', 'LQ_USER_AKID');
       return href.toString();
@@ -177,24 +187,26 @@
     var handleLiquid = function($el, usesAk) {
       var substitutionSource = usesAk ? LIQUID_SUBSTITUTIONS : LIQUIDLESS_SUBSTITUTIONS;
       var fullHtml = $el.html();
-      console.log('using substitutionSource', substitutionSource);
       _.each(_.keys(substitutionSource), function(key) {
         fullHtml = fullHtml.replace(new RegExp(key, 'g'), substitutionSource[key]);
       });
       $el.html(fullHtml);
     }
 
-    var updateMailingHtml = function(category, shareLink, usesAk) {
+    var updateMailingHtml = function(category, usesAk) {
       $outputs[category].preview.html($outputs[category].template);
       var buttonHtml = $outputs['ak-button'].preview.html();
       var spreaderPrompt = smartFormat($spreaderPrompt.val());
       var spreaderShare = smartFormat($spreaderShare.val());
       var spreaderSignoff = smartFormat($spreaderSignoff.val());
+      var shareLink = shareHref(usesAk, 'email');
 
       $outputs[category].preview.find('.full-email-template__button-container').html(buttonHtml);
       $outputs[category].preview.find('.full-email-template__spreader-prompt-container').html(spreaderPrompt);
       $outputs[category].preview.find('.full-email-template__spreader-share-container').html(spreaderShare);
       $outputs[category].preview.find('.full-email-template__spreader-signoff-container').html(spreaderSignoff);
+      $outputs[category].preview.find('a.full-email-template__spreader-share-cta').attr('href', shareLink);
+      $outputs[category].preview.find('a.full-email-template__spreader-share-cta').text($shareEmailCta.val());
       handleLiquid($outputs[category].preview, usesAk);
 
       populateCodeFromPreview(category);
@@ -204,10 +216,10 @@
       var link = new URI('https://www.facebook.com/dialog/share').query({
         app_id: APP_ID,
         display: 'page',
-        href: shareHref(usesAk),
+        href: shareHref(usesAk, 'fb'),
         redirect_uri: $redirectUri.val(),
         no_redirect: 1
-      })
+      });
       if (hashtag()) link.addSearch('hashtag', hashtag());
       var substitutionSource = usesAk ? LIQUID_SUBSTITUTIONS : LIQUIDLESS_SUBSTITUTIONS;
       return link.toString().replace(/LQ_USER_AKID/, substitutionSource.LQ_USER_AKID);
@@ -222,7 +234,7 @@
 
       updateButton('ak-button', shareLink);
       updateButton('champaign-button', shareLink);
-      updateMailingHtml('full-email', shareLink, usesAk);
+      updateMailingHtml('full-email', usesAk);
     }
 
     var changeOutput = function() {
@@ -316,6 +328,9 @@
   <div style="padding: 20px; border: 1px dotted silver;">
     <p>Dear Friends,&nbsp;</p>
     <p class="full-email-template__spreader-share-container"></p>
+    <p>
+      <a class="full-email-template__spreader-share-cta"></a>
+    </p>
     <p>
       LQ_SIGNOFF
     </p>
