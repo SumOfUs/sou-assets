@@ -31,6 +31,18 @@
       font-size: 20px;
       margin: 5px 20px;
     }
+    &__link {
+      color: white;
+    }
+    &__button {
+      background: white;
+      color: $ups-orange;
+      font-weight: bold;
+      border-radius: 5px;
+      padding: 12px 20px;
+      position: relative;
+      top: -12px;
+    }
   }
 
   .ups-panel {
@@ -121,4 +133,79 @@
       line-height: 1.15em;
     }
   }
+
+  .ups-plan {
+    background: $ups-orange;
+    font-weight: bold;
+    font-size: 54px;
+    line-height: 1.1em;
+    color: white;
+
+    a {
+      text-decoration: underline;
+      color: white;
+      &:hover {
+        text-decoration: none;
+        background: $teal;
+        color: white;
+      }
+    }
+  }
+
+  .ups-join {
+    background-color: white;
+    background-image: url(asset-path('images/upstanders/fists.jpg'));
+    background-size: contain;
+    background-position: bottom;
+    min-height: 1040px;
+    background-repeat: no-repeat;
+
+    &__lead-line {
+      font-size: 32px;
+      font-weight: normal;
+      width: 100%;
+      text-align: center;
+    }
+    &__content {
+      width: 780px;
+      margin: 60px auto 0;
+    }
+    &__sign-up {
+      width: 380px;
+      margin-right: 20px;
+      float: left;
+    }
+    &__social-proof {
+      width: 380px;
+      float: right;
+    }
+    &__signer {
+      float: left;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    &__signer-name {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    &__time-stamp {
+      font-size: 16px;
+    }
+    strong {
+      font-weight: bold;
+    }
+    .action-form {
+      background: white;
+    }
+    .sweet-placeholder__field {
+      border: 1px solid lightgray;
+    }
+    .form--big .sweet-placeholder .selectize-control.single .selectize-input {
+      border: none;
+    }
+  }
+}
+.simple-footer--ups {
+  border-top: none;
+  padding-bottom: 60px;
 }
