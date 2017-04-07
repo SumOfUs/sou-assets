@@ -15,7 +15,7 @@
 
   @mixin mobile-full-width() {
     width: 92%;
-    margin: auto;    
+    margin: auto;
   }
 
   .clearfix {
@@ -88,7 +88,7 @@
       text-align: center;
       margin: 1em 0;
       line-height: 1.2em;
-      font-style: italic;  
+      font-style: italic;
       color: rgba(0, 0, 0, 0.4);
     }
 
@@ -110,13 +110,16 @@
     .form__group.countryCodeField .error-msg {
       display: none;
     }
-    
+
     .form__group.phoneNumberField {
       width: calc(75% - 4px);
       margin-left: 4px;
       margin-bottom: 0px;
     }
 
+    form.single-country .form__group.form__group.phoneNumberField {
+      width: 100%;
+    }
 
     p.guessed-country-name {
       @include clearfix();
@@ -141,7 +144,7 @@
       line-height: 16px;
       margin: 0.5em auto;
     }
-    
+
     p.select-home-country {
       line-height: 1.2em;
       text-align: center;
