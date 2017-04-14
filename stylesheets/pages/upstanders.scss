@@ -1,6 +1,8 @@
 .upstanders {
   font-family: 'Raleway', Arial, sans;
+  $teal: #00c0cf;
   $ups-orange: #f8622e;
+  $mobile-nav-width: 850px;
 
   .ups-header {
     width: 100%;
@@ -13,7 +15,7 @@
     padding: 20px;
     z-index: 1000;
 
-    background: $ups-orange;
+    background: $teal;
     color: white;
 
     &__logo {
@@ -25,23 +27,54 @@
       float: right;
       font-size: 20px;
       font-weight: normal;
+      @media(max-width: $mobile-nav-width) {
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        background: #00c0cf;
+        height: 100%;
+        padding: 30px 10px;
+        transition: transform 0.2s ease-in-out;
+        &.ups-header__links--open {
+          transform: translateX(-250px);
+        }
+      }
+    }
+    &__close-nav, &__open-nav {
+      display: none;
+      @media(max-width: $mobile-nav-width) {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        font-size: 32px;
+        top: 20px;
+        right: 25px;
+      }
     }
     &__link, &__button {
       float: left;
       font-size: 20px;
       margin: 5px 20px;
+      @media(max-width: $mobile-nav-width) {
+        margin: 10px 20px;
+      }
     }
     &__link {
       color: white;
     }
     &__button {
       background: white;
-      color: $ups-orange;
+      color: $teal;
       font-weight: bold;
       border-radius: 5px;
       padding: 12px 20px;
       position: relative;
       top: -12px;
+      @media(max-width: $mobile-nav-width) {
+        top: 0;
+      }
     }
   }
 
@@ -52,6 +85,12 @@
     overflow: hidden;
   }
 
+  .ups-lead-text {
+    font-weight: bold;
+    font-size: 60px;
+    text-align: left;
+    line-height: 1.1em;
+  }
   .ups-intro {
     background-image: url(asset-path('images/upstanders/airport-grad.jpg'));
     background-color: #1f0c06;
@@ -59,20 +98,13 @@
     color: white;
     margin-top: 40px;
 
-    &__lead-text {
-      text-shadow: 0 0 15px black;
-      font-weight: bold;
-      font-size: 60px;
-      text-align: left;
-      line-height: 1.1em;
-    }
     &__content {
       max-width: 560px;
       float: right;
     }
     &__giant-button {
       display: block;
-      background: $ups-orange;
+      background: $teal;
       padding: 10px;
       font-size: 32px;
       font-weight: bold;
@@ -83,6 +115,9 @@
       max-width: 340px;
       color: white;
       margin-top: 30px;
+    }
+    &__lead-text {
+      text-shadow: 0 0 15px black;
     }
   }
 
@@ -100,42 +135,58 @@
           float: right;
         }
         .ups-stories__text {
-          left: 0;
+          left: 10px;
         }
       }
     }
     &__circle-image {
-      width: 250px;
-      height: 250px;
-      border-radius: 125px;
+      width: 360px;
+      height: 360px;
+      border-radius: 180px;
       background-size: contain;
-      background-color: $ups-orange;
+      background-color: $teal;
 
       &--signing {
-        background-image: url(asset-path('images/upstanders/trump-signing.jpg'));
+        background-image: url(asset-path('images/upstanders/trump-desk.jpg'));
       }
-      &--trump-home {
-        background-image: url(asset-path('images/upstanders/trump-home.jpg'));
+      &--two-execs {
+        background-image: url(asset-path('images/upstanders/two-execs.jpg'));
       }
-      &--romulo {
-        background-image: url(asset-path('images/upstanders/romulo.jpg'));
+      &--hurting {
+        background-image: url(asset-path('images/upstanders/bummer.jpg'));
       }
+      &--national {
+        background-image: url(asset-path('images/upstanders/national.png'));
+      }
+      &--local {
+        background-image: url(asset-path('images/upstanders/local.jpg'));
+      }
+      &--mobilize {
+        background-image: url(asset-path('images/upstanders/mobilize.jpg'));
+      }
+    }
+    &__wrap-up {
+      width: 100%;
+      max-width: 830px;
+      margin: 80px auto 0;
+      font-size: 32px;
+      line-height: 1.2em;
     }
     &__text {
       font-size: 32px;
       font-weight: normal;
       float: left;
-      width: calc(100% - 280px);
+      width: calc(100% - 420px);
       position: absolute;
-      left: 280px;
+      left: 420px;
       top: 50%;
       transform: translateY(-50%);
-      line-height: 1.15em;
+      line-height: 1.2em;
     }
   }
 
   .ups-plan {
-    background: $ups-orange;
+    background: $teal;
     font-weight: bold;
     font-size: 54px;
     line-height: 1.1em;
@@ -146,9 +197,14 @@
       color: white;
       &:hover {
         text-decoration: none;
-        background: $teal;
+        background: $ups-orange;
         color: white;
       }
+    }
+    &__paragraph {
+      width: 100%;
+      max-width: 870px;
+      // float: left;
     }
   }
 
@@ -202,6 +258,26 @@
     }
     .form--big .sweet-placeholder .selectize-control.single .selectize-input {
       border: none;
+    }
+  }
+  .ups-dual-panel {
+    height: 600px;
+    &__fists-image {
+      float: right;
+      height: 100%;
+      width: 420px;
+      background-image: url(asset-path('images/upstanders/flag-fists-teal.jpg'));
+      background-size: contain;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      height: calc(100% + 110px);
+      bottom: -110px;
+    }
+    &__lead-text {
+      width: 100%;
+      max-width: 550px;
+      color: white;
+      float: left;
     }
   }
 }
