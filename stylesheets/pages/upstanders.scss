@@ -5,6 +5,7 @@
   $teal: #00c0cf;
   $ups-orange: #f8622e;
   $goldenrod: #FFAD00;
+  $light-teal: #ebfafb;
   $mobile-nav-width: 850px;
 
   .ups-header {
@@ -268,6 +269,40 @@
     background-position: bottom;
     background-repeat: no-repeat;
 
+    &__form {
+      display: none;
+      &--selected {
+        display: block;
+      }
+    }
+    &__join-selector {
+      width: 100%;
+      border: 2px solid #00c0cf;
+      box-sizing: border-box;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    &__join-choice {
+      box-sizing: border-box;
+      width: 50%;
+      color: $teal;
+      padding: 20px;
+      float: left;
+      text-align: center;
+      cursor: pointer;
+      background: white;
+      &:hover {
+        background: $light-teal;
+      }
+      &--selected {
+        background: $teal;
+        color: white;
+        &:hover {
+          background: $teal;
+        }
+      }
+    }
     &__lead-line {
       font-size: 32px;
       font-weight: normal;
