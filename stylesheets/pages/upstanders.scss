@@ -316,8 +316,59 @@
       float: left;
     }
   }
+  .ups-split-panel {
+    min-height: 100vh;
+    background: white;
+    position: relative;
+
+    &__image {
+      position: absolute;;
+      height: 100%;
+      width: 40%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 99;
+      @media(max-width: 900px) {
+        width: 100%;
+        float: left;
+        height: 400px;
+        position: static;
+        background-position: center;
+      }
+      &--interview {
+        background-image: url(asset-path('images/upstanders/sou-interview.jpg'));
+      }
+    }
+    &__text {
+      width: calc(60% - 60px);
+      float: right;
+      @media(max-width: 900px) {
+        width: 90%;
+        padding: 40px 5% 0;
+      }
+      h1 {
+        font-size: 42px;
+        @media(max-width: 900px) {
+          font-size: 32px;
+          line-height: 1.2em;
+        }
+      }
+      p {
+        font-size: 20px;
+        margin: 20px 0;
+        line-height: 1.3em;
+      }
+    }
+    @media(max-width: 900px) {
+      padding: 72px 0;
+    }
+  }
 }
 .simple-footer--ups {
   border-top: none;
   padding-bottom: 60px;
+  z-index: 100;
 }
