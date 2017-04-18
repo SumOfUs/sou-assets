@@ -1,7 +1,9 @@
 .upstanders {
-  font-family: 'Raleway', Arial, sans;
+  $raleway: 'Raleway', Arial, sans;
+  font-family: $raleway;
   $teal: #00c0cf;
   $ups-orange: #f8622e;
+  $goldenrod: #FFAD00;
   $mobile-nav-width: 850px;
 
   .ups-header {
@@ -72,6 +74,11 @@
       padding: 12px 20px;
       position: relative;
       top: -12px;
+      &:hover {
+        text-decoration: none;
+        background: $goldenrod;
+        color: white;
+      }
       @media(max-width: $mobile-nav-width) {
         top: 0;
       }
@@ -103,17 +110,6 @@
       float: right;
     }
     &__giant-button {
-      display: block;
-      background: $teal;
-      padding: 10px;
-      font-size: 32px;
-      font-weight: bold;
-      border-radius: 6px;
-      text-align: center;
-      cursor: pointer;
-      width: 100%;
-      max-width: 340px;
-      color: white;
       margin-top: 30px;
     }
     &__lead-text {
@@ -186,7 +182,7 @@
   }
 
   .ups-plan {
-    background: $teal;
+    background: $goldenrod;
     font-weight: bold;
     font-size: 54px;
     line-height: 1.1em;
@@ -208,12 +204,52 @@
     }
   }
 
+  .ups__giant-button, .button.action-form__submit-button {
+    display: block;
+    background: $goldenrod;
+    padding: 10px;
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    max-width: 340px;
+    color: white;
+    margin-top: 30px;
+    text-decoration: none;
+    &.button.action-form__submit-button {
+      text-transform: none;
+      font-family: $raleway;
+      max-width: none;
+    }
+
+    &:hover {
+      text-decoration: none;
+      background: darken($goldenrod, 5%);
+    }
+    &--white {
+      background: white;
+      color: black;
+      &:hover {
+        background: darken(white, 5%);
+      }
+    }
+  }
+
+  .ups-link-to-action {
+    background: $goldenrod;
+    font-weight: bold;
+    font-size: 54px;
+    line-height: 1.1em;
+    color: white;
+  }
+
   .ups-join {
     background-color: white;
-    background-image: url(asset-path('images/upstanders/fists.jpg'));
+    // background-image: url(asset-path('images/upstanders/fists.jpg'));
     background-size: contain;
     background-position: bottom;
-    min-height: 1040px;
     background-repeat: no-repeat;
 
     &__lead-line {
