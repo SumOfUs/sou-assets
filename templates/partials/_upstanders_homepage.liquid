@@ -49,8 +49,27 @@
     </div>
     <div class="ups-join__content">
       <div class="ups-join__sign-up">
-        {% include 'Petition' %}
+        <div class="ups-join__join-selector">
+          <div class="ups-join__join-choice ups-join__join-choice--selected">Individual</div>
+          <div class="ups-join__join-choice">Group</div>
+        </div>
+        <div class="ups-join__form ups-join__form--selected">
+          {% include 'Petition', ref: 'Individual' %}
+        </div>
+        <div class="ups-join__form">
+          {% include 'Petition', ref: 'Group' %}
+        </div>
       </div>
+      <script type="text/javascript">
+        $(document).ready(function(){
+          $('.ups-join__join-choice').on('click', function(){
+            if (!$(this).hasClass('ups-join__join-choice--selected')) {
+              $('.ups-join__join-choice').toggleClass('ups-join__join-choice--selected');
+              $('.ups-join__form').toggleClass('ups-join__form--selected');
+            }
+          });
+        });
+      </script>
       <div class="ups-join__social-proof">
         <div class="ups-join__signer">
           <div class="ups-join__signer-name">
