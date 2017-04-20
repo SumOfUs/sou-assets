@@ -195,7 +195,7 @@
       color: white;
       &:hover {
         text-decoration: none;
-        background: $ups-orange;
+        background: $teal;
         color: white;
       }
     }
@@ -209,7 +209,8 @@
   .ups__giant-button, .button.action-form__submit-button {
     display: block;
     background: $goldenrod;
-    padding: 10px;
+    padding: 20px;
+    height: auto;
     font-size: 32px;
     font-weight: bold;
     border-radius: 6px;
@@ -239,12 +240,46 @@
     }
   }
 
-  .ups-link-to-action {
+  .ups-simple-color {
     background: white;
     font-weight: bold;
     font-size: 54px;
     line-height: 1.1em;
     color: black;
+    &--teal {
+      background: $teal;
+      color: white;
+    }
+    &__sub-text {
+      font-size: 32px;
+      margin-top: 30px;
+      line-height: 1.2em;
+      max-width: 800px;
+      font-weight: normal;
+    }
+  }
+
+  .ups-donate-share {
+    background: white;
+    color: black;
+
+    &__first, &__second {
+      width: calc(50% - 20px);
+    }
+    &__first {
+      float: left;
+    }
+    &__second {
+      float: right;
+    }
+    &__explanation {
+      margin: 20px 0 10px;
+      line-height: 1.4em;
+    }
+    @media(max-width: 940px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
   }
 
   .ups-number-panel {
@@ -432,6 +467,9 @@
     @media(max-width: 900px) {
       padding: 72px 0;
     }
+  }
+  .share-buttons__alternative {
+    text-align: center;
   }
 }
 .simple-footer--ups {
