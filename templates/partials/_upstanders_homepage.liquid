@@ -71,41 +71,122 @@
         });
       </script>
       <div class="ups-join__social-proof">
-        <div class="ups-join__signer">
-          <div class="ups-join__signer-name">
-            <strong>Jake W.</strong> from <strong>Northampton, MA</strong> is ready.
+        <script type="text/template" id="proof-template">
+          <div class="ups-join__signer">
+            <div class="ups-join__signer-name">
+              <strong><%= data.name %></strong> <%= data.status %>
+            </div>
+            <div class="ups-join__time-stamp"><%= data.timestamp %></div>
           </div>
-          <div class="ups-join__time-stamp">3 minutes ago</div>
-        </div>
-        <div class="ups-join__signer">
-          <div class="ups-join__signer-name">
-            <strong>Jake W.</strong> from <strong>Northampton, MA</strong> is ready.
+        </script>
+        <div class="ups-join__signers">
+          <div class="ups-join__signer">
+            <div class="ups-join__signer-name">
+              <strong>Jake W.</strong> from <strong>Northampton, MA</strong> is ready.
+            </div>
+            <div class="ups-join__time-stamp">3 minutes ago</div>
           </div>
-          <div class="ups-join__time-stamp">3 minutes ago</div>
-        </div>
-        <div class="ups-join__signer">
-          <div class="ups-join__signer-name">
-            <strong>Jake W.</strong> from <strong>Northampton, MA</strong> is ready.
+          <div class="ups-join__signer">
+            <div class="ups-join__signer-name">
+              <strong>Jake W.</strong> from <strong>Northampton, MA</strong> is ready.
+            </div>
+            <div class="ups-join__time-stamp">3 minutes ago</div>
           </div>
-          <div class="ups-join__time-stamp">3 minutes ago</div>
-        </div>
-        <div class="ups-join__signer">
-          <div class="ups-join__signer-name">
-            <strong>Jake W.</strong> from <strong>Northampton, MA</strong> is ready.
+          <div class="ups-join__signer">
+            <div class="ups-join__signer-name">
+              <strong>Jake W.</strong> from <strong>Northampton, MA</strong> is ready.
+            </div>
+            <div class="ups-join__time-stamp">3 minutes ago</div>
           </div>
-          <div class="ups-join__time-stamp">3 minutes ago</div>
-        </div>
-        <div class="ups-join__signer">
-          <div class="ups-join__signer-name">
-            <strong>Jake W.</strong> from <strong>Northampton, MA</strong> is ready.
+          <div class="ups-join__signer">
+            <div class="ups-join__signer-name">
+              <strong>Jake W.</strong> from <strong>Northampton, MA</strong> is ready.
+            </div>
+            <div class="ups-join__time-stamp">3 minutes ago</div>
           </div>
-          <div class="ups-join__time-stamp">3 minutes ago</div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<script type="text/javascript">
+  $(document).ready(function(){
+    var templater = _.template($('#proof-template').html(), { variable: 'data' });
+    var $container = $('.ups-join__signers');
+    var ANIMATION_DURATION = 1000;
+    var MAX_TO_DISPLAY = 5;
+    var HEIGHT_PER = 64;
+
+    var currentTop = 0;
+    var currentCount = $container.children().length;
+
+    var add = function(html) {
+      $container.append(html);
+      currentCount++;
+    }
+
+    var capitalize = function(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    }
+
+    var abbreviateName = function(name) {
+      var names = name.split(' ');
+      var formattedFirstName = capitalize(names[0]);
+      if(names[1].length === 0) return formattedFirstName;
+      return formattedFirstName + ' ' + names[1].slice(0, 1).toUpperCase() + '.';
+    }
+
+    var randomStatus = function() {
+      var statuses = ['has had enough.', 'is standing up.', 'is ready.', 'is taking a stand.'];
+      return statuses[Math.floor(Math.random() * statuses.length)]
+    }
+
+    var format = function(name) {
+      return templater({
+        name: abbreviateName(name),
+        status: randomStatus(),
+        timestamp: '4 minutes ago'
+      });
+    }
+
+    var reveal = function() {
+      if (currentCount - currentTop > MAX_TO_DISPLAY) {
+        currentTop++;
+        $container.css('transform', 'translateY(-'+(currentTop * HEIGHT_PER)+'px)');
+      }
+    }
+
+    var handleAction = function(msg) {
+      console.log(msg);
+      var data = JSON.parse(msg);
+      add(format(data.first_name + ' ' + data.last_name));
+    }
+
+    socket = io('https://actions-api.sumofus.org');
+    socket.on('actions', handleAction);
+
+
+    window.setInterval(reveal, ANIMATION_DURATION);
+
+    $.get('/api/pages/upstanders-homepage/actions', {
+      page: 1, per_page: 5
+    }, function(data){
+      var names = _.map(data.actions, function(action){ return action.name });
+      if (names.length > 2) {
+        $container.html('')
+        currentCount = 0;
+      }
+      _.each(names, function(name){
+        add(format(name));
+        add(format(name));
+        add(format(name));
+        add(format(name));
+      });
+    });
+  });
+</script>
+
 {% include 'Upstanders Footer' %}
 
-<script src="https://cdn.socket.io/socket.io-1.4.5.js" async></script>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>

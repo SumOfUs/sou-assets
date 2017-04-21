@@ -26,6 +26,7 @@
       font-weight: 900;
       float: left;
       font-size: 32px;
+      color: white;
     }
     &__links {
       float: right;
@@ -356,6 +357,8 @@
     &__social-proof {
       width: 380px;
       float: right;
+      height: 5 * 64px; // number of signers * height per signer
+      overflow: hidden;
     }
     &__signer {
       float: left;
