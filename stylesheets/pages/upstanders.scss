@@ -365,6 +365,9 @@
       width: 100%;
       margin-bottom: 20px;
     }
+    &__signers {
+      transition: transform 0.2s ease-in-out;
+    }
     &__signer-name {
       font-size: 20px;
       margin-bottom: 8px;
