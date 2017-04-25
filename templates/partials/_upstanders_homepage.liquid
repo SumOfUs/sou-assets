@@ -146,7 +146,7 @@
       return templater({
         name: abbreviateName(name),
         status: randomStatus(),
-        timestamp: '4 minutes ago'
+        timestamp: 'Moments ago'
       });
     }
 
@@ -160,12 +160,12 @@
     var handleAction = function(msg) {
       console.log(msg);
       var data = JSON.parse(msg);
+      if (window.slugFilter && data.slug !== window.slugFilter) return;
       add(format(data.first_name + ' ' + data.last_name));
     }
 
     socket = io('https://actions-api.sumofus.org');
     socket.on('actions', handleAction);
-
 
     window.setInterval(reveal, ANIMATION_DURATION);
 
@@ -178,9 +178,6 @@
         currentCount = 0;
       }
       _.each(names, function(name){
-        add(format(name));
-        add(format(name));
-        add(format(name));
         add(format(name));
       });
     });
