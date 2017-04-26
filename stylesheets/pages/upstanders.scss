@@ -575,6 +575,50 @@
       padding: 72px 0;
     }
   }
+  .ups-list-panel {
+    background: white;
+    // padding-left: 0;
+    // padding-right: 0;
+    padding: 0;
+
+    &__list li, &__intro {
+      background: white;
+      @extend .medium-text;
+      line-height: 1.3em;
+      padding: 40px calc(50% - 400px);
+
+      @media(max-width: 850px) {
+        padding: 40px 4%;
+      }
+
+      &.odd {
+        background: #ececec;
+      }
+    }
+    &__intro {
+      font-weight: bold;
+      padding-top: 80px;
+      padding-bottom: 60px;
+    }
+  }
+  .ups-full-bleed-image-panel {
+    background-size: auto 100%;
+    width: 100%;
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    &--unplug {
+      background-image: url(asset-path('images/upstanders/unplug.png'));
+      background-color: $teal;
+      height: 400px;
+      @media(max-width: 925px) {
+        height: 250px;
+      }
+      @media(max-width: 560px) {
+        height: 150px;
+      }
+    }
+  }
   .share-buttons__alternative {
     text-align: center;
   }
