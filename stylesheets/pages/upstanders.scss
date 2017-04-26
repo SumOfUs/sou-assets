@@ -8,6 +8,14 @@
   $light-teal: #ebfafb;
   $mobile-nav-width: 850px;
 
+  .medium-text {
+    font-size: 32px;
+    line-height: 1.2em;
+    @media(max-width: 400px) {
+      font-size: 24px;
+    }
+  }
+
   .ups-header {
     width: 100%;
     height: 72px;
@@ -93,6 +101,12 @@
     box-sizing: border-box;
     padding: 110px;
     overflow: hidden;
+    @media(max-width: 760px) {
+      padding: 90px 10%;
+    }
+    &--white {
+      background: white;
+    }
   }
 
   .ups-lead-text {
@@ -100,6 +114,19 @@
     font-size: 60px;
     text-align: left;
     line-height: 1.1em;
+    &__spaced {
+      margin: 30px 0;
+    }
+    @media(max-width: 1050px) {
+      font-size: 46px;
+    }
+    @media(max-width: 400px) {
+      font-size: 38px;
+    }
+  }
+  .ups-sub-text {
+    @extend .medium-text;
+    text-align: left;
   }
   .ups-intro {
     background-image: url(asset-path('images/upstanders/airport-grad.jpg'));
@@ -116,7 +143,7 @@
       margin-top: 30px;
     }
     &__lead-text {
-      text-shadow: 0 0 15px black;
+      text-shadow: 0 0 35px black;
     }
   }
 
@@ -132,6 +159,9 @@
         margin: 30px auto;
         .ups-stories__circle-image {
           float: right;
+          @media(max-width: 910px) {
+            float: none;
+          }
         }
         .ups-stories__text {
           left: 10px;
@@ -144,6 +174,14 @@
       border-radius: 180px;
       background-size: contain;
       background-color: $teal;
+      @media(max-width: 910px) {
+        float: none;
+        margin: 0 auto 20px;
+      }
+      @media(max-width: 460px) {
+        width: 255px;
+        height: 255px;
+      }
 
       &--signing {
         background-image: url(asset-path('images/upstanders/trump-desk.jpg'));
@@ -164,23 +202,31 @@
         background-image: url(asset-path('images/upstanders/mobilize.jpg'));
       }
     }
-    &__wrap-up {
+    &__wrap-up, &__intro {
       width: 100%;
       max-width: 830px;
+      @extend .medium-text;
+    }
+    &__wrap-up {
       margin: 80px auto 0;
-      font-size: 32px;
-      line-height: 1.2em;
+    }
+    &__intro {
+      margin: 0 auto 80px;
     }
     &__text {
-      font-size: 32px;
+      @extend .medium-text;
       font-weight: normal;
-      float: left;
       width: calc(100% - 420px);
       position: absolute;
       left: 420px;
       top: 50%;
       transform: translateY(-50%);
-      line-height: 1.2em;
+      @media(max-width: 910px) {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin: 40px 0 0;
+      }
     }
   }
 
@@ -190,6 +236,13 @@
     font-size: 54px;
     line-height: 1.1em;
     color: white;
+
+    @media(max-width: 1050px) {
+      font-size: 46px;
+    }
+    @media(max-width: 400px) {
+      font-size: 38px;
+    }
 
     a {
       text-decoration: underline;
@@ -203,7 +256,6 @@
     &__paragraph {
       width: 100%;
       max-width: 870px;
-      // float: left;
     }
   }
 
@@ -211,14 +263,15 @@
     display: block;
     background: $goldenrod;
     padding: 20px;
+    box-sizing: border-box;
     height: auto;
-    font-size: 32px;
+    @extend .medium-text;
     font-weight: bold;
     border-radius: 6px;
     text-align: center;
     cursor: pointer;
     width: 100%;
-    max-width: 340px;
+    max-width: 380px;
     color: white;
     margin-top: 30px;
     text-decoration: none;
@@ -239,6 +292,13 @@
         background: darken(white, 5%);
       }
     }
+    &--teal {
+      background: $teal;
+      color: white;
+      &:hover {
+        background: darken($teal, 5%);
+      }
+    }
   }
 
   .ups-simple-color {
@@ -251,10 +311,13 @@
       background: $teal;
       color: white;
     }
+    &--yellow {
+      background: $goldenrod;
+      color: white;
+    }
     &__sub-text {
-      font-size: 32px;
+      @extend .medium-text;
       margin-top: 30px;
-      line-height: 1.2em;
       max-width: 800px;
       font-weight: normal;
     }
@@ -266,6 +329,10 @@
 
     &__first, &__second {
       width: calc(50% - 20px);
+      @media(max-width: 720px) {
+        width: 100%;
+        margin-bottom: 80px;
+      }
     }
     &__first {
       float: left;
@@ -278,8 +345,8 @@
       line-height: 1.4em;
     }
     @media(max-width: 940px) {
-      padding-left: 40px;
-      padding-right: 40px;
+      padding-left: 5%;
+      padding-right: 5%;
     }
   }
 
@@ -289,12 +356,20 @@
     &__number {
       font-size: 200px;
       font-weight: bold;
+      @media(max-width: 1250px) {
+        font-size: 150px;
+      }
+      @media(max-width: 950px) {
+        font-size: 120px;
+      }
+      @media(max-width: 750px) {
+        font-size: 90px;
+      }
     }
     &__text {
-      font-size: 32px;
-      line-height: 1.2em;
+      @extend .medium-text;
       max-width: 780px;
-      padding: 30px 0 0 30px;
+      padding: 30px 0;
     }
   }
 
@@ -340,7 +415,7 @@
       }
     }
     &__lead-line {
-      font-size: 32px;
+      @extend .medium-text;
       font-weight: normal;
       width: 100%;
       text-align: center;
@@ -348,22 +423,42 @@
     &__content {
       width: 780px;
       margin: 60px auto 0;
+      @media(max-width: 1000px) {
+        width: 100%;
+        float: left;
+      }
     }
     &__sign-up {
-      width: 380px;
       margin-right: 20px;
       float: left;
     }
     &__social-proof {
-      width: 380px;
       float: right;
       height: 5 * 64px; // number of signers * height per signer
       overflow: hidden;
+    }
+    &__sign-up, &__social-proof {
+      width: 380px;
+      @media(max-width: 1000px) {
+        float: none;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      @media(max-width: 480px) {
+        width: 100%;
+      }
+    }
+    &__social-proof {
+      @media(max-width: 1000px) {
+        margin-top: 20px;
+      }
     }
     &__signer {
       float: left;
       width: 100%;
       margin-bottom: 20px;
+      height: 44px;
+      overflow: hidden;
     }
     &__signers {
       transition: transform 0.2s ease-in-out;
@@ -389,7 +484,10 @@
     }
   }
   .ups-dual-panel {
-    height: 600px;
+    height: 700px;
+    @media(min-width: 1150px) {
+      height: 600px
+    }
     @media(max-width: 950px) {
       height: auto;
     }
@@ -415,12 +513,15 @@
       max-width: 550px;
       color: white;
       float: left;
+
       @media(max-width: 1050px) {
         font-size: 46px;
       }
+      @media(max-width: 400px) {
+        font-size: 38px;
+      }
       @media(max-width: 950px) {
         width: 100%;
-
       }
     }
   }
