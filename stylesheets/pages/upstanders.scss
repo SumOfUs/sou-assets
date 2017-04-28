@@ -96,6 +96,48 @@
     }
   }
 
+  .ups__giant-button, .button.action-form__submit-button {
+    display: block;
+    background: $goldenrod;
+    padding: 20px;
+    box-sizing: border-box;
+    height: auto;
+    @extend .medium-text;
+    font-weight: bold;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    max-width: 380px;
+    color: white;
+    margin-top: 30px;
+    text-decoration: none;
+    &.button.action-form__submit-button {
+      text-transform: none;
+      font-family: $raleway;
+      max-width: none;
+    }
+
+    &:hover {
+      text-decoration: none;
+      background: darken($goldenrod, 5%);
+    }
+    &--white {
+      background: white;
+      color: black;
+      &:hover {
+        background: darken(white, 5%);
+      }
+    }
+    &--teal {
+      background: $teal;
+      color: white;
+      &:hover {
+        background: darken($teal, 5%);
+      }
+    }
+  }
+
   .ups-panel {
     width: 100%;
     box-sizing: border-box;
@@ -134,13 +176,15 @@
     background-size: cover;
     color: white;
     margin-top: 40px;
+    padding-top: 130px;
+    padding-bottom: 130px;
 
     &__content {
       max-width: 560px;
       float: right;
     }
     &__giant-button {
-      margin-top: 30px;
+      margin-top: 60px;
     }
     &__lead-text {
       text-shadow: 0 0 35px black;
@@ -256,48 +300,6 @@
     &__paragraph {
       width: 100%;
       max-width: 870px;
-    }
-  }
-
-  .ups__giant-button, .button.action-form__submit-button {
-    display: block;
-    background: $goldenrod;
-    padding: 20px;
-    box-sizing: border-box;
-    height: auto;
-    @extend .medium-text;
-    font-weight: bold;
-    border-radius: 6px;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    max-width: 380px;
-    color: white;
-    margin-top: 30px;
-    text-decoration: none;
-    &.button.action-form__submit-button {
-      text-transform: none;
-      font-family: $raleway;
-      max-width: none;
-    }
-
-    &:hover {
-      text-decoration: none;
-      background: darken($goldenrod, 5%);
-    }
-    &--white {
-      background: white;
-      color: black;
-      &:hover {
-        background: darken(white, 5%);
-      }
-    }
-    &--teal {
-      background: $teal;
-      color: white;
-      &:hover {
-        background: darken($teal, 5%);
-      }
     }
   }
 
@@ -572,7 +574,7 @@
       }
     }
     @media(max-width: 900px) {
-      padding: 72px 0;
+      padding: 42px 0;
     }
   }
   .ups-list-panel {

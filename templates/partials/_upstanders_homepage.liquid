@@ -48,9 +48,33 @@
     </div>
   </div>
 
-  <div class="ups-panel ups-join" id="join">
+  <div id="join"></div>
+
+  <div class="ups-panel ups-simple-color ups-simple-color--teal ups-post-action hidden-irrelevant">
+    <div class="ups-simple-color__text">We're thrilled to have you with us<span class="comma-name"></span>!</div>
+    <div class="ups-simple-color__sub-text">We'll be in touch shortly with trainings, local connections, and plans for the first action. In the meantime, here are a few things you can do now.</div>
+  </div>
+
+  <div class="ups-panel ups-donate-share ups-post-action hidden-irrelevant">
+    <div class="ups-donate-share__first">
+      <h1>Grow the movement</h1>
+      <div class="ups-donate-share__explanation">
+        Share on social media to invite your friends to stand up to end Trump’s corporate coup now.
+      </div>
+      <div class="ups-donate-share__share">{% include 'Share' %}</div>
+    </div>
+    <div class="ups-donate-share__second">
+      <h1>Make a donation</h1>
+      <div class="ups-donate-share__explanation">
+        We are a movement by and of the people that means don’t take money from corporations or governments. Make a small donation today to sustain our Upstander movement.
+      </div>
+      <div class="ups-donate-share__donate">{% include 'Fundraiser', freestanding: true %}</div>
+    </div>
+  </div>
+
+  <div class="ups-panel ups-join">
     <div class="ups-join__lead-line">
-      Take the first step. Let's stop this coup - together.
+      Take the first step. Let's stop this coup - together. Sign up below for yourself or a group you participate in.
     </div>
     <div class="ups-join__content">
       <div class="ups-join__sign-up">
@@ -59,20 +83,55 @@
           <div class="ups-join__join-choice">Group</div>
         </div>
         <div class="ups-join__form ups-join__form--selected">
-          {% include 'Petition', ref: 'Individual' %}
+          {% include 'Petition', ref: 'Individual', skip_javascript: true %}
         </div>
         <div class="ups-join__form">
-          {% include 'Petition', ref: 'Group' %}
+          {% include 'Petition', ref: 'Group', skip_javascript: true %}
         </div>
       </div>
       <script type="text/javascript">
         $(document).ready(function(){
+          var chmp = window.champaign; // convenience binding
+
           $('.ups-join__join-choice').on('click', function(){
             if (!$(this).hasClass('ups-join__join-choice--selected')) {
               $('.ups-join__join-choice').toggleClass('ups-join__join-choice--selected');
               $('.ups-join__form').toggleClass('ups-join__form--selected');
             }
           });
+
+          var showFollowUp = function(e, data) {
+            $('.ups-join').addClass('hidden-irrelevant');
+            $('.ups-post-action').removeClass('hidden-irrelevant');
+          }
+
+          var autoRecognize = function() {
+            member = window.champaign.personalization.member;
+            if (member.action_upstander) {
+              if (member.first_name && member.first_name.length) {
+                $('.comma-name').text(', ' + member.first_name);
+              }
+              $('.ups-header__button').text('Get started')
+              showFollowUp();
+            }
+          }
+
+          autoRecognize();
+          chmp.myActionForm  = new chmp.ActionForm({
+            member:           chmp.personalization.member,
+            outstandingFields:chmp.personalization.outstandingFields,
+            location:         chmp.personalization.location,
+            akid:             chmp.personalization.urlParams.akid,
+            referring_akid:   chmp.personalization.urlParams.referring_akid,
+            source:           chmp.personalization.urlParams.source,
+            referrer_id:      chmp.personalization.urlParams.referrer_id,
+            bucket:           chmp.personalization.urlParams.bucket,
+            prefill:          true
+          });
+
+          chmp.myPetition      = new chmp.Petition({skipOnSuccessAction: true});
+
+          $.subscribe('petition:submitted', showFollowUp);
         });
       </script>
       <div class="ups-join__social-proof">
@@ -122,11 +181,11 @@
       return statuses[Math.floor(Math.random() * statuses.length)]
     }
 
-    var format = function(name) {
+    var format = function(name, timestamp) {
       return templater({
         name: abbreviateName(name),
         status: randomStatus(),
-        timestamp: 'Moments ago'
+        timestamp: timestamp || 'Just now'
       });
     }
 
@@ -152,13 +211,10 @@
     $.get('/api/pages/upstanders-homepage/actions', {
       page: 1, per_page: 5
     }, function(data){
-      var names = _.map(data.actions, function(action){ return action.name });
-      if (names.length > 2) {
-        $container.html('')
-        currentCount = 0;
-      }
-      _.each(names, function(name){
-        add(format(name));
+      $container.html('')
+      currentCount = 0;
+      _.each(data.actions, function(action){
+        add(format(action.name, 'Moments ago'));
       });
     });
   });

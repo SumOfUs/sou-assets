@@ -23,5 +23,13 @@
     $('.ups-header__open-nav, .ups-header__close-nav').on('click', function(){
       $('.ups-header__links').toggleClass('ups-header__links--open');
     });
+
+    var autoRecognize = function() {
+      if (window.champaign.personalization.member.action_upstander) {
+        $('.ups-header__button').text('Get started');
+      }
+    }
+
+    autoRecognize();
   });
 </script>
