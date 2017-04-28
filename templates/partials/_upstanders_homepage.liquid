@@ -68,7 +68,12 @@
       <div class="ups-donate-share__explanation">
         We are a movement by and of the people that means don’t take money from corporations or governments. Make a small donation today to sustain our Upstander movement.
       </div>
-      <div class="ups-donate-share__donate">{% include 'Fundraiser', freestanding: true %}</div>
+      <div class="ups-donate-share__donate ups-donate-share__donate--fundraiser">
+        {% include 'Fundraiser Refactor', freestanding: true %}
+      </div>
+      <div class="ups-donate-share__donate--post-donation hidden-irrelevant">
+        Thanks so much for your donation! Together, we're staying in this fight.
+      </div>
     </div>
   </div>
 
@@ -82,10 +87,10 @@
           <div class="ups-join__join-choice ups-join__join-choice--selected">Individual</div>
           <div class="ups-join__join-choice">Group</div>
         </div>
-        <div class="ups-join__form ups-join__form--selected">
+        <div class="ups-join__form ups-join__form--individual ups-join__form--selected">
           {% include 'Petition', ref: 'Individual', skip_javascript: true %}
         </div>
-        <div class="ups-join__form">
+        <div class="ups-join__form ups-join__form--group">
           {% include 'Petition', ref: 'Group', skip_javascript: true %}
         </div>
       </div>
@@ -117,7 +122,7 @@
           }
 
           autoRecognize();
-          chmp.myActionForm  = new chmp.ActionForm({
+          formParams = {
             member:           chmp.personalization.member,
             outstandingFields:chmp.personalization.outstandingFields,
             location:         chmp.personalization.location,
@@ -127,11 +132,25 @@
             referrer_id:      chmp.personalization.urlParams.referrer_id,
             bucket:           chmp.personalization.urlParams.bucket,
             prefill:          true
-          });
+          }
+          chmp.individualForm  = new chmp.ActionForm(_.extend({
+            el: '.ups-join__form--individual form.action-form'
+          }));
+          chmp.groupForm  = new chmp.ActionForm(_.extend({
+            el: '.ups-join__form--group form.action-form'
+          }));
 
-          chmp.myPetition      = new chmp.Petition({skipOnSuccessAction: true});
+          chmp.myPetition = new chmp.Petition({skipOnSuccessAction: true});
 
           $.subscribe('petition:submitted', showFollowUp);
+
+          $.subscribe('fundraiser:transaction_success', function(event, responseData, formData) {
+            $('.ups-donate-share__donate--fundraiser').addClass('hidden-irrelevant');
+            $('.ups-donate-share__donate--post-donation').removeClass('hidden-irrelevant');
+          });
+          $('.overlay-toggle__mobile-view').
+            removeClass('overlay-toggle__mobile-view').
+            removeClass('overlay-toggle__mobile-view--closed');
         });
       </script>
       <div class="ups-join__social-proof">
@@ -197,7 +216,6 @@
     }
 
     var handleAction = function(msg) {
-      console.log(msg);
       var data = JSON.parse(msg);
       if (window.slugFilter && data.slug !== window.slugFilter) return;
       add(format(data.first_name + ' ' + data.last_name));

@@ -346,6 +346,25 @@
       margin: 20px 0 10px;
       line-height: 1.4em;
     }
+    &__donate--post-donation {
+      margin: 70px auto 20px;
+      font-size: 28px;
+      line-height: 1.3em;
+      text-align: center;
+    }
+    .fundraiser-bar__main {
+      height: auto;
+    }
+    .SweetSelect .Select > .Select-control {
+      border-color: #b2b5ba;
+    }
+    .DonationBands__input {
+      border: 2px solid #b2b5ba;
+    }
+    .form--big.action-form {
+      overflow: hidden;
+      margin: 0 auto;
+    }
     @media(max-width: 940px) {
       padding-left: 5%;
       padding-right: 5%;
