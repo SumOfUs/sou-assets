@@ -646,8 +646,45 @@
     text-align: center;
   }
 }
-.simple-footer--ups {
-  border-top: none;
-  padding-bottom: 60px;
-  z-index: 100;
+.simple-footer {
+  &--ups {
+    border-top: none;
+    padding-bottom: 60px;
+    z-index: 100;
+    height: auto;
+  }
+  &__partner-logos {
+    float: left;
+    width: 100%;
+    clear: both;
+    &-lead-in {
+      color: $dingy-gray;
+      padding: 20px 0 12px;
+      font-size: 14px;
+    }
+  }
+  &__partner-logo {
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    float: left;
+    width: 130px;
+    height: 70px;
+    &--pfwf {
+      background-image: url(asset-path('images/upstanders/partners/pfwf.png'));
+    }
+    &--im {
+      background-image: url(asset-path('images/upstanders/partners/mischief.png'));
+    }
+    &--jvp {
+      background-image: url(asset-path('images/upstanders/partners/jvp.png'));
+    }
+    &--uv {
+      background-image: url(asset-path('images/upstanders/partners/ultraviolet.png'));
+    }
+    &--cosecha {
+      background-image: url(asset-path('images/upstanders/partners/cosecha.png'));
+    }
+  }
 }
