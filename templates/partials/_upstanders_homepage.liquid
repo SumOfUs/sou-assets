@@ -135,10 +135,10 @@
             bucket:           chmp.personalization.urlParams.bucket,
             prefill:          true
           }
-          chmp.individualForm  = new chmp.ActionForm(_.extend({
+          chmp.individualForm  = new chmp.ActionForm(_.extend(formParams, {
             el: '.ups-join__form--individual form.action-form'
           }));
-          chmp.groupForm  = new chmp.ActionForm(_.extend({
+          chmp.groupForm  = new chmp.ActionForm(_.extend(formParams, {
             el: '.ups-join__form--group form.action-form'
           }));
 
