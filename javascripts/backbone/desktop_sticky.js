@@ -1,4 +1,4 @@
-const MobileCheck = require('member-facing/backbone/mobile_check')
+import MobileCheck from 'member-facing/backbone/mobile_check';
 
 const DesktopSticky = Backbone.View.extend({
 
