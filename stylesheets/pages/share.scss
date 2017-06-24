@@ -84,10 +84,10 @@
     width: 145px;
     float: left;
   }
+  &__after-donation, &__accepted {
+    font-size: 42px;
+    margin-top: 2em;
+  }
 }
 
-.two-step__after-donation {
-  font-size: 42px;
-  margin-top: 2em;
-}
 
