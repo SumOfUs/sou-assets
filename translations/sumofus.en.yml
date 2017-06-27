@@ -57,7 +57,7 @@ en:
       decline: 'No'
       accepted: "Thanks! Share now in just a couple of clicks:"
       declined: "No problem. Thanks for your support!"
-    thanks: 'Thank you for your donation'
+    thanks: 'Thank you for your donation!'
   share_and_donate:
     fundraiser_title: 'Can you chip in to help fund SumOfUs’ campaigning?'
   footer:

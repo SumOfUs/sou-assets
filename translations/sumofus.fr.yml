@@ -57,7 +57,7 @@ fr:
       decline: 'Non'
       accepted: "Merci beaucoup ! Plus nous serons nombreux à nous mobiliser, plus notre mouvement sera fort."
       declined: "Merci d'avoir signé la pétition ! "
-    thanks: 'Merci pour votre don'
+    thanks: 'Merci pour votre don !'
   share_and_donate:
     fundraiser_title: 'Pouvez-vous faire un don afin de financer les campagnes de SumOfUs?'
   footer:
