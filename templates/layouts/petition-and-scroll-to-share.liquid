@@ -1,0 +1,52 @@
+{% comment %} Description: Petition page that scrolls down to share. {% endcomment %}
+{% comment %} Primary layout: true {% endcomment %}
+
+{% include 'Small Header' %}
+
+<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__sidebar">
+  <div class="center-content__big-column">
+    <div class="mobile-show pre-main-bar">{% include 'Thermometer' %}</div>
+
+    {% include 'Body Text' %}
+  </div>
+  <div class="center-content__fixed-right center-content--push-down">
+    {% include 'Petition Sidebar', extra_class: 'stuck-right not-sticky' %}
+  </div>
+</div>
+
+<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__share-wrapper">
+  <div class="center-content__one-column">
+
+    <div class="center-content__central-square">
+
+      {% capture message %}{{ 'petition.thank_you' | val: 'petition_title', title | t }}{% endcapture %}
+      <h1 class="thank-you__thanks">{{ message }}</h1>
+      <div class="thank-you__cta">{{ 'share.cta' | t }}</div>
+
+      <div class="center-content__centered-element">
+        {% include 'Share' %}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% include 'Petition Mobile Footer' %}
+{% include 'Small Image Footer' %}
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    var callback = function(e, data) {
+      var petitionSidebar = $('.center-content__fixed-right');
+      var bottomShare = $('.petition-and-scroll-to-share__share-wrapper');
+      petitionSidebar.fadeOut();
+      bottomShare.fadeIn();
+      $('html, body').animate({scrollTop: bottomShare.offset().top}, 800);
+    }
+
+    new window.champaign.Petition({
+      redirectAfterAction: false,
+      submissionCallback: callback
+    });
+  });
+</script>
