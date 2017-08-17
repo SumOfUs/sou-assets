@@ -3,7 +3,7 @@
 
 {% include 'Small Header' %}
 
-<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__sidebar">
+<div class="center-content center-content--accomodates-stuck-footer">
   <div class="center-content__big-column">
     <div class="mobile-show pre-main-bar">{% include 'Thermometer' %}</div>
 
@@ -14,13 +14,41 @@
   </div>
 </div>
 
-<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__share-wrapper">
+<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__yes-no-question-wrapper">
   <div class="center-content__one-column">
 
     <div class="center-content__central-square">
 
       {% capture message %}{{ 'petition.thank_you' | val: 'petition_title', title | t }}{% endcapture %}
       <h1 class="thank-you__thanks">{{ message }}</h1>
+      <div class="thank-you__cta">
+        <span class="two-step__question">{{ 'share.two_step.cta' | t }}</span>
+        <span class="two-step__declined hidden-closed">{{ 'share.two_step.declined' | t }}</span>
+        <span class="two-step__accepted hidden-closed">{{ 'share.two_step.accepted' | t }}</span>
+      </div>
+
+      <div class="center-content__centered-element">
+        <div class="two-step__question">
+          <div class="share-buttons">
+            <div class="share-buttons__button button two-step__button two-step__accept">
+              {{ 'share.two_step.accept' | t }}
+            </div>
+            <div class="share-buttons__button button two-step__button two-step__decline">
+              {{ 'share.two_step.decline' | t }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__share-wrapper">
+  <div class="center-content__one-column">
+
+    <div class="center-content__central-square">
+
       <div class="thank-you__cta">{{ 'share.cta' | t }}</div>
 
       <div class="center-content__centered-element">
@@ -36,17 +64,38 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
-    var callback = function(e, data) {
-      var petitionSidebar = $('.center-content__fixed-right');
-      var bottomShare = $('.petition-and-scroll-to-share__share-wrapper');
-      petitionSidebar.fadeOut();
-      bottomShare.fadeIn();
-      $('html, body').animate({scrollTop: bottomShare.offset().top}, 800);
-    }
+    var petitionSidebar = $('.center-content__fixed-right');
+    var yesNoQuestion = $('.petition-and-scroll-to-share__yes-no-question-wrapper');
+    var shareStep = $('.petition-and-scroll-to-share__share-wrapper');
 
     new window.champaign.Petition({
       redirectAfterAction: false,
-      submissionCallback: callback
+      submissionCallback: petitionCallback
     });
+
+    $('.two-step__accept').click(displayAndScrollToShare);
+    $('.two-step__decline').click(displayAndScrollToDonate);
+
+    function petitionCallback(e, data) {
+      petitionSidebar.fadeOut();
+      yesNoQuestion.css('margin-bottom', window.innerHeight - yesNoQuestion.height());
+      yesNoQuestion.fadeIn();
+      scrollTo(yesNoQuestion);
+    }
+
+    function displayAndScrollToShare() {
+      shareStep.fadeIn();
+      shareStep.css('margin-bottom', window.innerHeight - shareStep.height());
+      scrollTo(shareStep);
+    }
+
+    function displayAndScrollToDonate() {
+      alert('donate');
+    }
+
+    function scrollTo(element) {
+      $('html, body').animate({scrollTop: element.offset().top}, 800);
+    }
+
   });
 </script>

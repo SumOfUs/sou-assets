@@ -1,4 +1,9 @@
-.petition-and-scroll-to-share__share-wrapper {
-  display: none;
-  margin-top: -70px;
+.petition-and-scroll-to-share {
+  &__yes-no-question-wrapper {
+    display: none;
+  }
+
+  &__share-wrapper {
+    display: none;
+  }
 }
