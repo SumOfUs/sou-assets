@@ -60,6 +60,8 @@ fr:
     thanks: 'Merci pour votre don !'
   share_and_donate:
     fundraiser_title: 'Pouvez-vous faire un don afin de financer les campagnes de SumOfUs?'
+  petition_and_scroll:
+    fundraiser_intro: '<TranslationMissing> Many thanks for your help! To help us continue to fight for people to be more important than profits, we need your help: SumOfUs is funded entirely by members like you.'
   footer:
     home: Accueil
     about: Nous connaître
