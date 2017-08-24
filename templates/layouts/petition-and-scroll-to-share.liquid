@@ -87,7 +87,7 @@
     function makeStepFullScreen(stepElement) {
       var offset = 35;
       var padding = parseInt(stepElement.css('padding-top'), 10);
-      var totalElementHeight = stepElement.height() + padding + offset
+      var totalElementHeight = stepElement.height() + padding + offset;
       if (totalElementHeight < window.innerHeight) {
         stepElement.css('margin-bottom', window.innerHeight - totalElementHeight);
       }
