@@ -21,3 +21,11 @@
 
 {% include 'Petition Mobile Footer' %}
 {% include 'Small Image Footer' %}
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    new window.champaign.Petition(
+      {followUpUrl: "{{ follow_up_url }}"}
+    );
+  });
+</script>

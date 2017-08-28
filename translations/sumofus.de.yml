@@ -60,6 +60,8 @@ de:
     thanks: 'Vielen Dank für Ihre Spende!'
   share_and_donate:
     fundraiser_title: 'Unterstützen Sie die Kampagnen von SumOfUs jetzt mit einer Spende!'
+  petition_and_scroll:
+    fundraiser_intro: 'Vielen Dank für Ihre Hilfe! Damit wir auch weiterhin dafür kämpfen können, dass Menschen wichtiger sind als Profite, brauchen wir Ihre Hilfe: Denn SumOfUs wird komplett von Mitgliedern wie Ihnen finanziert.'
   footer:
     home: Start
     about: Über Uns
