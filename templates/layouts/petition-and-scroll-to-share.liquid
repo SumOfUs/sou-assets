@@ -59,7 +59,7 @@
   </div>
 </div>
 
-<div class="center-content petition-and-scroll-to-share__fundraiser-wrapper">
+<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__fundraiser-wrapper ">
   <h1 class="thank-you__cta intro"> {{ 'petition_and_scroll.fundraiser_intro' | t }} </h1>
   {% capture fundraiser_title %} {{ 'share_and_donate.fundraiser_title' | t }} {% endcapture %}
   {% include 'Fundraiser Refactor', freestanding: true, fundraiser_title: fundraiser_title %}
@@ -85,14 +85,12 @@
     $('.two-step__decline').click(displayAndScrollToDonate);
 
     function makeStepFullScreen(stepElement) {
-      var offset = 35;
       var padding = parseInt(stepElement.css('padding-top'), 10);
-      var totalElementHeight = stepElement.height() + padding + offset;
+      var margin =  parseInt(stepElement.css('margin-bottom'), 10);
+      var totalElementHeight = stepElement.height() + padding + margin;
       if (totalElementHeight < window.innerHeight) {
-        stepElement.css('margin-bottom', window.innerHeight - totalElementHeight);
+        stepElement.css('margin-bottom', margin + (window.innerHeight - totalElementHeight));
       }
-      // Fix step height
-      stepElement.css('height', stepElement.height());
     }
 
     function petitionCallback(e, data) {
