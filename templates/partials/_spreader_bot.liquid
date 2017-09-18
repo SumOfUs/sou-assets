@@ -24,6 +24,12 @@
       </label>
     </div>
     <div class="form__group">
+      <label>What language does the user speak?</label>
+      <label><input type="radio" name="language" value="EN" checked>English</label>
+      <label><input type="radio" name="language" value="FR">French</label>
+      <label><input type="radio" name="language" value="DE">German</label>
+    </div>
+    <div class="form__group">
       <label>Where will this be used?</label>
       <label>
         <input type="radio" name="usesAk" value="true" checked>
@@ -118,17 +124,66 @@
   $(document).ready(function(){
     var APP_ID = '514456635236116';
 
+
+    var TRANSLATIONS = {
+      EN: {
+        DEFAULT_SALUTATION: 'Friend',
+        MAILING_SHARE_ON_FACEBOOK: 'Share on Facebook',
+        CHAMPAIGN_SHARE_ON_FACEBOOK: 'Share',
+        COPY_AND_PASTE_PROMPT: 'Or you can copy and share this email if you prefer:',
+        SUMOFUS_SIGNOFF: 'Thanks for all you do,',
+        SHARE_EMAIL_SALUTATION: 'Dear Friends,'
+      },
+      DE: {
+        DEFAULT_SALUTATION: 'Hallo',
+        MAILING_SHARE_ON_FACEBOOK: 'Jetzt auf Facebook teilen!',
+        CHAMPAIGN_SHARE_ON_FACEBOOK: 'Facebook',
+        COPY_AND_PASTE_PROMPT: 'Hier noch einmal unsere E-mail:',
+        SUMOFUS_SIGNOFF: 'Vielen Dank für Ihre Unterstützung!',
+        SHARE_EMAIL_SALUTATION: 'Hallo,'
+      },
+      FR: {
+        DEFAULT_SALUTATION: 'Chèr(e) ami(e)',
+        MAILING_SHARE_ON_FACEBOOK: 'Partager sur Facebook',
+        CHAMPAIGN_SHARE_ON_FACEBOOK: 'Partager',
+        COPY_AND_PASTE_PROMPT: "Vous pouvez aussi copier et envoyer l'email ci-dessous à vos contacts :",
+        SUMOFUS_SIGNOFF: 'Merci pour tout ce que vous faites !',
+        SHARE_EMAIL_SALUTATION: 'Salut,'
+      },
+    };
     //  funky formatting otherwise gets interpreted by Champaign liquid
-    var LIQUID_SUBSTITUTIONS = {
+    var DEFAULT_LIQUID_SUBSTITUTIONS = {
       LQ_USER_AKID: '{' + '{ user.akid }}',
-      LQ_SALUTATION: '{' + '{ user.first_name|capfirst|default:"Friend" }}',
       LQ_SIGNOFF: '{' + '{ user.first_name|capfirst|default:"" }}'
-    }
-    var LIQUIDLESS_SUBSTITUTIONS = {
+    };
+    var DEFAULT_LIQUIDLESS_SUBSTITUTIONS = {
       LQ_USER_AKID: '',
-      LQ_SALUTATION: 'Friend',
       LQ_SIGNOFF: ''
-    }
+    };
+
+    window.LIQUID_SUBSTITUTIONS = {
+      EN: _.extend(_.clone(DEFAULT_LIQUID_SUBSTITUTIONS), TRANSLATIONS.EN, {
+        LQ_SALUTATION: '{' + '{ user.first_name|capfirst|default:"'+TRANSLATIONS.EN.DEFAULT_SALUTATION+'" }}'
+      }),
+      DE: _.extend(_.clone(DEFAULT_LIQUID_SUBSTITUTIONS), TRANSLATIONS.DE, {
+        LQ_SALUTATION: '{' + '{ user.first_name|capfirst|default:"'+TRANSLATIONS.DE.DEFAULT_SALUTATION+'" }}'
+      }),
+      FR: _.extend(_.clone(DEFAULT_LIQUID_SUBSTITUTIONS), TRANSLATIONS.FR, {
+        LQ_SALUTATION: '{' + '{ user.first_name|capfirst|default:"'+TRANSLATIONS.FR.DEFAULT_SALUTATION+'" }}'
+      })
+    };
+    window.LIQUIDLESS_SUBSTITUTIONS = {
+      EN: _.extend(_.clone(DEFAULT_LIQUID_SUBSTITUTIONS), TRANSLATIONS.EN, {
+        LQ_SALUTATION: TRANSLATIONS.EN.DEFAULT_SALUTATION
+      }),
+      DE: _.extend(_.clone(DEFAULT_LIQUID_SUBSTITUTIONS), TRANSLATIONS.DE, {
+        LQ_SALUTATION: TRANSLATIONS.DE.DEFAULT_SALUTATION
+      }),
+      FR: _.extend(_.clone(DEFAULT_LIQUID_SUBSTITUTIONS), TRANSLATIONS.FR, {
+        LQ_SALUTATION: TRANSLATIONS.FR.DEFAULT_SALUTATION
+      })
+    };
+
 
     var $shareHref = $('[name="share_href"]');
     var $redirectUri = $('[name="redirect_uri"]');
@@ -150,7 +205,7 @@
       }
     });
 
-    var $linkOutput = $('[name="link_output"');
+    var $linkOutput = $('[name="link_output"]');
 
     var shareHref = function(usesAk, medium) {
       var href = new URI($shareHref.val());
@@ -174,9 +229,10 @@
       $outputs[category].code.val($outputs[category].preview.html().trim());
     }
 
-    var updateButton = function(category, shareLink) {
+    var updateButton = function(category, shareLink, locale) {
       $outputs[category].preview.html($outputs[category].template);
       $outputs[category].preview.find('a').attr('href', shareLink);
+      handleLiquid($outputs[category].preview, false, locale);
       populateCodeFromPreview(category);
     }
 
@@ -184,8 +240,8 @@
       return text.replace(/\n/g, '<br>');
     }
 
-    var handleLiquid = function($el, usesAk) {
-      var substitutionSource = usesAk ? LIQUID_SUBSTITUTIONS : LIQUIDLESS_SUBSTITUTIONS;
+    var handleLiquid = function($el, usesAk, locale) {
+      var substitutionSource = usesAk ? LIQUID_SUBSTITUTIONS[locale] : LIQUIDLESS_SUBSTITUTIONS[locale];
       var fullHtml = $el.html();
       _.each(_.keys(substitutionSource), function(key) {
         fullHtml = fullHtml.replace(new RegExp(key, 'g'), substitutionSource[key]);
@@ -193,7 +249,7 @@
       $el.html(fullHtml);
     }
 
-    var updateMailingHtml = function(category, usesAk) {
+    var updateMailingHtml = function(category, usesAk, locale) {
       $outputs[category].preview.html($outputs[category].template);
       var buttonHtml = $outputs['ak-button'].preview.html();
       var spreaderPrompt = smartFormat($spreaderPrompt.val());
@@ -207,12 +263,12 @@
       $outputs[category].preview.find('.full-email-template__spreader-signoff-container').html(spreaderSignoff);
       $outputs[category].preview.find('a.full-email-template__spreader-share-cta').attr('href', shareLink);
       $outputs[category].preview.find('a.full-email-template__spreader-share-cta').text($shareEmailCta.val());
-      handleLiquid($outputs[category].preview, usesAk);
+      handleLiquid($outputs[category].preview, usesAk, locale);
 
       populateCodeFromPreview(category);
     }
 
-    var generateLink = function(usesAk) {
+    var generateLink = function(usesAk, locale) {
       var link = new URI('https://www.facebook.com/dialog/share').query({
         app_id: APP_ID,
         display: 'page',
@@ -221,20 +277,21 @@
         no_redirect: 1
       });
       if (hashtag()) link.addSearch('hashtag', hashtag());
-      var substitutionSource = usesAk ? LIQUID_SUBSTITUTIONS : LIQUIDLESS_SUBSTITUTIONS;
+      var substitutionSource = usesAk ? LIQUID_SUBSTITUTIONS[locale] : LIQUIDLESS_SUBSTITUTIONS[locale];
       return link.toString().replace(/LQ_USER_AKID/, substitutionSource.LQ_USER_AKID);
     }
 
     var updatePreviews = function() {
       var usesAk = $('input[type=radio][name=usesAk]:checked').val() == 'true';
-      var shareLink = generateLink(usesAk);
+      var locale = $('input[type=radio][name=language]:checked').val();
+      var shareLink = generateLink(usesAk, locale);
 
       $linkOutput.val(shareLink);
       $linkTest.attr('href', shareLink);
 
-      updateButton('ak-button', shareLink);
-      updateButton('champaign-button', shareLink);
-      updateMailingHtml('full-email', usesAk);
+      updateButton('ak-button', shareLink, locale);
+      updateButton('champaign-button', shareLink, locale);
+      updateMailingHtml('full-email', usesAk, locale);
     }
 
     var changeOutput = function() {
@@ -245,6 +302,7 @@
 
     $('.spreader-form__input').on('keyup', updatePreviews);
     $('input[type=radio][name=usesAk]').change(updatePreviews);
+    $('input[type=radio][name=language]').change(updatePreviews);
     $('input[type=radio][name=desiredOutput]').change(changeOutput);
     changeOutput();
   });
@@ -303,7 +361,7 @@
 
 <script type="text/template" id="ak-button-template">
   <a style="background-color: #3b5998; border: 1px solid #3b5998; border-radius: 3px; color: #ffffff; display: block; font-family: sans-serif; font-size: 16px; line-height: 44px; text-align: center; text-decoration: none; width: 100%; max-width: 500px; -webkit-text-size-adjust: none; white-space: nowrap;" target="_blank">
-    <img style="height: 16px; padding-right: 5px; margin-bottom: -1px;" src="https://s3.amazonaws.com/s3.sumofus.org/images/FB-f-Logo__white_29.png" alt="" height="16" /> Share on Facebook
+    <img style="height: 16px; padding-right: 5px; margin-bottom: -1px;" src="https://s3.amazonaws.com/s3.sumofus.org/images/FB-f-Logo__white_29.png" alt="" height="16" /> MAILING_SHARE_ON_FACEBOOK
   </a>
 </script>
 <script type="text/template" id="champaign-button-template">
@@ -313,7 +371,7 @@
       .button--facebook a::before { color: white; font-size: 18px; line-height: 35px; }
       .button--facebook a { box-sizing: border-box; max-width: 145px; width: 100%; height: 60px; border: none; color: white; text-transform: uppercase; font-size: 16px; font-weight: bold; border-radius: 3px; cursor: pointer; outline: none; display: block; padding-top: 15px; text-decoration: none; text-align: center; background-color: #597ac7; }
       .button--facebook a:hover { background-color: #466bc1; text-decoration: none; }
-      .button--facebook a::before { content: "Share"; }
+      .button--facebook a::before { content: "CHAMPAIGN_SHARE_ON_FACEBOOK"; }
     </style>
     <a target="_blank"></a>
   </div>
@@ -325,9 +383,9 @@
   <p class="full-email-template__spreader-prompt-container"></p>
   <center class="full-email-template__button-container">
   </center>
-  <p>Or you can copy and share this email if you prefer:</p>
+  <p>COPY_AND_PASTE_PROMPT</p>
   <div style="padding: 20px; border: 1px dotted silver;">
-    <p>Dear Friends,&nbsp;</p>
+    <p>SHARE_EMAIL_SALUTATION&nbsp;</p>
     <p class="full-email-template__spreader-share-container"></p>
     <p>
       <a class="full-email-template__spreader-share-cta"></a>
@@ -336,7 +394,7 @@
       LQ_SIGNOFF
     </p>
   </div>
-  <p>Thanks for all you do,</p>
+  <p>SUMOFUS_SIGNOFF</p>
   <p class="full-email-template__spreader-signoff-container"></p>
   <hr>
 </script>
