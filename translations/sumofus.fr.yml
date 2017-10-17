@@ -38,6 +38,8 @@ fr:
       target: Vous
       ask: "Pouvez-vous faire un don afin d’aider SumOfUs à continuer de combattre le pouvoir grandissant des grandes entreprises dans le monde ?"
       body: "Merci d’avoir agi avec SumOfUs ! Votre action aide à combattre le pouvoir des grandes entreprises dans le monde. Il reste cependant beaucoup à faire. SumOfUs dépend presque entièrement de petits dons faits par des personnes comme vous. Chaque petit don compte. Vos contributions nous permettent de défier les multinationales les plus puissantes, les plus malveillantes et de leur faire rendre des comptes. Pourriez-vous faire un don afin de nous aider à continuer le combat aujourd’hui ?"
+    two_step:
+      cta: "Pouvez-vous faire un don pour cette campagne de mobilisation ?"
   petition:
     sign_it: Signez la pétition
     target_prefix: Pétition adressée à
