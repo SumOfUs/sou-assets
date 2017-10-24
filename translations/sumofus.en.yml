@@ -29,7 +29,7 @@ en:
     license: Creative Commons Attribution 3.0 Unported License.
     description: "SumOfUs is a global movement of consumers, investors, and workers all around the world, standing together to hold corporations accountable for their actions and forge a new, sustainable and just path for our global economy. It's not going to be fast or easy. But if enough of us come together, we can make a real difference."
   fundraiser:
-    fine_print: "SumOfUs is a registered 501(c)4 non-profit incorporated in Washington, DC, United States. Contributions or gifts to SumOfUs are not tax deductible. For further information, please contact info@sumofus.org."
+    fine_print: "SumOfUs will protect <a href='https://sumofus.org/privacy'>your privacy</a>, and keep you updated about this and similar campaigns."
     debit:
       recurring: "You are setting up a monthly donation of %{amount} to SumOfUs"
       one_time: "You are donating %{amount} to SumOfUs"
