@@ -63,7 +63,7 @@ fr:
   share_and_donate:
     fundraiser_title: 'Pouvez-vous faire un don afin de financer les campagnes de SumOfUs?'
   petition_and_scroll:
-    fundraiser_intro: '<TranslationMissing> Thank you, you are incredible! SumOfUs is funded entirely by members like you. With your support we can continue to fight corporate power.'
+    fundraiser_intro: "Merci, vous êtes fantastique ! SumOfUs est un mouvement financé par des personnes comme vous. Avec votre soutien, nous pouvons continuer de combattre le pouvoir démesuré des grandes entreprises."
   footer:
     home: Accueil
     about: Nous connaître
