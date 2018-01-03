@@ -17,6 +17,12 @@
     window.champaign.mySticky = new window.champaign.DesktopSticky({extraClass: 'fundraiser'});
 
     $.subscribe('fundraiser:transaction_success', function(event, responseData, formData) {
+      var fundraiserData = champaign.store.getState().fundraiser;
+      fbq('track', 'CompleteRegistration', {
+        registered_member: champaign.personalization.member.registered,
+        currency: fundraiserData.currency,
+        value: fundraiserData.donationAmount
+      });
       var followUpUrl = responseData.follow_up_url || "{{ follow_up_url }}"
       window.champaign.redirectors.AfterDonationRedirector.attemptRedirect(followUpUrl, formData)
     });
