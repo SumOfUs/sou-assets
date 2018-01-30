@@ -96,6 +96,11 @@
       petitionSidebar.fadeOut();
       petitionOverlayButton.fadeOut();
       displayAndScrollToYesNoQuestion();
+      fundraiserSignIn(data.petitionForm);
+    }
+
+    function fundraiserSignIn(data) {
+      champaign.store.dispatch({ type: 'login_member', payload: {formValues: data} });
     }
 
     function displayAndScrollToYesNoQuestion() {
