@@ -1,12 +1,18 @@
-{% include 'Small Header' %}
-
-<div class="center-content center-content--accomodates-stuck-footer">
-  <div class="center-content__big-column">
-
-  {% include 'Body Text' %}
+<div class="partial--fundraiser fundraiser-with-small-image">
+  <div class="section--header">
+    {% include 'Small Header' %}
   </div>
-  <div class="center-content__fixed-right">
-    {% include 'Fundraiser Refactor', extra_class: 'stuck-right not-sticky overlay-toggle' %}
+  <div class="center-content center-content--accomodates-stuck-footer">
+    <div class="center-content__big-column">
+      {% include 'Body Text' %}
+    </div>
+    <div class="center-content__fixed-right">
+      {% include 'Fundraiser Refactor', extra_class: 'stuck-right not-sticky overlay-toggle' %}
+    </div>
+  </div>
+  <div class="section--footer">
+    {% include 'Fundraiser Mobile Footer' %}
+    {% include 'Small Image Footer' %}
   </div>
 </div>
 
@@ -19,6 +25,3 @@
     });
   });
 </script>
-
-{% include 'Fundraiser Mobile Footer' %}
-{% include 'Small Image Footer' %}
