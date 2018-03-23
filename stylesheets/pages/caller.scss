@@ -145,9 +145,12 @@
       margin: 0.5em auto;
     }
 
-    p.select-home-country {
-      line-height: 1.2em;
+    p.instructions {
       text-align: center;
+      max-width: 600px;
+      margin: auto;
+      padding: 0 1em;
+      line-height: 1.2em;
     }
 
   } // #call-tool-component
