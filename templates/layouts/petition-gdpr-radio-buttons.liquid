@@ -11,7 +11,7 @@
   </div>
 
   <div class="center-content__fixed-right center-content--push-down">
-    {% include 'Petition Sidebar', extra_class: 'stuck-right not-sticky gdpr gdpr-variant-radio-buttons' %}
+    {% include 'Petition Sidebar', extra_class: 'stuck-right not-sticky gdpr consent-variant-radio-buttons' %}
   </div>
 </div>
 
@@ -145,10 +145,10 @@
 </script>
 
 <script type="text/javascript">
-  $('.petition-bar.gdpr form button[type=submit]').before('<div id="gdpr-consent-section"></div>');
+  $('.petition-bar.gdpr form button[type=submit]').before('<div id="consent-section"></div>');
   $(function () {
-    new window.champaign.GDPRConsentComponent({
-      container: document.getElementById('gdpr-consent-section'),
+    new window.champaign.ConsentFeature({
+      container: document.getElementById('consent-section'),
       variant: 'simple'
     });
   });
