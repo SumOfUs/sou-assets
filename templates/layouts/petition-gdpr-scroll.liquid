@@ -118,17 +118,13 @@
   });
 
   $(document).ready(function(){
-    var petitionOverlayButton = $('.petition-bar__mobile_ui__bottom_bar');
-    var yesNoQuestion = $('.petition-and-scroll-to-share__yes-no-question-wrapper');
-    var shareStep = $('.petition-and-scroll-to-share__share-wrapper');
-    var fundraiserStep = $('.petition-and-scroll-to-share__fundraiser-wrapper');
-
+    /* Initialise the Petition sidebar */
     new window.champaign.Petition({
       redirectAfterAction: false,
       submissionCallback: petitionCallback
     });
 
-    /* Create a hidden ConsentComponent that will hold check boxes */
+    /* Initialise the consent feature in hidden mode */
     new window.champaign.ConsentFeature({
       container: document.getElementById('consent-section'),
       variant: 'hidden-irrelevant'
