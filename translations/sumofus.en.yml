@@ -47,6 +47,9 @@ en:
     excited_confirmation: Name submitted!
     thank_you: 'Thanks for adding your name to "%{petition_title}"'
     fine_print: "SumOfUs will protect <a href='https://sumofus.org/privacy'>your privacy</a>, and keep you updated about this and similar campaigns."
+    before_you_sign: 'Before you sign "%{petition_title}"'
+    thanks_for_signing: 'Thanks for signing "%{petition_title}"'
+    next: 'Next'
   share:
     cta: Share the campaign with your friends to triple your impact!
     send_email: Send Email
@@ -140,5 +143,3 @@ en:
             <b>After the call, can you let us know how it went?&nbsp;</b>You can leave a message below.&nbsp;"
     show_talking_points: "Click here to show the example conversation, tips and FAQs again"
     submit: "Submit"
-
-
