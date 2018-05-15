@@ -10,7 +10,7 @@
     {% include 'Body Text' %}
   </div>
   <div class="center-content__fixed-right center-content--push-down">
-    {% include 'Petition Sidebar', extra_class: 'stuck-right not-sticky' %}
+    {% include 'Petition Sidebar', extra_class: 'stuck-right not-sticky gdpr consent-variant-togglable-buttons' %}
   </div>
 </div>
 
@@ -69,6 +69,9 @@
 {% include 'Small Image Footer' %}
 
 <script type="text/javascript">
+
+
+
   $(document).ready(function(){
     var petitionOverlayButton = $('.petition-bar__mobile_ui__bottom_bar');
     var petitionSidebar = $('.center-content__fixed-right');
@@ -79,6 +82,15 @@
     new window.champaign.Petition({
       redirectAfterAction: false,
       submissionCallback: petitionCallback
+    });
+
+    // Mount consent component
+    $('.petition-bar.gdpr form button[type=submit]').before('<div id="consent-section"></div>');
+    $(function () {
+      new window.champaign.ConsentFeature({
+        container: document.getElementById('consent-section'),
+        variant: 'selectable-buttons'
+      });
     });
 
     $('.two-step__accept').click(displayAndScrollToShare);
