@@ -38,6 +38,6 @@
     data[item[0]] = item[1];
   });
 
-  $('.js-name').text(data['name']);
-  $('.js-email').text(data['email']);
+  $('.js-name').text(data['d_name']);
+  $('.js-email').text(decodeURIComponent(data['d_email']));
 </script>
