@@ -11,7 +11,7 @@
   <div class="center-content__one-column registration">
 
     <div class="center-content__central-square">
-      <h1 class="typography__highlight">
+      <h1>
         <span>Fast geschafft, <span class='js-name'></span>!</span>
       </h1>
 
@@ -29,10 +29,10 @@
 </div>
 
 <script>
-  var data = {email:null, name: null};
+  var data = {d_email:null, d_name: null};
 
-  location.search.split('&').filter(function(item){
-    return item.match(/email\=|name\=/);
+  location.search.split('?')[1].split('&').filter(function(item){
+    return item.match(/d_email\=|d_name\=/);
   }).forEach(function(item){
     item = item.split('=');
     data[item[0]] = item[1];
@@ -40,4 +40,7 @@
 
   $('.js-name').text(data['d_name']);
   $('.js-email').text(decodeURIComponent(data['d_email']));
+
 </script>
+
+{% include 'Small Image Footer', extra_class: 'simple-footer--stuck-to-bottom' %}
