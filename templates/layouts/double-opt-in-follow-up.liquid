@@ -1,0 +1,46 @@
+{% comment %} Post Action Message for double opt in actions {% endcomment %}
+{% comment %} Primary layout: false {% endcomment %}
+
+<div class="header-logo header-logo--light">
+  <a href="{{ 'footer.home_url' | t }}">
+    <div class="header-logo__logo sumofus-logo--positive"></div>
+  </a>
+</div>
+
+<div class="center-content">
+  <div class="center-content__one-column registration">
+
+    <div class="center-content__central-square">
+      <h1>
+        <span>Fast geschafft, <span class='js-name'></span>!</span>
+      </h1>
+
+      <p>
+        Wir haben einen Bestätigungslink per E-Mail an folgende Adresse gesendet:
+        <strong class='js-email'></strong>
+      </p>
+
+      <p>
+        Bitte rufen Sie die E-Mail jetzt gleich ab und klicken Sie auf den enthaltenen Link.
+        Nur wenn Sie Ihre Unterschrift bestätigen, zählt Ihre Stimme!
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  var data = {d_email:null, d_name: null};
+
+  location.search.split('?')[1].split('&').filter(function(item){
+    return item.match(/d_email\=|d_name\=/);
+  }).forEach(function(item){
+    item = item.split('=');
+    data[item[0]] = item[1];
+  });
+
+  $('.js-name').text(data['d_name']);
+  $('.js-email').text(decodeURIComponent(data['d_email']));
+
+</script>
+
+{% include 'Small Image Footer', extra_class: 'simple-footer--stuck-to-bottom' %}
