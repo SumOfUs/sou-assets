@@ -51,7 +51,8 @@
           rid:              chmp.personalization.urlParams.rid,
           referring_akid:   chmp.personalization.urlParams.referring_akid,
           bucket:           chmp.personalization.urlParams.bucket,
-          prefill:          true
+          prefill:          true,
+          consentNeeded: {{ consent_needed | default: 'false' }}
         });
 
         chmp.myOverlayToggle = new chmp.OverlayToggle();
