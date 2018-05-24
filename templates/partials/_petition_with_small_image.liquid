@@ -7,7 +7,26 @@
     {% include 'Body Text' %}
   </div>
   <div class="center-content__fixed-right center-content--push-down">
-    {% include 'Petition Sidebar', variant: "{{ variant }}", extra_class: 'stuck-right not-sticky' %}
+    {% include 'Petition Sidebar',
+      variant: "{{ variant }}",
+      extra_class: 'stuck-right not-sticky'
+      consent_needed: {{ consent_needed }} %}
+  </div>
+</div>
+
+<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-consent__consent-question-wrapper">
+  <div class="center-content__one-column">
+
+    <div class="center-content__central-square">
+      <h1 class="thank-you__thanks">
+        {{ 'petition.before_you_sign' | val: 'petition_title', title | t }}
+      </h1>
+      <p class="opt-in-reason">{{ 'consent.opt_in_reason' | t }}</p>
+      <button id="opt-in-button" class="button">{{ 'consent.accept_long' | t }}</button>
+      <a id="opt-out-button">{{ 'consent.decline_long' | t }}</a>
+      <p class="how-to-opt-out">{{ 'consent.how_to_opt_out' | t }}</p>
+    </div>
+
   </div>
 </div>
 
