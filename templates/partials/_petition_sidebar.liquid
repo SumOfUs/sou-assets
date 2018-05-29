@@ -52,7 +52,7 @@
           referring_akid:   chmp.personalization.urlParams.referring_akid,
           bucket:           chmp.personalization.urlParams.bucket,
           prefill:          true,
-          consentNeeded: {{ consent_needed | default: 'false' }}
+          async: {{ async | default: false }}
         });
 
         chmp.myOverlayToggle = new chmp.OverlayToggle();
