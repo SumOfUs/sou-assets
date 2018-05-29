@@ -41,6 +41,7 @@
       $(document).ready(function(){
         var chmp = window.champaign; // convenience binding
         chmp.myActionForm  = new chmp.ActionForm({
+          variant:          "{{ variant }}",
           member:           chmp.personalization.member,
           outstandingFields:chmp.personalization.outstandingFields,
           location:         chmp.personalization.location,

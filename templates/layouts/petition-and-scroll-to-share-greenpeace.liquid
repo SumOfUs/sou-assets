@@ -1,5 +1,14 @@
-{% comment %} Description: Petition GDPR variant: radio buttons {% endcomment %}
+{% comment %} Description: Petition page that scrolls down to share. {% endcomment %}
 {% comment %} Primary layout: true {% endcomment %}
+
+<style type="text/css">
+  .cover-photo__overlay {
+    display: none;
+  }
+  .mobile-title {
+    display: block !important;
+  }
+</style>
 
 {% include 'Small Header' %}
 
@@ -11,7 +20,9 @@
   </div>
 
   <div class="center-content__fixed-right center-content--push-down">
-    {% include 'Petition Sidebar', extra_class: 'stuck-right not-sticky gdpr consent-variant-radio-buttons' %}
+    {% include 'Petition Sidebar',
+      variant: 'simple',
+      extra_class: 'stuck-right not-sticky gdpr consent-variant-togglable-buttons' %}
   </div>
 </div>
 
@@ -120,6 +131,12 @@
     }
 
     $.subscribe('fundraiser:transaction_success', function(event, responseData, formData) {
+      var fundraiserData = champaign.store.getState().fundraiser;
+      fbq('track', 'CompleteRegistration', {
+        registered_member: champaign.personalization.member.registered,
+        currency: fundraiserData.currency,
+        value: fundraiserData.donationAmount
+      });
       window.champaign.redirectors.AfterDonationRedirector.attemptRedirect("{{ follow_up_url }}", formData);
     });
 
@@ -141,15 +158,5 @@
         }
       }
     }, 100);
-  });
-</script>
-
-<script type="text/javascript">
-  $('.petition-bar.gdpr form button[type=submit]').before('<div id="consent-section"></div>');
-  $(function () {
-    new window.champaign.ConsentFeature({
-      container: document.getElementById('consent-section'),
-      variant: 'simple'
-    });
   });
 </script>

@@ -41,6 +41,7 @@
       $(document).ready(function(){
         var chmp = window.champaign; // convenience binding
         chmp.myActionForm  = new chmp.ActionForm({
+          variant:          "{{ variant }}",
           member:           chmp.personalization.member,
           outstandingFields:chmp.personalization.outstandingFields,
           location:         chmp.personalization.location,
@@ -57,7 +58,7 @@
         chmp.myOverlayToggle = new chmp.OverlayToggle();
         chmp.myThermometer   = new chmp.Thermometer(window.champaign.personalization.thermometer);
         chmp.mySidebar       = new chmp.Sidebar({petitionTextMinHeight: 120, baseClass: 'petition-bar'});
-        
+
         window.champaign.mySticky = new window.champaign.DesktopSticky({extra_class: 'petition'});
       });
     </script>
