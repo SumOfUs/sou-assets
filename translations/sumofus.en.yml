@@ -143,3 +143,7 @@ en:
             <b>After the call, can you let us know how it went?&nbsp;</b>You can leave a message below.&nbsp;"
     show_talking_points: "Click here to show the example conversation, tips and FAQs again"
     submit: "Submit"
+  cookie_consent:
+    privacy_policy_url: "https://www.sumofus.org/privacy/"
+
+

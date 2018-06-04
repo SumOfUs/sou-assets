@@ -139,3 +139,5 @@ de:
     intro_with_target_info: "Sie sollten jetzt jeden Moment einen Anruf erhalten. Sie werden zuerst eine kurze Nachricht von uns hören, und dann mit dem Büro von <b>:target_name:</b>, <b>:target_title:</b> verbunden.<br><br> Wir freuen uns, wenn Sie uns nach Ihrem Anruf mitteilen, wie es gelaufen ist.&nbsp;</b>Unten können Sie uns eine Nachricht hinterlassen.&nbsp;"
     show_talking_points: "Klicken Sie hier, wenn Sie das Beispiel-Gespräch, die Tipps oder FAQs noch einmal lesen möchten. "
     submit: "Senden"
+  cookie_consent:
+    privacy_policy_url: "https://www.sumofus.org/de/privacy/"

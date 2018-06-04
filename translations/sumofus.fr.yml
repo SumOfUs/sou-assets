@@ -139,3 +139,5 @@ fr:
     intro_with_target_info: "Vous allez recevoir un appel sur votre téléphone dans quelques instants. En décrochant, vous allez entendre un court message de notre chargé.e de campagnes et vous serez ensuite mis en relation avec le bureau de <b>:target_name:</b>, <b>:target_title:</b>.<br><br><i>Petit rappel</i>: l’appel est gratuit et ne vous sera donc pas facturé. <br> <br> <b>A la suite de votre appel, pourriez-vous nous dire comment cela s’est passé?</b> Vous pouvez nous laisser un message ci-dessous."
     show_talking_points: "Cliquez ici pour revoir l'exemple de conversation, les conseils ainsi que la FAQ."
     submit: "Envoyer"
+  cookie_consent:
+    privacy_policy_url: "https://www.sumofus.org/fr/privacy/"
