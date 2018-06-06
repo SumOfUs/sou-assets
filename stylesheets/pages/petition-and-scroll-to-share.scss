@@ -54,3 +54,36 @@
 
   }
 }
+
+.petition-and-scroll-to-consent {
+  &__consent-question-wrapper {
+    display: none;
+
+    h1 {
+      font-weight: bold;
+      color: black;
+    }
+
+    p.opt-in-reason {
+      margin: 20px 0;
+      line-height: 1.6em;
+    }
+
+    .how-to-opt-out {
+      font-size: 0.9em;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    #opt-in-button {
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+    }
+
+    #opt-out-button {
+      margin-top: 10px;
+    }
+  }
+}
