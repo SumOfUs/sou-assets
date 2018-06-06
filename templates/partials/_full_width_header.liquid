@@ -1,4 +1,7 @@
-<div class="cover-photo {{extra_class}}" style="background-image: url({{ primary_image.urls.large }})">
+<div
+  class="cover-photo {{extra_class}}"
+  data-desktop-image="{{ primary_image.urls.large }}"
+  data-mobile-image="{{ primary_image.urls.mobile }}">
   <div class="cover-photo__overlay">
 
     {% include 'Top Bar' %}
