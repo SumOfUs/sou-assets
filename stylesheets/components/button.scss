@@ -68,11 +68,11 @@ button.button {
     margin-top: 10px;
     margin-left: 5px;
     margin-right: 5px;
-    float: left;
+    display: inline-block;
     width: 135px;
     a {
       width: 100%;
-      max-width: 145px;
+      max-width: 135px;
       padding-top: 20px;
     }
 
