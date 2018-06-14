@@ -31,23 +31,15 @@
 }
 
 .share-buttons {
-  width: 100%;
-  max-width: 300px;
-  margin: 80px auto 0;
-  overflow: hidden;
+
+  display: inline-block;
+  text-align: center;
 
   @media(max-width: 400px) {
     width: 148px;
     margin-top: 55px;
   }
 
-  &__button:first-of-type {
-    &:last-of-type {
-      // when you're the first and the last, you're the only
-      margin: 0 auto;
-      float: none;
-    }
-  }
   &__alternative {
     padding-top:15px;
     margin: 0 auto;
@@ -80,11 +72,14 @@
 }
 
 .two-step {
+  &__question {
+    margin-top: 50px;
+  }
   &__button {
+    display: inline-block;
     margin-top: 10px;
     margin-left: 5px;
     margin-right: 5px;
-    float: left;
     width: 135px;
   }
   &__after-donation, &__accepted {
