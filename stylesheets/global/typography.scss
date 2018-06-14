@@ -76,12 +76,11 @@ a {
 .body-text {
   line-height: 1.6em;
   p, span, div {
-    line-height: 1.6em;
+    line-height: 1.5em;
   }
-  // don't pad the paragraphs in the WYSIWYG or the output
   p, ul, ol {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 1em;
   }
   ul, ol {
     padding-left: 40px;
@@ -106,7 +105,7 @@ a {
       color: $teal !important;
     }
     p, span, div {
-      line-height: 1.6em !important;
+      line-height: 1.5em !important;
     }
     p, ul, ol {
       margin-top: 0 !important;
@@ -123,4 +122,3 @@ a {
     }
   }
 }
-
