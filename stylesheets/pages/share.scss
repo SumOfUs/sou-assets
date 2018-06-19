@@ -37,7 +37,6 @@
 
   @media(max-width: 400px) {
     width: 148px;
-    margin-top: 55px;
   }
 
   &__alternative {
@@ -84,7 +83,7 @@
   }
   &__after-donation, &__accepted {
     font-size: 42px;
-    margin-top: 2em;
+    margin-top: 1em;
     text-align: center;
   }
 }
