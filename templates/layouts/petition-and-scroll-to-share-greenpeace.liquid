@@ -132,7 +132,7 @@
 
     if(location.pathname.match(/follow\-up/)) petitionCallback();
 
-    $.subscribe('fundraiser:transaction_success', function(event, responseData, formData) {
+    window.event.on('fundraiser:transaction_success', function(responseData, formData) {
       var fundraiserData = champaign.store.getState().fundraiser;
       fbq('track', 'CompleteRegistration', {
         registered_member: champaign.personalization.member.registered,
