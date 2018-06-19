@@ -19,7 +19,7 @@ const DesktopSticky = Backbone.View.extend({
 
   makeSticky() {
     if(!this.isSticky) {
-      this.$el.sticky({topSpacing:0});
+      $(this.$el).sticky({topSpacing:0});
       if (this.extraClass.length) {
         this.$el.parent('.sticky-wrapper').addClass(this.extraClass);
       }
