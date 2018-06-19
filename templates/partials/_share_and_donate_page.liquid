@@ -60,7 +60,7 @@
       }
     });
 
-    $.subscribe('fundraiser:transaction_success', function(event, responseData, formData) {
+    window.event.on('fundraiser:transaction_success', function(responseData, formData) {
       var followUpUrl, redirected;
 
       followUpUrl = new URI(responseData.follow_up_url || "{{ follow_up_url }}");
