@@ -160,7 +160,7 @@
     var interval = setInterval(function() {
       if(window.SharePop && window.SharePop.FB){
         clearInterval(interval);
-        SharePop.FB = function(link) {
+        window.SharePop.FB = function(link) {
             var shareURL = link.getAttribute('default_share') ? link.href : this.FB_Link(link);
 
             if (typeof window.open === 'function') {
