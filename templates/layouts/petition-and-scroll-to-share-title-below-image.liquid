@@ -81,7 +81,7 @@
 <div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__fundraiser-wrapper ">
     <h1 class="thank-you__cta intro"> {{ 'petition_and_scroll.fundraiser_intro' | t }} </h1>
     {% capture fundraiser_title %} {{ 'share_and_donate.fundraiser_title' | t }} {% endcapture %}
-    {% include 'Fundraiser Refactor', freestanding: true, fundraiser_title: fundraiser_title %}
+    {% include 'Fundraiser', freestanding: true, fundraiser_title: fundraiser_title %}
 </div>
 
 {% include 'Petition Mobile Footer' %}
