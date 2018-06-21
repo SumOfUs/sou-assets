@@ -147,7 +147,7 @@
             $('html, body').animate({scrollTop: element.offset().top}, 800);
         }
 
-        $.subscribe('fundraiser:transaction_success', function(event, responseData, formData) {
+        window.event.on('fundraiser:transaction_success', function(responseData, formData) {
             var fundraiserData = champaign.store.getState().fundraiser;
             fbq('track', 'CompleteRegistration', {
                 member_type: champaign.personalization.member.registered,
