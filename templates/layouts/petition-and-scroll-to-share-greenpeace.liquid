@@ -146,12 +146,11 @@
       if(SharePop && SharePop.FB){
         clearInterval(interval);
         SharePop.FB = function(link) {
-            var shareURL = link.getAttribute('default_share') ? link.href : this.FB_Link(link)
-              , w = this.isMobile.any() ? '300' : '526'
-              , h = this.isMobile.any() ? '300' : '636';
-
-            var win = window.open(shareURL, '_blank');
-            win.focus();
+            var shareURL = link.getAttribute('default_share') ? link.href : this.FB_Link(link);
+            if (typeof window.open === 'function') {
+              var popupWindow = window.open(shareURL, '_blank');
+              if (popupWindow) popupWindow.focus();
+            }
             if (!link.getAttribute('default_share')) {
                 this.sendShare('f', link);
                 this.triggerShare('f', link);
