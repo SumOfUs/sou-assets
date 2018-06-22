@@ -47,8 +47,8 @@ fr:
     excited_confirmation: Nom envoyé!
     thank_you: 'Merci d’avoir ajouté votre nom à la pétition "%{petition_title}"!'
     fine_print: "SumOfUs protège <a href='https://sumofus.org/fr/privacy'>vos informations personnelles</a> et vous tiendra au courant de campagnes similaires."
-    before_you_sign: 'Before you sign "%{petition_title}" (FR)'
-    thanks_for_signing: 'Thanks for signing "%{petition_title}" (FR)'
+    before_you_sign: 'Avant de signer la pétition "%{petition_title}"'
+    thanks_for_signing: 'Thanks for signing "%{petition_title}"'
     next: 'Next (FR)'
   share:
     cta: Partagez la campagne avec vos ami-e-s afin de tripler votre impact !
