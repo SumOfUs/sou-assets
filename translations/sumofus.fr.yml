@@ -49,7 +49,7 @@ fr:
     fine_print: "SumOfUs protège <a href='https://sumofus.org/fr/privacy'>vos informations personnelles</a> et vous tiendra au courant de campagnes similaires."
     before_you_sign: 'Avant de signer la pétition "%{petition_title}"'
     thanks_for_signing: 'Thanks for signing "%{petition_title}"'
-    next: 'Next (FR)'
+    next: 'Next'
   share:
     cta: Partagez la campagne avec vos ami-e-s afin de tripler votre impact !
     send_email: Envoyer un courriel
