@@ -145,9 +145,9 @@
 
           chmp.myPetition = new chmp.Petition({skipOnSuccessAction: true});
 
-          window.event.on('petition:submitted', showFollowUp);
+          window.ee.on('petition:submitted', showFollowUp);
 
-          window.event.on('fundraiser:transaction_success', function(responseData, formData) {
+          window.ee.on('fundraiser:transaction_success', function(responseData, formData) {
             $('.ups-donate-share__donate--fundraiser').addClass('hidden-irrelevant');
             $('.ups-donate-share__donate--post-donation').removeClass('hidden-irrelevant');
           });
