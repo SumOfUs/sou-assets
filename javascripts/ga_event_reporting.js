@@ -7,7 +7,7 @@ if (window.event) {
 
   EVENTS_TO_REPORT.forEach(e => {
     const [category, action] = e.split(':');
-    window.event.on(e, () => {
+    window.ee.on(e, () => {
       if (typeof window.ga === 'function') {
         window.ga('send', 'event', category, action);
       }

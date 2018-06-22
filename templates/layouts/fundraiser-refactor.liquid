@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function(){
     window.champaign.mySticky = new window.champaign.DesktopSticky({extraClass: 'fundraiser'});
-    window.event.on('fundraiser:transaction_success', function(responseData, formData) {
+    window.ee.on('fundraiser:transaction_success', function(responseData, formData) {
       var fundraiserData = champaign.store.getState().fundraiser;
       fbq('track', 'CompleteRegistration', {
         registered_member: champaign.personalization.member.registered,

@@ -19,7 +19,7 @@
 <script type="text/javascript">
   $(document).ready(function(){
     window.champaign.mySticky = new window.champaign.DesktopSticky({extraClass: 'fundraiser'});
-    window.event.on('fundraiser:transaction_success', function(responseData, formData) {
+    window.ee.on('fundraiser:transaction_success', function(responseData, formData) {
       var followUpUrl = responseData.follow_up_url || "{{ follow_up_url }}"
       window.champaign.redirectors.AfterDonationRedirector.attemptRedirect(followUpUrl, formData)
     });
