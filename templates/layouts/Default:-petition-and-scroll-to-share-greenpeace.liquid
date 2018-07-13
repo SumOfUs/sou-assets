@@ -147,6 +147,8 @@
       $('html, body').animate({scrollTop: element.offset().top}, 800);
     }
 
+    if(location.pathname.match(/follow\-up/)) petitionCallback();
+
     window.ee.on('fundraiser:transaction_success', function(responseData, formData) {
       var fundraiserData = champaign.store.getState().fundraiser;
       fbq('track', 'CompleteRegistration', {
