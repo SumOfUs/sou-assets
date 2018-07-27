@@ -3,7 +3,7 @@
     font-size: 42px;
     font-weight: normal;
     margin: 20px 0 10px;
-    
+
     @media(max-width: 450px) {
       font-size: 24px;
       line-height: 28px;
@@ -14,7 +14,7 @@
     line-height: 32px;
     font-weight: normal;
     color: $slate-gray;
- 
+
     @media(max-width: 450px) {
       font-size: 12px;
       line-height: 18px;
@@ -31,16 +31,25 @@
 }
 
 .share-buttons {
-
-  display: inline-block;
-  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 80px auto 0;
+  overflow: hidden;
 
   @media(max-width: 400px) {
     width: 148px;
+    margin-top: 55px;
   }
 
+  &__button:first-of-type {
+    margin-right: 10px;
+    &:last-of-type {
+      // when you're the first and the last, you're the only
+      margin: 0 auto;
+      float: none;
+    }
+  }
   &__alternative {
-    padding-top:15px;
     margin: 0 auto;
     width: 100%;
     color: $chalkboard;
@@ -71,21 +80,20 @@
 }
 
 .two-step {
-  &__question {
-    margin-top: 50px;
-  }
   &__button {
-    display: inline-block;
-    margin-top: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    width: 135px;
+    width: 145px;
+    float: left;
   }
+
+  @media(max-width: 400px) {
+    &__button {
+      margin-top: 10px
+    }
+  }
+
   &__after-donation, &__accepted {
     font-size: 42px;
-    margin-top: 1em;
+    margin-top: 2em;
     text-align: center;
   }
 }
-
-
