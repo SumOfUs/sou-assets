@@ -10,8 +10,9 @@
 <div class="center-content">
   <div class="center-content__one-column registration">
     <div class="center-content__central-square">
+      {% assign capitalized_name = name | capitalize  %}
       <h1>
-        <span>{{ 'double_opt_in.check_email.title' | val: 'name', name | t }}</span>
+        <span>{{ 'double_opt_in.check_email.title' | val: 'name', capitalized_name | t }}</span>
       </h1>
       <div class='body-text'>
 		    {{ 'double_opt_in.check_email.body' | val: 'email', email | t }}
