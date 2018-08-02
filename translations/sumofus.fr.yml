@@ -141,5 +141,3 @@ fr:
     submit: "Envoyer"
   cookie_consent:
     privacy_policy_url: "https://www.sumofus.org/fr/privacy/"
-  consent:
-    opt_in_reason: "<b>SumOfUs est une communauté de personnes engagées pour limiter le pouvoir grandissant des entreprises à travers le monde</b>. Souhaitez-vous en savoir plus sur nos dernières campagnes, actualités, événements, collectes de fonds et découvrir comment vous engager plus à nos côtés ? <b>Choisissez 'oui' pour vous inscrire à notre liste de diffusion :</b>"
