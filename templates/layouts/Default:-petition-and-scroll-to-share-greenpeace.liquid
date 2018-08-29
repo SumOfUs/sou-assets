@@ -158,22 +158,26 @@
       window.champaign.redirectors.AfterDonationRedirector.attemptRedirect("{{ follow_up_url }}", formData);
     });
 
+    window.addEventListener('share', function (e) {
+      // when a share event is triggered, display and scroll to the donation form
+      displayAndScrollToDonate();
+    }, false);
+
     var interval = setInterval(function() {
       if(window.SharePop && window.SharePop.FB){
         clearInterval(interval);
         window.SharePop.FB = function(link) {
-            var shareURL = link.getAttribute('default_share') ? link.href : this.FB_Link(link);
+          var shareURL = link.getAttribute('default_share') ? link.href : this.FB_Link(link);
 
-            if (typeof window.open === 'function') {
-              var popupWindow = window.open(shareURL, '_blank');
-              if (popupWindow) popupWindow.focus();
-            }
+          if (typeof window.open === 'function') {
+            var popupWindow = window.open(shareURL, '_blank');
+            if (popupWindow) popupWindow.focus();
+          }
 
-            if (!link.getAttribute('default_share')) {
-                this.sendShare('f', link);
-                this.triggerShare('f', link);
-                displayAndScrollToDonate();
-            }
+          if (!link.getAttribute('default_share')) {
+            this.sendShare('f', link);
+            this.triggerShare('f', link);
+          }
         }
       }
     }, 100);
