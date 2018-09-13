@@ -6,7 +6,6 @@
 <div class="center-content center-content--accomodates-stuck-footer">
   <div class="center-content__big-column">
     <div class="mobile-show pre-main-bar">{% include 'Thermometer' %}</div>
-
     {% include 'Body Text' %}
   </div>
   <div class="center-content__fixed-right center-content--push-down">
@@ -18,7 +17,6 @@
   <div class="center-content__one-column">
 
     <div class="center-content__central-square">
-
       {% capture message %}{{ 'petition.thank_you' | val: 'petition_title', title | t }}{% endcapture %}
       <h1 class="thank-you__thanks">{{ message }}</h1>
       <div class="thank-you__cta">
@@ -96,11 +94,6 @@
       petitionSidebar.fadeOut();
       petitionOverlayButton.fadeOut();
       displayAndScrollToYesNoQuestion();
-      fundraiserSignIn(data.petitionForm);
-    }
-
-    function fundraiserSignIn(data) {
-      champaign.store.dispatch({ type: 'login_member', payload: {formValues: data} });
     }
 
     function displayAndScrollToYesNoQuestion() {
