@@ -158,14 +158,6 @@
       $('.inject-name').text(formData.name.split(' ')[0]);
     });
 
-    window.addEventListener('share', function (e) {
-      // when a share event is triggered, display and scroll to the donation form
-      // displayAndScrollToDonate();
-      // window.champaign.redirectors.RegisterMemberRedirector.attemptRedirect("{{ follow_up_url }}");
-      // window.champaign.redirectors.AfterDonationRedirector.attemptRedirect("{{ follow_up_url }}");
-      window.location.href = "{{ follow_up_url }}";
-    }, false);
-
     var interval = setInterval(function() {
       if(window.SharePop && window.SharePop.FB){
         clearInterval(interval);
