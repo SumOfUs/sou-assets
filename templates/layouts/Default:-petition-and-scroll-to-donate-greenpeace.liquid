@@ -149,7 +149,7 @@
       });
 
       $('.thank-you__cta.intro').show();
-      window.champaign.redirectors.AfterDonationRedirector.attemptRedirect("{{ follow_up_url }}");
+      window.champaign.redirectors.AfterDonationRedirector.attemptRedirect("{{ follow_up_url }}", formData);
     });
     
     window.ee.on('action:submitted_success', function () {
