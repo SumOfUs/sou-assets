@@ -43,6 +43,10 @@ de:
         "<p>Damit wir auch 2019 Kampagnen gewinnen können, brauchen wir heute Ihre Unterstützung, <span class='inject-name'></span>.</p>
         <br/>
         <p>Helfen Sie mit Ihrer Spende dabei, SumOfUs für 2019 stark zu machen?</p>"
+      cta_eoy:
+        "<p><b><span class='inject-name'>2018 ist fast zu Ende</span>, uns fehlen noch <span class='donations-thermometer-remainder'></span>, um unser Fundraisingziel für dieses Jahr zu erreichen.</b> Wir brauchen Ihre Unterstützung, damit wir auch 2019 Kampagnen gegen skrupellose Konzerne gewinnen.
+        <br>
+        <p>Helfen Sie uns mit einer Spende dabei, SumOfUs 2019 erfolgreich zu machen?</p>"
   petition:
     sign_it: Petition Unterschreiben
     target_prefix: AN
