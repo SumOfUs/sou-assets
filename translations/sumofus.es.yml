@@ -43,6 +43,11 @@ es:
         "<p><span class='inject-name'>Querido/a amigo/a</span>, necesitamos tu ayuda hoy para ganar campañas contra las corporaciones en 2019</p>
         <br/>
         <p>¿Contribuirás algo para financiar las campañas de SumOfUs en 2019?</p>"
+      cta_eoy:
+        "<p><b><span class='inject-name'>Querido/a amigo/a</span>, nos faltan <span class='donations-thermometer-remainder'></span> para llegar a nuestro objetivo de fin de año. Necesitamos tu ayuda hoy para ganar campañas contra las corporaciones en 2019.</p>
+        <br/>
+        <p>¿Contribuirás algo para financiar las campañas de SumOfUs en 2019?</p>"
+
   petition:
     sign_it: Firma la petición
     target_prefix: PARA

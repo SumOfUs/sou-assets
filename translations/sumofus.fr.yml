@@ -43,6 +43,10 @@ fr:
         "<p><span class='inject-name'>Chèr-e ami-e</span>, nous avons besoin de votre soutien aujourd'hui pour obtenir des victoires contre l'impunité des multinationales en 2019</p>
         <br/>
         <p>Pouvez-vous faire un don pour aider à renforcer SumOfUs en 2019 ?</p>"
+      cta_eoy:
+        "<p><span class='inject-name'>Chèr-e ami-e</span>, il nous manque <span class='donations-thermometer-remainder'></span> pour atteindre notre objectif de collecte de dons de fin d'année.</b> Nous avons besoin de votre soutien aujourd'hui pour continuer à gagner des campagnes contre le pouvoir des multinationales.</p>
+        <br/>
+        <p>Pouvez-vous faire un don pour combler ce déficit et aider SumOfUs à financer ses campagnes en 2019 ?</p>"
   petition:
     sign_it: Signez la pétition
     target_prefix: Pétition adressée à

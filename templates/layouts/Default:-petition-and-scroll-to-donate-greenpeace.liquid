@@ -31,27 +31,9 @@
     <div class="center-content__central-square">
       {% capture message %}{{ 'petition.thank_you' | val: 'petition_title', title | t }}{% endcapture %}
       <h1 class="thank-you__thanks">{{ message }}</h1>
-      <div class="thank-you__cta">
 
-        <span class="two-step__question">{{ 'fundraiser.two_step.cta' | t }}</span>
+      {% include 'Donation Ask With Thermometer' %}
 
-
-        <span class="two-step__declined hidden-closed">{{ 'share.two_step.declined' | t }}</span>
-        <span class="two-step__accepted hidden-closed">{{ 'share.two_step.accepted' | t }}</span>
-      </div>
-
-      <div class="center-content__centered-element">
-        <div class="two-step__question">
-          <div class="share-buttons">
-            <div class="share-buttons__button button two-step__button two-step__accept">
-              {{ 'share.two_step.accept' | t }}
-            </div>
-            <div class="share-buttons__button button two-step__button two-step__decline">
-              {{ 'share.two_step.decline' | t }}
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
