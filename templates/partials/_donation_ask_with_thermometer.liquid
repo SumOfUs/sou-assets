@@ -69,4 +69,21 @@
         }
     });
     </script>
+{% else %}
+  <div class="thank-you__cta">
+    <span class="two-step__question">{{ 'fundraiser.two_step.cta' | t }}</span>
+  </div>
+
+  <div class="center-content__centered-element">
+    <div class="two-step__question">
+      <div class="share-buttons">
+        <div class="share-buttons__button button two-step__button two-step__accept">
+          {{ 'share.two_step.accept' | t }}
+        </div>
+        <div class="share-buttons__button button two-step__button two-step__decline">
+          {{ 'share.two_step.decline' | t }}
+        </div>
+      </div>
+    </div>
+  </div>
 {% endif %}
