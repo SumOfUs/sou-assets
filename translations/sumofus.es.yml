@@ -155,3 +155,7 @@ es:
     submit: "Submit"
   cookie_consent:
     privacy_policy_url: "https://www.sumofus.org/es/privacy/"
+  progress_tracker:
+    signed: Firmado
+    shared: Compartido
+    donated: Donado
