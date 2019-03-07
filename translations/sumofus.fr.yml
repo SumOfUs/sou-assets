@@ -149,6 +149,6 @@ fr:
   cookie_consent:
     privacy_policy_url: "https://www.sumofus.org/fr/privacy/"
   progress_tracker:
-    signed: Signed
-    shared: Shared
-    donated: Donated
+    signed: Signé
+    shared: Partagé
+    donated: Donné
