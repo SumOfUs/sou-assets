@@ -42,11 +42,11 @@ en:
       cta:
         "<p><span class='inject-name'>Dear friend</span>, we need your support today to win campaigns against corporate power in 2019</p>
         <br/>
-        <p>Can you chip in to help power SumOfUs into 2019?</p>"
+        <p>Can you chip in to help power SumOfUs?</p>"
       cta_eoy:
         "<p><b><span class='inject-name'>Dear friend</span>, we're <span class='donations-thermometer-remainder'></span> short of our end of year fundraising goal.</b> We need your support today to win campaigns against corporate power in 2019.
         <br/>
-        <p>Can you chip in to help power SumOfUs into 2019?</p>"
+        <p>Can you chip in to help power SumOfUs?</p>"
   petition:
     sign_it: Sign the petition
     target_prefix: TO
@@ -71,7 +71,7 @@ en:
       declined: "No problem. Thanks for your support!"
     thanks: "Thank you for your donation!"
   share_and_donate:
-    fundraiser_title: Chip in to help power SumOfUs into 2019
+    fundraiser_title: Chip in to help power SumOfUs
   petition_and_scroll:
     fundraiser_intro: "Thank you - you are incredible! SumOfUs is funded entirely by members like you."
   footer:
