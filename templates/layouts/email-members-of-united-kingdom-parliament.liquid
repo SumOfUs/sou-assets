@@ -4,11 +4,15 @@
 {% include 'Full Width Header'  %}
 <main class="container email-uk-parliament">
   <section class="body-text text-top">
-    {{ content }}
+    <div class="one-column">
+      {{ content }}
+    </div>
   </section>
 
   <section class="alternate-bg">
-    {% include 'Email', type: 'ukparliament' %}
+    <div class="one-column">
+      {% include 'Email', type: 'ukparliament' %}
+    </div>
   </section>
 </main>
 
