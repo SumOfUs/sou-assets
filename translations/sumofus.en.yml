@@ -47,6 +47,15 @@ en:
         "<p><b><span class='inject-name'>Dear friend</span>, we're <span class='donations-thermometer-remainder'></span> short of our end of year fundraising goal.</b> We need your support today to win campaigns against corporate power in 2019.
         <br/>
         <p>Can you chip in to help power SumOfUs?</p>"
+    upgrade_monthly_gift: "I would like to upgrade my <span class='js-current'></span> monthly gift to"
+    update: "Update"
+    processing: "Processing..."
+    problem_upgrading: "We're sorry, but there was a problem upgrading your donation"
+    amount_greater_than_1: "Please enter an amount greater than 1"
+    upgrading:
+        awesome: "You're awesome!"
+        thank_you: "Thanks so much for upgrading your monthly gift to SumOfUs."
+        becoming_stronger: "Because of you we'll be that much stronger in our work challenging corporate power."
   petition:
     sign_it: Sign the petition
     target_prefix: TO
