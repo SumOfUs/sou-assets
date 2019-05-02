@@ -47,6 +47,15 @@ de:
         "<p><b><span class='inject-name'>2018 ist fast zu Ende</span>, uns fehlen noch <span class='donations-thermometer-remainder'></span>, um unser Fundraisingziel für dieses Jahr zu erreichen.</b> Wir brauchen Ihre Unterstützung, damit wir auch 2019 Kampagnen gegen skrupellose Konzerne gewinnen.
         <br>
         <p>Helfen Sie uns mit einer Spende dabei, SumOfUs 2019 erfolgreich zu machen?</p>"
+    upgrade_monthly_gift: "Ich erhöhe meine <span class='js-current'></span> monatliche Spende auf "
+    update: "Spende erhöhen"
+    processing: "Ihre Änderung wird bearbeitet..."
+    problem_upgrading: "Entschuldigung, es gab ein Problem beim Erhöhen Ihrer Spende"
+    amount_greater_than_1: "Bitte geben Sie einen Betrag ein, der größer ist als 1"
+    upgrading:
+        awesome: "Sie sind fantastisch!"
+        thank_you: "Vielen Dank, dass Sie Ihre monatliche Spende an SumOfUs erhöht haben."
+        becoming_stronger: "Dank Ihnen können wir uns noch schlagkräftiger gegen die Macht von Großkonzernen einsetzen."
   petition:
     sign_it: Petition Unterschreiben
     target_prefix: AN

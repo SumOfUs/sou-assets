@@ -1,0 +1,161 @@
+{% comment %} Description: A follow-up page asking to share and then ask to donate as a fallback {% endcomment %}
+{% comment %} Post-action layout: true {% endcomment %}
+
+{% capture confirmation %}{{ 'petition.confirmation' | t }}{% endcapture %}
+{% capture message %}{{ 'petition.thank_you' | val: 'petition_title', title | t }}{% endcapture %}
+
+
+<div class="header-logo header-logo--light">
+  <a href="{{ 'footer.home_url' | t }}">
+    <div class="header-logo__logo sumofus-logo--positive"></div>
+  </a>
+</div>
+
+<div class="center-content center-content--share-and-donate">
+  <div class="center-content__one-column">
+
+    <div class="center-content__central-square">
+
+      <div class="js-recurring-box">
+        <h1 class="js-recurring-message"> {{ 'fundraiser.upgrade_monthly_gift' | t }} </h1>
+        <form class='js-recurring-form'>
+          <span class='js-currency-symbol'>$</span>
+          <input class='js-recurring-new-amount' type='text' />
+          <span style='display: none;' class='error js-amount'>{{ 'fundraiser.amount_greater_than_1' | t }}</span>
+          <span style='display: none;' class='error js-problem'>{{ 'fundraiser.problem_upgrading' | t }}</span>
+          <button type="submit" class="button">{{ 'fundraiser.update' | t }}</button>
+        </form>
+      </div>
+      <div class="js-recurring-thanks" style='display:none;'>
+        <h2>Thanks!</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  input.js-recurring-new-amount {
+    font-size: 2.6rem;
+    border: 1px solid #999;
+    width: 110px;
+    padding: 3px;
+    color: rgb(65, 65, 65);
+    font-weight: bold;
+  }
+
+  form.js-recurring-form button {
+    padding-top: 0;
+    margin-top: 20px;
+    width: 40%;
+    margin: 20px auto;
+  }
+
+  form.js-recurring-form {
+    margin-top: 10px;
+    font-size: 2.6rem;
+    font-weight: bold;
+  }
+
+  .error {
+    font-size: 12px;
+    display: block;
+    color: #f8492e;
+    margin-top: 20px;
+  }
+</style>
+
+<script type="text/javascript">
+  function post(data) {
+    var options = {
+      amount: data.amount,
+      akid: data.akid
+    };
+
+    var handler = function(r) {
+      window.location.href = r.followUpUrl;
+    }
+
+    var handleFailed = function(e) {
+      $('.error').hide();
+      if (e.responseJSON.message) {
+        $('.js-problem').text(e.responseJSON.message);
+      }
+      $('.js-problem').show();
+    }
+
+    const url = "https://mvp3xdr3oa.execute-api.us-east-1.amazonaws.com/prod/subscriptions/" + data.subscription_id;
+
+    $('button.button')
+      .attr("disabled", "disabled")
+      .text("{{ 'fundraiser.processing' | t}}");
+
+    $.ajax(url, {
+      data : JSON.stringify(options),
+      crossDomain: true,
+      contentType : 'application/json',
+      type : 'POST',
+    })
+    .done(handler)
+    .fail(handleFailed)
+    .always( function() {
+      $('button.button')
+        .attr("disabled", false)
+        .text("Update");
+    })
+  }
+
+  function currencyToSymbol(currency) {
+    switch (currency.toUpperCase()) {
+      case 'USD':
+      case 'CAD':
+      case 'AUD':
+      case 'NZD':
+        return '$';
+      case 'EUR':
+        return '€';
+      case 'GBP':
+        return '£';
+      default:
+        return currency || '';
+    }
+  }
+
+  $(function(){
+    var data = _.defaults(
+      {},
+      _.pick(champaign.personalization.urlParams, 'currency', 'amount', 'subscription_id', 'akid', 'new_amount'),
+      _.pick(champaign.personalization.location, 'currency')
+    );
+
+    if (data.currency && data.amount) {
+      $('.js-recurring-message span.js-current').html(
+        (currencyToSymbol(data.currency) + data.amount) || ''
+      );
+    }
+
+    $('.js-currency-symbol').html(
+      currencyToSymbol(data.currency)
+    );
+
+    var $field = $('.js-recurring-new-amount');
+
+    if (data.new_amount && parseFloat(data.new_amount)) {
+      $field.val(data.new_amount);
+    }
+    $('form.js-recurring-form').on('submit', function(e){
+      e.preventDefault();
+      $val = $field.val();
+      $val = parseFloat($val).toFixed(2);
+
+      if(isNaN($val)){
+        $('.error').hide();
+        $('.error.js-amount').show();
+        $('button.button').attr("disabled", false);
+
+      } else {
+        post(Object.assign({}, data, {amount: $val}));
+      }
+    })
+  });
+</script>
+{% comment %}{% include 'Small Image Footer', extra_class: 'simple-footer--stuck-to-bottom' %}{% endcomment %}
