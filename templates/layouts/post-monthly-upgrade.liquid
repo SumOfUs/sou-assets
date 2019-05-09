@@ -1,0 +1,55 @@
+{% comment %} Description: A follow-up page thanking for donating money and asking to share {% endcomment %}
+{% comment %} Post-action layout: true {% endcomment %}
+
+{% capture confirmation %}{{'fundraiser.upgrading.becoming_stronger' | t }} {% endcapture %}
+{% capture message %} {{ 'fundraiser.upgrading.thank_you' | t }} {% endcapture %}
+
+<div id="test-fa"></div>
+<div id="fa-optimisation" data-value="post-donate"></div>
+
+<div class="header-logo header-logo--dark checks-top--at-top">
+  <a href="{{ 'footer.home_url' | t }}">
+    <div class="header-logo__logo sumofus-logo--positive"></div>
+  </a>
+  <div class="header-logo__tagline sumofus-logo--tagline">{{ 'branding.tagline' | t }}</div>
+</div>
+
+<div class="cover-photo" style="background-image: url(https://storage.googleapis.com/fa-assets/sou/sou-post-donate-bg.jpg); background-position:top;">
+	<div class="cover-photo__overlay"></div>
+	<div class="cover-photo__titles" style="bottom: 50px;">
+		<div class="center-content">
+			<div class="center-content__big-column" style="float:none; margin-left:0px; width:100%; text-align:center;">
+				<div class="typography__highlight-wrapper" style="border-left:none;">
+					<h1 class="cover-photo__title typography__highlight youre-awesome-container" style="padding-left:8px; font-size:50px;"><span>{{ 'fundraiser.upgrading.awesome' | t }}</span></h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="mobile-title">
+	<div class="center-content__one-column" style="text-align:center;">
+		<h1 class="cover-photo__title youre-awesome-container"> {{ 'fundraiser.upgrading.awesome' | t }} </h1>
+	</div>
+</div>
+
+<div class="center-content">
+	<div id="share-ask">
+    <div class="center-content">
+      <div class="center-content__one-column">
+        <div class="center-content__central-square">
+          <h1 class="thank-you__thanks">{{ message }}</h1>
+          <div class="thank-you__cta">{{ 'fundraiser.upgrading.becoming_stronger' | t }} </div>
+          <div class="center-content__centered-element">
+          </div>
+        </div>
+      </div>
+    </div>
+	</div>
+  <div class="center-content__one-column">
+    <div class="center-content__central-square body-text" id="thankyou-container">
+      <div id="donate-ask">
+		  </div>
+	  </div>
+  </div>
+</div>
+{% include 'Simple Footer', extra_class: 'simple-footer--stuck-to-bottom' %}
