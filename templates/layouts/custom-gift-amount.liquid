@@ -136,7 +136,7 @@
         (currencyToSymbol(data.currency) + data.amount) || ''
       );
     }
-    data.currency === 'EUR' 
+    champaign.page.language_code === 'fr'
       ? $('.js-currency-symbol-euro').html(currencyToSymbol(data.currency))
       : $('.js-currency-symbol').html(currencyToSymbol(data.currency))
 
