@@ -19,8 +19,9 @@
       <div class="js-recurring-box">
         <h1 class="js-recurring-message"> {{ 'fundraiser.upgrade_monthly_gift' | t }} </h1>
         <form class='js-recurring-form'>
-          <span class='js-currency-symbol'>$</span>
+          <span class='js-currency-symbol'></span>
           <input class='js-recurring-new-amount' type='text' />
+          <span class='js-currency-symbol-euro'></span>
           <span style='display: none;' class='error js-amount'>{{ 'fundraiser.amount_greater_than_1' | t }}</span>
           <span style='display: none;' class='error js-problem'>{{ 'fundraiser.problem_upgrading' | t }}</span>
           <button type="submit" class="button">{{ 'fundraiser.update' | t }}</button>
@@ -61,6 +62,9 @@
     display: block;
     color: #f8492e;
     margin-top: 20px;
+  }
+  .js-currency-symbol-euro {
+    padding-left: 10px;
   }
 </style>
 
@@ -132,10 +136,9 @@
         (currencyToSymbol(data.currency) + data.amount) || ''
       );
     }
-
-    $('.js-currency-symbol').html(
-      currencyToSymbol(data.currency)
-    );
+    champaign.page.language_code === 'fr'
+      ? $('.js-currency-symbol-euro').html(currencyToSymbol(data.currency))
+      : $('.js-currency-symbol').html(currencyToSymbol(data.currency))
 
     var $field = $('.js-recurring-new-amount');
 
