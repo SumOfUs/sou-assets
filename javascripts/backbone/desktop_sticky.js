@@ -1,4 +1,4 @@
-const MobileCheck = require('member-facing/backbone/mobile_check').default;
+const MobileCheck = require('legacy/member-facing/backbone/mobile_check').default;
 
 const DesktopSticky = Backbone.View.extend({
 
@@ -18,8 +18,8 @@ const DesktopSticky = Backbone.View.extend({
   },
 
   makeSticky() {
-    if(!this.isSticky) {
-      $(this.$el).sticky({topSpacing:0});
+    if (!this.isSticky) {
+      $(this.$el).sticky({ topSpacing: 0 });
       if (this.extraClass.length) {
         this.$el.parent('.sticky-wrapper').addClass(this.extraClass);
       }
@@ -28,14 +28,14 @@ const DesktopSticky = Backbone.View.extend({
   },
 
   unmakeSticky() {
-    if(this.isSticky) {
+    if (this.isSticky) {
       this.$el.unstick();
       this.isSticky = false;
     }
   },
 
   questionSticky() {
-    if(MobileCheck.isMobile() || this.$el.hasClass('not-sticky')) {
+    if (MobileCheck.isMobile() || this.$el.hasClass('not-sticky')) {
       this.unmakeSticky();
     } else {
       this.makeSticky();
