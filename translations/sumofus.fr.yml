@@ -47,7 +47,7 @@ fr:
         "<p><span class='inject-name'>Chèr-e ami-e</span>, il nous manque <span class='donations-thermometer-remainder'></span> pour atteindre notre objectif de collecte de dons de fin d'année.</b> Nous avons besoin de votre soutien aujourd'hui pour continuer à gagner des campagnes contre le pouvoir des multinationales.</p>
         <br/>
         <p>Pouvez-vous faire un don pour combler ce déficit et aider SumOfUs à financer ses campagnes en 2019 ?</p>"
-    upgrade_monthly_gift: "J'aimerais changer mon <span class='js-current'></span> don mensuel et le porter à "
+    upgrade_monthly_gift: "J'aimerai changer mon don mensuel de <span class='js-current'></span> et le porter à:"
     update: "Changer le montant"
     processing: "traitement en cours..."
     problem_upgrading: "Nous sommes désolés, mais un problème est survenu lors de la mise à jour de votre don"
