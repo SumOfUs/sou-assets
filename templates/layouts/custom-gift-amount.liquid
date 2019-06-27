@@ -136,9 +136,25 @@
         (currencyToSymbol(data.currency) + data.amount) || ''
       );
     }
-    champaign.page.language_code === 'fr'
-      ? $('.js-currency-symbol-euro').html(currencyToSymbol(data.currency))
-      : $('.js-currency-symbol').html(currencyToSymbol(data.currency))
+
+    switch(champaign.page.language_code) {
+      case 'fr':
+        $('.js-currency-symbol-euro').html(currencyToSymbol(data.currency));
+        break;
+      case 'de':
+        switch(champaign.personalization.location.country) {
+          case 'AT':
+            $('.js-currency-symbol').html(currencyToSymbol(data.currency));
+            break;
+          default:
+            $('.js-currency-symbol-euro').html(currencyToSymbol(data.currency));
+            break;
+        }
+        break;
+      default:
+        $('.js-currency-symbol').html(currencyToSymbol(data.currency));
+        break;
+    }
 
     var $field = $('.js-recurring-new-amount');
 
