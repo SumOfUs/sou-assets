@@ -118,10 +118,10 @@
     );
 
     var supportedCountryLanguageList = ['en-US', 'en-GB', 'en-CA', 'en-NZ', 'en-AU', 'en-IE', 'de-DE', 'de-AT', 'de-CH', 'fr-FR', 'fr-CA', 'es-ES', 'es-AR', 'es-MX'];
-    var countryLanguage = `${champaign.page.language_code}-${champaign.personalization.location.country}`;
+    var countryLanguage = champaign.page.language_code + '-' + champaign.personalization.location.country;
     supportedCountryLanguageList.includes(countryLanguage)
       ? null
-      : countryLanguage = `${champaign.page.language_code}`
+      : countryLanguage = champaign.page.language_code
     
     if (data.currency && data.amount) {
       $('.js-recurring-message span.js-current').html(
