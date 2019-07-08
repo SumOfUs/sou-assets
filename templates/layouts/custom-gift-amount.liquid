@@ -19,9 +19,7 @@
       <div class="js-recurring-box">
         <h1 class="js-recurring-message"> {{ 'fundraiser.upgrade_monthly_gift' | t }} </h1>
         <form class='js-recurring-form'>
-          <span class='js-currency-symbol'></span>
-          <input class='js-recurring-new-amount' type='text' />
-          <span class='js-currency-symbol-euro'></span>
+          <span class='js-currency-symbol'>$</span>
           <span style='display: none;' class='error js-amount'>{{ 'fundraiser.amount_greater_than_1' | t }}</span>
           <span style='display: none;' class='error js-problem'>{{ 'fundraiser.problem_upgrading' | t }}</span>
           <button type="submit" class="button">{{ 'fundraiser.update' | t }}</button>
@@ -62,9 +60,6 @@
     display: block;
     color: #f8492e;
     margin-top: 20px;
-  }
-  .js-currency-symbol-euro {
-    padding-left: 10px;
   }
 </style>
 
@@ -109,19 +104,10 @@
   }
 
   function currencyToSymbol(currency) {
-    switch (currency.toUpperCase()) {
-      case 'USD':
-      case 'CAD':
-      case 'AUD':
-      case 'NZD':
-        return '$';
-      case 'EUR':
-        return '€';
-      case 'GBP':
-        return '£';
-      default:
-        return currency || '';
-    }
+    return currency.replace(
+      '0', 
+      '<input class="js-recurring-new-amount" type="number" />'
+    );  
   }
 
   $(function(){
@@ -131,30 +117,24 @@
       _.pick(champaign.personalization.location, 'currency')
     );
 
+    var countryLanguage = `${champaign.page.language_code}-${champaign.personalization.location.country}`;
+    
     if (data.currency && data.amount) {
       $('.js-recurring-message span.js-current').html(
-        (currencyToSymbol(data.currency) + data.amount) || ''
+        new Intl.NumberFormat(
+          countryLanguage, 
+          { style: 'currency', currency: data.currency }
+        ).format(data.amount)
       );
     }
 
-    switch(champaign.page.language_code) {
-      case 'fr':
-        $('.js-currency-symbol-euro').html(currencyToSymbol(data.currency));
-        break;
-      case 'de':
-        switch(champaign.personalization.location.country) {
-          case 'AT':
-            $('.js-currency-symbol').html(currencyToSymbol(data.currency));
-            break;
-          default:
-            $('.js-currency-symbol-euro').html(currencyToSymbol(data.currency));
-            break;
-        }
-        break;
-      default:
-        $('.js-currency-symbol').html(currencyToSymbol(data.currency));
-        break;
-    }
+    $('.js-currency-symbol').html(
+      currencyToSymbol(
+        new Intl.NumberFormat(
+          countryLanguage, 
+          { style: 'currency', currency: data.currency, minimumFractionDigits: '0', maximumFractionDigits: '0' }
+        ).format(0))
+    );
 
     var $field = $('.js-recurring-new-amount');
 
