@@ -19,14 +19,14 @@
     {% include 'Body Text' %}
   </div>
 
-  <div class="center-content__fixed-right center-content--push-down">
+  <div class="center-content__fixed-right center-content--push-down" data-transition-id="petition-wrapper">
     {% include 'Petition Sidebar Refactor',
-      variant: 'simple',
+      transition: 'petition-wrapper:consent-wrapper',
       extra_class: 'stuck-right not-sticky' %}
   </div>
 </div>
 
-<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-consent__consent-question-wrapper">
+<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-consent__consent-question-wrapper" data-transition-id="consent-wrapper">
   <div class="center-content__one-column">
 
     <div class="center-content__central-square">
@@ -42,9 +42,8 @@
   </div>
 </div>
 
-<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__yes-no-question-wrapper">
+<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__yes-no-question-wrapper" data-transition-id="share-prompt">
   <div class="center-content__one-column">
-
     <div class="center-content__central-square">
       {% capture message %}{{ 'petition.thank_you' | val: 'petition_title', title | t }}{% endcapture %}
       <h1 class="thank-you__thanks">{{ message }}</h1>
@@ -70,7 +69,7 @@
   </div>
 </div>
 
-<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__share-wrapper">
+<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__share-wrapper" data-transition-id="share-wrapper" data-transition-to="fundraiser-wrapper">
   <div class="center-content__one-column">
     <div class="center-content__central-square">
 
@@ -84,7 +83,7 @@
   </div>
 </div>
 
-<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__fundraiser-wrapper ">
+<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__fundraiser-wrapper " data-transition-id="fundraiser-wrapper">
   <h1 class="thank-you__cta intro"> {{ 'petition_and_scroll.fundraiser_intro' | t }} </h1>
   {% capture fundraiser_title %} {{ 'share_and_donate.fundraiser_title' | t }} {% endcapture %}
   {% include 'Fundraiser', freestanding: true, fundraiser_title: fundraiser_title %}
@@ -163,6 +162,7 @@
       displayAndScrollToDonate();
     }, false);
 
+    /*
     var interval = setInterval(function() {
       if(window.SharePop && window.SharePop.FB){
         clearInterval(interval);
@@ -181,5 +181,6 @@
         }
       }
     }, 100);
+    */
   });
 </script>
