@@ -8,6 +8,11 @@
   .mobile-title {
     display: block !important;
   }
+
+  .full-screen {
+    width: 100vw;
+    height: 100vh;
+  }
 </style>
 
 {% include 'Small Header With Progress Tracker' %}
@@ -15,33 +20,18 @@
 <div class="center-content center-content--accomodates-stuck-footer">
   <div class="center-content__big-column">
     <div class="mobile-show pre-main-bar">{% include 'Thermometer' %}</div>
-
     {% include 'Body Text' %}
   </div>
 
   <div class="center-content__fixed-right center-content--push-down" data-transition-id="petition-wrapper">
     {% include 'Petition Sidebar Refactor',
-      transition: 'petition-wrapper:consent-wrapper',
+      transition: 'petition-wrapper:share-prompt',
       action: 'validate',
       extra_class: 'stuck-right not-sticky' %}
   </div>
 </div>
 
-<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-consent__consent-question-wrapper" data-transition-id="consent-wrapper">
-  <div class="center-content__one-column">
-
-    <div class="center-content__central-square">
-      <h1 class="thank-you__thanks">
-        {{ 'petition.before_you_sign' | val: 'petition_title', title | t }}
-      </h1>
-      <p class="opt-in-reason">{{ 'consent.opt_in_reason' | t }}</p>
-      <button id="opt-in-button" class="button">{{ 'consent.accept_alt' | t }}</button>
-      <a id="opt-out-button">{{ 'consent.decline_alt' | t }}</a>
-      <p class="how-to-opt-out">{{ 'consent.how_to_opt_out' | t }}</p>
-    </div>
-
-  </div>
-</div>
+{% include 'Standalone Consent Prompt', title: title, ref: ref %}
 
 <div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__yes-no-question-wrapper" data-transition-id="share-prompt">
   <div class="center-content__one-column">
@@ -87,7 +77,7 @@
 <div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__fundraiser-wrapper " data-transition-id="fundraiser-wrapper">
   <h1 class="thank-you__cta intro"> {{ 'petition_and_scroll.fundraiser_intro' | t }} </h1>
   {% capture fundraiser_title %} {{ 'share_and_donate.fundraiser_title' | t }} {% endcapture %}
-  {% include 'Fundraiser', freestanding: true, fundraiser_title: fundraiser_title %}
+  {% include 'Fundraiser', freestanding: true, fundraiser_title: fundraiser_title, is_follow_up: true %}
 </div>
 
 {% include 'Petition Mobile Footer' %}
@@ -95,16 +85,9 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
-    var petitionOverlayButton = $('.petition-bar__mobile_ui__bottom_bar');
-    var petitionSidebar = $('.center-content__fixed-right');
     var yesNoQuestion = $('.petition-and-scroll-to-share__yes-no-question-wrapper');
     var shareStep = $('.petition-and-scroll-to-share__share-wrapper');
     var fundraiserStep = $('.petition-and-scroll-to-share__fundraiser-wrapper');
-
-    window.champaign.myPetition = new window.champaign.PetitionAndScrollToConsent({
-      followUpUrl: "{{ follow_up_url }}",
-      onSubmitSuccess: petitionCallback
-    });
 
     $('.two-step__accept').click(displayAndScrollToShare);
     $('.two-step__decline').click(displayAndScrollToDonate);
@@ -116,12 +99,6 @@
       if (totalElementHeight < window.innerHeight) {
         stepElement.css('margin-bottom', margin + (window.innerHeight - totalElementHeight));
       }
-    }
-
-    function petitionCallback(e, data) {
-      petitionSidebar.fadeOut();
-      petitionOverlayButton.fadeOut();
-      displayAndScrollToYesNoQuestion();
     }
 
     function displayAndScrollToYesNoQuestion() {
