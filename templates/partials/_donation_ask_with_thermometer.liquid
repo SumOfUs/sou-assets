@@ -38,19 +38,6 @@
 
     <script type="text/javascript">
     $(function () {
-        var el = document.getElementById('chmp-inline-thermometer__{{ ref }}');
-        var thermometer = new window.champaign.DonationsThermometer({
-            el: el,
-            store: window.champaign.store
-        });
-
-        // save the plugin to the list of plugins
-        window.champaign.plugins = window.champaign.plugins || {};
-        window.champaign.plugins.donationThermometer = window.champaign.plugins.donationThermometer || {};
-        window.champaign.plugins.donationThermometer['{{ref}}'] = thermometer;
-
-        // update the remaining amount if necessary
-
         window.champaign.store.subscribe(_.throttle(updateRemainder, 1000));
 
         function updateRemainder () {
