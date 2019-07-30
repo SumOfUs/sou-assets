@@ -123,7 +123,7 @@
 
     if(location.pathname.match(/follow\-up/)) petitionCallback();
     
-    window.ee.on('petition:sign_success', function() {
+    window.ee.on('petition:complete', function() {
       petitionOverlayButton.fadeOut();
     })
 
