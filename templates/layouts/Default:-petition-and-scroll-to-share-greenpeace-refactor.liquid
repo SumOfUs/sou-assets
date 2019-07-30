@@ -82,6 +82,7 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
+    var petitionOverlayButton = $('.petition-bar__mobile_ui__bottom_bar');
     var yesNoQuestion = $('.petition-and-scroll-to-share__yes-no-question-wrapper');
     var shareStep = $('.petition-and-scroll-to-share__share-wrapper');
     var fundraiserStep = $('.petition-and-scroll-to-share__fundraiser-wrapper');
@@ -121,6 +122,10 @@
     }
 
     if(location.pathname.match(/follow\-up/)) petitionCallback();
+    
+    window.ee.on('petition:complete', function() {
+      petitionOverlayButton.fadeOut();
+    })
 
     window.ee.on('fundraiser:transaction_success', function(responseData, formData) {
       var fundraiserData = champaign.store.getState().fundraiser;
