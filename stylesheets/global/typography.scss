@@ -33,16 +33,14 @@ a {
 
 .typography {
   &__highlight {
-    display: inline;
-    border-style: solid;
-    border-width: 0.25em 0;
-    position: relative;
+    display: block;
     line-height: 1.1em;
     // can't get the box shadow working on this :/
-
     background: $teal;
-    border-color: $teal;
+    backdrop-filter: blur(2px);
     color: white;
+    font-size: 28px;
+    font-weight: bold;
 
     span {
       position: relative;
@@ -66,10 +64,10 @@ a {
     }
   }
   &__highlight-wrapper {
-    border-left: 15px solid $teal;
     overflow: hidden;
-    padding: 8px 0;
+    padding: 20px;
     margin: 0;
+    background: $teal;
   }
 }
 

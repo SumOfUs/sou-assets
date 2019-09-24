@@ -79,9 +79,9 @@
 }
 
 .cover-photo--small, .header-logo__left-constraint, .mobile-title {
-  float: right;
+  float: left;
   max-width: 900px;
-  width: 67%;
+  width: 65%;
   margin-right: 33%;
   &.header-logo__left-constraint {
     max-width: 880px; // creates padding

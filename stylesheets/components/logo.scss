@@ -1,9 +1,9 @@
 .sumofus-logo {
   &--negative {
-    background-image: url(asset-path('images/logo-white.png'));
+    background-image: url(asset-path('images/sumofus-logo-horizontal.svg'));
   }
   &--positive {
-    background-image: url(asset-path('images/logo-positive.png'));
+    background-image: url(asset-path('images/sumofus-logo-horizontal.svg'));
   }
   &--positive, &--negative {
     @include background-size(100%);
