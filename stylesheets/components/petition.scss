@@ -31,11 +31,10 @@
       width: 100%;
     }
     @media(min-width: $mobile-width) {
-      form, .petition-bar__petition-text, .thermometer,
-      .fundraiser-bar__steps, .fundraiser-bar__step-panel,
-      .petition-bar__fine-print, .petition-bar__target {
-        max-width: 290px;
-      }
+      // form, .petition-bar__petition-text, .thermometer,
+      // .fundraiser-bar__steps, .fundraiser-bar__step-panel,
+      // .petition-bar__fine-print, .petition-bar__target {
+      // }
       .fundraiser-bar__steps {
         margin-left: 0;
       }
@@ -84,9 +83,11 @@
   &__title {
     @include box-sizing(border-box);
     padding: 18px 16px;
-
+    font-size: 18px;
     background: $teal;
     color: white;
+    // background: white;
+    // color: black;
     &.petition-bar__title {
       width: 85%;
     }
