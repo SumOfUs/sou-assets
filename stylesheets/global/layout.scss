@@ -11,30 +11,26 @@ html {
 
   &--accomodates-stuck-footer {
     margin-bottom: 150px;
-  }
+}
   &__fixed-right {
     position: fixed;
     right: 0;
     top: 30px;
     width: 33%;
     z-index: 400;
-    margin: 0 15px 15px 15px;
     @media (max-width: 1100px) {
-      width: 39%;
+      width: 45%;
     }
     @media (max-width: 900px) {
       width: 47%;
     }
   }
   &__big-column {
-    width: 55%;
-    margin-left: 4%;
-    float: left;
-    @media (max-width: 1100px) {
-      width: 53%;
-    }
-    @media (max-width: 900px) {
-      width: 46%;
+    // @media (max-width: 1100px) {
+    //   width: 100%;
+    // }
+    @media (max-width: 700px) {
+      width: 100%;
     }
   }
   &__small-column {
@@ -56,9 +52,7 @@ html {
     }
   }
   &__one-column {
-    max-width: 92%; // For FUNDRAISING PLUGIN
-    margin-left: 4%;
-    float: left;
+    width: 100%;
   }
   &__central-square {
     text-align: center;
@@ -76,7 +70,7 @@ html {
     margin-right: auto;
   }
   &--push-down {
-    margin-top: 50px;
+    margin-top: 85px;
   }
 }
 

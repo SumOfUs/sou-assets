@@ -72,6 +72,9 @@ a {
 }
 
 .body-text {
+  width: 65%;
+  padding: 0 20px;
+  padding-bottom: 20px;
   line-height: 1.6em;
   p, span, div {
     line-height: 1.5em;
@@ -118,5 +121,11 @@ a {
     ul {
       list-style-type: disc !important;
     }
+  }
+  @media (max-width: 1100px) {
+    width: 50%;
+  }
+  @media (max-width: 700px) {
+    width: 100%;
   }
 }
