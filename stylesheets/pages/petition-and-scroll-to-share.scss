@@ -20,6 +20,10 @@
       max-width: 700px;
       text-align: center;
       margin: 0 auto;
+      padding-bottom: 60px;
+      @media (max-width: 700px) {
+        padding-bottom: 0;
+      }
     }
 
     .fundraiser-bar__top h2 {

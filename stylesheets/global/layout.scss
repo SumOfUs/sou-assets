@@ -10,32 +10,27 @@ html {
   @include centered-to-full(100%);
 
   &--accomodates-stuck-footer {
-    margin-bottom: 150px;
+min-height: 40vh;
 }
   &__fixed-right {
     position: fixed;
     right: 0;
-    top: 30px;
-    width: 33%;
+    top: 0px;
+    width: 28%;
+    margin: 0 36px;
     z-index: 400;
     margin: 0 15px 15px 15px;
     @media (max-width: 1100px) {
-      width: 39%;
+      width: 38%;
     }
     @media (max-width: 900px) {
-      width: 47%;
+      width: 38%;
     }
   }
   &__big-column {
-    width: 55%;
+    width: 100%;
     margin-left: 4%;
     float: left;
-    @media (max-width: 1100px) {
-      width: 53%;
-    }
-    @media (max-width: 900px) {
-      width: 47%;
-    }
   }
   &__small-column {
     width: 29%;
@@ -75,7 +70,6 @@ html {
     margin-right: auto;
   }
   &--push-down {
-    margin-top: 50px;
   }
 }
 
