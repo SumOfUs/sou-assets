@@ -19,7 +19,7 @@
     .petition-bar__title-bar {
       clip-path: none;
       -webkit-clip-path: none;
-      top: -67px;
+      top: 0 !important;
       &::after {
         display: none;
       }
@@ -46,7 +46,11 @@
     padding: $padding;
     overflow: visible;
     position: relative;
-    min-height: 68px;
+    min-height: 135px;
+    display: flex;
+    flex-direction: column;
+    max-height: 135px;
+    overflow-y: scroll;
     &.fundraiser-bar__top {
       @include box-sizing(border-box);
     }
@@ -107,6 +111,7 @@
     font-weight: bold;
     line-height: 1.2em;
     @include rem(font-size, 1rem, true);
+    margin-top: 70px;
   }
 
   &__petition-text {
@@ -116,34 +121,31 @@
 
   &__welcome-text {
     font-size: 14px;
-    margin-bottom: 15px;
-    display: block;
+    display: flex;
     max-width: 500px;
     width: 100%;
     float: left;
     overflow: hidden;
-    padding: 16px;
-    border-top: 1px solid $dingy-gray;
-    border-bottom: 1px solid $dingy-gray;
+    padding:0;
+    padding-bottom: 16px;
     @include box-sizing(border-box);
     position: relative;
   }
   &__user-icon {
+    color: #00C0CF;
     font-size: 26px;
-    position: absolute;
-    top: 20px;
   }
 
   &__welcome-name {
-    margin-left: 36px;
-    font-weight: bold;
+    padding-left: 10px;
+    font-weight: 600 ;
   }
 
   &__clear-form {
-    margin-top: 6px;
-    display: block;
-    margin-left: 36px;
     font-size: 12px;
+    width: 100%;
+    text-align: end;
+    color: #f8482c;
   }
 
   &__fine-print {
@@ -211,6 +213,9 @@
       .petition-bar__mobile-ui__bottom-bar {
         bottom: -100px;
       }
+    }
+    h1{
+      padding: 40px 0;
     }
   }
 
