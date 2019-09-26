@@ -80,15 +80,15 @@
 }
 
 .cover-photo--small, .header-logo__left-constraint, .mobile-title {
-  width: 67%;
+  width: 65%;
   &.header-logo__left-constraint {
     max-width: 880px; // creates padding
   }
   @media(max-width: 1100px) {
-    width: 55%;
+    width: 58%;
   }
   @media(max-width: 900px) {
-    width: 53%;
+    width: 50%;
   }
   @media(max-width: $mobile-width) {
     width: 100%;
