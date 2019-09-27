@@ -3,7 +3,7 @@
     background-image: url(asset-path('images/sumofus-logo-horizontal.svg'));
   }
   &--positive {
-    background-image: url(asset-path('images/sumofus-logo-horizontal.svg'));
+    background-image: url(asset-path('images/sumofus-white-logo-horizontal.svg'));
   }
   &--positive, &--negative {
     @include background-size(100%);
@@ -16,6 +16,16 @@
     font-size: 20px;
     line-height: 32px;
     margin-left: 15px;
+  }
+}
+.with-progress-tracker {
+  .sumofus-logo {
+    &--negative {
+      background-image: url(asset-path('images/sumofus-white-logo-horizontal.svg'));
+    }
+    &--tagline {
+      color: white;
+    }
   }
 }
     
