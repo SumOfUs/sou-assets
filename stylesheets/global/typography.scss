@@ -65,14 +65,14 @@ a {
   }
   &__highlight-wrapper {
     overflow: hidden;
-    padding: 20px;
     margin: 0;
     background: $teal;
   }
 }
 
 .body-text {
-  padding: 45px 0;
+  width: 60%;
+  padding: 45px 20px 45px 40px;
   line-height: 1.6em;
   p, span, div {
     line-height: 1.5em;
@@ -125,6 +125,6 @@ a {
   }
   @media (max-width: 700px) {
     width: 100%;
-    padding-bottom: 40px;
+    padding: 20px 20px; 
   }
 }

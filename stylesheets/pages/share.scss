@@ -90,6 +90,9 @@
 .two-step {
   &__question {
     margin-top: 50px;
+    p {
+      padding: 15px 0;
+    }
   }
   &__button {
     display: inline-block;
