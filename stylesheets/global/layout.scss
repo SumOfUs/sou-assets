@@ -10,8 +10,8 @@ html {
   @include centered-to-full(100%);
 
   &--accomodates-stuck-footer {
-min-height: 40vh;
-}
+    min-height: 40vh;
+  }
   &__fixed-right {
     position: fixed;
     right: 0;
