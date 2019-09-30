@@ -79,6 +79,17 @@ min-height: 40vh;
   }
 }
 
+.sign-share-big-column{
+  width: 60%;
+  min-height: 57vh;
+  @media (max-width: 900px) {
+    width: 50%;
+  }
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+}
+
 .clearfix {
   @include clearfix();
 }
