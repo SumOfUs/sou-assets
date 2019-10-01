@@ -46,11 +46,11 @@ html {
   &__small-column,
   &__big-column {
     @media (max-width: $mobile-width) {
-      width: 92%;
+      width: 100%;
     }
   }
   &__one-column {
-    max-width: 92%; // For FUNDRAISING PLUGIN
+    max-width: 100%; // For FUNDRAISING PLUGIN
   }
   &__central-square {
     text-align: center;
@@ -76,6 +76,31 @@ html {
     margin-right: auto;
   }
   &--push-down {
+  }
+
+}
+.without-image-sidebar {
+  right: 38px;
+  @media (max-width: 900px) {
+    right: 0;
+  }
+
+}
+.without-image-center-content {
+  margin-top: 60px;
+  min-height: 84.6vh;
+  @media (max-width: 700px) {
+    margin-top: 30px;
+  }
+}
+.sign-share-big-column{
+  width: 60%;
+  min-height: 57vh;
+  @media (max-width: 900px) {
+    width: 50%;
+  }
+  @media (max-width: 700px) {
+    width: 100%;
   }
 }
 
