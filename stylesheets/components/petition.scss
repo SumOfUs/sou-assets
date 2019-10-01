@@ -41,7 +41,7 @@
     }
   }
   &__top {
-    background: #efefef;
+    background: #f9f9f9;
     color: black;
     padding: $padding;
     overflow: visible;
@@ -55,7 +55,7 @@
     }
   }
   &__main {
-    background: $chalk-gray;
+    background: white;
     padding: $padding;
 
     position: absolute;
@@ -68,19 +68,17 @@
     // position: absolute;
     top: -60px;
     left: 0;
-
     width: 100%;
     overflow: hidden;
-    clip-path: url(images/corner.svg#corner);
-    -webkit-clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 0% 100%);
     &::after {
-      width: 15%;
-      height: 100%;
-      position: absolute;
-      right: 0;
-      top: 0;
-      background: $dark-teal;
-      content: "";
+      display: none;
+      // width: 15%;
+      // height: 100%;
+      // position: absolute;
+      // right: 0;
+      // top: 0;
+      // background: $dark-teal;
+      // content: "";
     }
   }
   &__title {
@@ -92,7 +90,7 @@
     // background: white;
     // color: black;
     &.petition-bar__title {
-      width: 85%;
+      width: 100%;
     }
   }
 
@@ -125,6 +123,7 @@
     float: left;
     overflow: hidden;
     padding:0;
+    padding-bottom: 16px;
     @include box-sizing(border-box);
     position: relative;
   }
@@ -168,9 +167,8 @@
     width: 100%;
     position: relative;
     overflow: hidden;
-    clip-path: url(images/corner.svg#corner);
-    -webkit-clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 0% 100%);
     &::after {
+      display: none;
       width: 15%;
       height: 100%;
       position: absolute;
@@ -187,7 +185,7 @@
     background: $teal;
     color: white;
     &.petition-bar__title {
-      width: 85%;
+      width: 100%;
     }
   }
 
