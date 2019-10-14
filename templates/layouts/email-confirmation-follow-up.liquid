@@ -11,7 +11,7 @@
   <div class="center-content__one-column registration">
 
     <div class="center-content__central-square content">
-      <h1 class="typography__highlight banner-text" style="padding: 30px 20px;">
+      <h1 class="typography__highlight banner-text">
         {% if errors == empty %}
           <span>{{ 'confirmation_mailer.follow_up_page.success' | t }}</span>
         {% else %}
@@ -19,16 +19,19 @@
         {% endif %}
       </h1>
       {% for error in errors %}
-        <h3 class="error-text">{{ error }}</h3>
+        <h3 class="info-text">{{ error }}</h3>
       {% endfor %}
       {% if errors == empty %}
-        <h3 class="error-text">{{ 'confirmation_mailer.follow_up_page.member_management' | val: 'url', members_dashboard_url | t }}</h3>
+        <h3 class="info-text">{{ 'confirmation_mailer.follow_up_page.member_management' | val: 'url', members_dashboard_url | t }}</h3>
       {% endif %}
     </div>
   </div>
 </div>
 
 <style>
+  .banner-text{
+  padding: 30px 20px !important;
+  }
   .registration{
     display: flex;
     align-items: center;
@@ -38,7 +41,7 @@
   .content{
     max-width: 80%;
   }
-  .error-text{
+  .info-text{
     line-height: 1.7;
   }
   @media (max-width: 700px) {
