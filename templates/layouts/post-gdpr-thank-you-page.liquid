@@ -1,8 +1,8 @@
 {% comment %} Description: SumOfUs branding around title, text, and share buttons {% endcomment %}
 
-{% include 'Small Header Without Cover Photo' %}
+{% include 'Small Header Without Cover Photo'%}
 <div class="tight-column">
-  <div class="imageless-title">
+  <div class="imageless-title hello">
     <div class="typography__highlight-wrapper">
       <h1 class="typography__highlight">
         <span>{{ title }}</span>
@@ -28,7 +28,10 @@
     width: 580px;
     margin: 0 auto;
     overflow: hidden;
-    margin-top: 30px;
+    margin-top: 50px;
+ }
+  h1{
+    margin-top: 120px !important;
   }
   .typography__highlight{
     padding: 20px;
@@ -42,6 +45,10 @@
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
     }  
+    h1{
+      margin-top: 0;
+      font-size: 22px;
+    }
   }
   .body-text {
     min-height: 80vh;
