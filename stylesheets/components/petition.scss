@@ -13,9 +13,12 @@
     margin-top: 17px;
   }
   &.stuck-right {
-    .petition-bar__main, .fundraiser-bar__main {
-      @include viewport-unit(height, 100vh);
-    } 
+    .fundraiser-bar__main {
+      max-height: calc(100vh - 220px) !important;
+    }
+    .petition-bar__main {
+      max-height: calc(100vh - 250px) !important;
+    }
     .petition-bar__title-bar {
       clip-path: none;
       -webkit-clip-path: none;
@@ -202,6 +205,9 @@
   }
 
   &__petition-text {
+    min-height: 30px;
+    max-height: 60px;
+    overflow-y: scroll;
     padding: 6px 26px 13px 26px;
     font-size: 16px;
     font-weight: 400;   

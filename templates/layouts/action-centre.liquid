@@ -28,7 +28,9 @@
           {% include 'Text', ref: 'Email instruction' %}
         </div>
         <div contenteditable="true" class="action-center__content action-center__email-content">
-          {% include 'Text', ref: 'Email body' %}
+          <div class="action-center__editable-content">
+            {% include 'Text', ref: 'Email body' %}
+          </div>
         </div>
       </div>
       <div id="letter-panel" class="action-center__page action-center__page--letter">
@@ -36,7 +38,9 @@
           {% include 'Text', ref: 'Letter instruction' %}
         </div>
         <div contenteditable="true" class="action-center__content action-center__letter-content">
-          {% include 'Text', ref: 'Letter body' %}
+          <div class="action-center__editable-content">
+            {% include 'Text', ref: 'Letter body' %}
+          </div>
         </div>
       </div>
       <div id="twitter-panel" class="action-center__page action-center__page--twitter">
@@ -169,58 +173,81 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    background: #dbdbdb;
-    padding: 4px;
+    background: #f9f9f9;
     border-radius: 4px;
     overflow: hidden;
-    margin-top: 40px;
-    margin-bottom: 240px;
+    margin-bottom: 200px;
   }
   .action-center__tabs {
+    padding: 20px 0;
     width: 100%;
     float: left;
-    margin-bottom: 4px;
+    border-bottom: 0.4px solid #d4d4d4;
+  }
+  .action-center__tabs ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  @media (max-width: 580px) {
+    .action-center__tabs ul {
+      flex-direction: column;
+      width: 60%;
+      margin: 0 auto;
+    }
+    .action-center__tabs ul a {
+      margin: 5px 0;
+    }
+    .action-center__instruction, .action-center__content {
+      padding: 40px 10px 20px 10px !important;
+    }
+    .action-center__page--twitter, .action-center__page--facebook {
+      padding: 40px 10px !important;
+    }
   }
   .action-center__tab {
-    background-color: white;
-    color: #00c0cf;
-    border-radius: 4px;
+    color: #5c5c5c;
+    border-radius: 20px;
     text-align: center;
-    width: calc(25% - 4px);
-    margin-right: 4px;
-    padding: 12px 0;
+    width: 100%;
+    padding: 12px;
     float: left;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   }
-  a[href="#facebook"] .action-center__tab {
-    width: 25%;
-    margin-right: 0;
-  }
   .action-center__tab:hover, .action-center__tab--active {
-    background-color: #00c0cf;
-    color: white;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.09);
+    background-color: white;
+    color: #f8492d;
   }
   .action-center__pages {
     float: left;
     width: 100%;
   }
   .action-center__page {
-    background: white;
+    background: #f9f9f9;
     border-radius: 4px;
     width: 100%;
-    padding: 20px;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    padding-bottom: 40px;
   }
   .action-center__instruction {
-    line-height: 1.2em;
-    margin-bottom: 20px;
+    background: #f9f9f9;
+    padding: 40px;
     padding-bottom: 20px;
-    border-bottom: 2px solid #dbdbdb
+    line-height: 1.5;
+    font-size: 14px;
+  }
+  .action-center__page--twitter, .action-center__page--facebook {
+    padding: 40px;
+  }
+  .action-center__instruction--twitter, .action-center__instruction--facebook {
+    padding: 0px;
+    padding-bottom: 20px;
   }
   .action-center__content {
-    width: 100%;
+    padding: 0 40px;
     min-height: 500px;
     font-size: 16px;
     line-height: 1.2em;
@@ -228,12 +255,17 @@
     outline: none;
     color: #414141;
   }
+  .action-center__editable-content {
+    padding: 20px;
+    background: white;
+    line-height: 1.75;
+  }
   .action-center__facebook-preview {
-    background: #f6f7f9;
+    background: white;
     border: 1px solid;
     border-color: #e5e6e9 #dfe0e4 #d0d1d5;
     border-radius: 3px;
-    padding: 12px 12px 12px 56px;
+    padding: 12px 12px 12px 70px;
     position: relative;
     font-size: 12px;
     line-height: 16px;
@@ -243,8 +275,9 @@
     width: 100%;
   }
   .action-center__twitter-preview {
-    font-size: 26px;
-    line-height: 32px;
+    background: white;
+    font-size: 18px;
+    line-height: 1.75;
     font-weight: 300;
     padding: 9px 12px;
     position: relative;
@@ -258,7 +291,7 @@
   .action-center__twitter-icon {
     height: 48px;
     width: 48px;
-    border-radius: 5px;
+    border-radius: 24px;
     background: #00c0cf;
     position: absolute;
     top: 12px;
@@ -269,11 +302,13 @@
     font-size: 14px;
     color: #8899ad;
     line-height: 19px;
+    padding: 15px 0;
   }
   .action-center__twitter-author {
     font-weight: bold;
     color: #292f33;
-    margin-right: 3px;
+    margin-right: 8px;
+    font-size: 16px;
   }
   .action-center__fake-like-reply {
     width: 100%;
@@ -283,13 +318,21 @@
     color: #365899;
     cursor: pointer;
   }
+  .action-center__facebook-preview-text {
+    font-size: 16px;
+    padding: 15px 0;
+  }
+  .action-center__facebook-body {
+    padding: 20px 0;
+  }
   .action-center__facebook-preview-image {
-    height: 32px;
-    width: 32px;
+    height: 48px;
+    width: 48px;
     background: #00c0cf;
     position: absolute;
     left: 12px;
     top: 12px;
+    border-radius: 24px;
   }
   .action-center__facebook-preview-name {
     color: #365899;
@@ -306,10 +349,15 @@
     top: 4px;
   }
   .tight-column {
-    width: 580px;
+    width: 70%;
     margin: 0 auto;
     overflow: hidden;
-    margin-top: 50px;
+    margin-top: 70px;
+  }
+  @media (max-width: 1100px) {
+    .tight-column {
+      width: 85%;
+    }
   }
   @media (max-width: 580px) {
     .tight-column {
@@ -321,8 +369,21 @@
       box-sizing: border-box;
     }  
   }
-  .intro {
-    margin-top: 40px;
+  .imageless-title {
+    display: flex;
+    justify-content: center;
+  }
+  .typography__highlight-wrapper {
+    padding: 10px;
+    display: inline-block;
+  }
+  .body-text.intro {
+    width: 100%;
+    padding: 35px 0;
+  }
+  .body-text {
+    min-height: unset;
+    margin-bottom: unset;
   }
   @media print {
     body > * {

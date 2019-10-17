@@ -32,11 +32,11 @@
 
 .share-buttons {
 
-  display: inline-block;
+  display: block;
   text-align: center;
 
   @media(max-width: 400px) {
-    width: 148px;
+    // width: 148px;
   }
 
   &__alternative {

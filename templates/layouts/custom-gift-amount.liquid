@@ -5,7 +5,7 @@
 {% capture message %}{{ 'petition.thank_you' | val: 'petition_title', title | t }}{% endcapture %}
 
 
-<div class="header-logo header-logo--light">
+<div class="header-logo header-logo--dark">
   <a href="{{ 'footer.home_url' | t }}">
     <div class="header-logo__logo sumofus-logo--negative"></div>
   </a>
@@ -14,7 +14,7 @@
 <div class="center-content center-content--share-and-donate">
   <div class="center-content__one-column">
 
-    <div class="center-content__central-square">
+    <div class="center-content__central-square cutom-center-content">
 
       <div class="js-recurring-box">
         <h1 class="js-recurring-message"> {{ 'fundraiser.upgrade_monthly_gift' | t }} </h1>
@@ -31,8 +31,15 @@
     </div>
   </div>
 </div>
-
+{% include 'Small Image Footer' %}
 <style>
+  .cutom-center-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding-bottom: 200px;
+  }
   .js-recurring-box{
      max-width: 859px;
     min-height: 283px;
