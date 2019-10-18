@@ -58,8 +58,10 @@ html {
     text-align: center;
     margin-top: 120px;
     min-height: 82vh;
+    padding: 0 40px;
     @media (max-width: $mobile-width) {
       margin-top: 80px;
+      padding: 0 15px;
     }
     &--compact {
       margin-bottom: 20px;

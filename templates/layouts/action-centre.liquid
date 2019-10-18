@@ -191,8 +191,7 @@
   }
   @media (max-width: 580px) {
     .action-center__tabs ul {
-      flex-direction: column;
-      width: 60%;
+      flex-wrap: wrap;
       margin: 0 auto;
     }
     .action-center__tabs ul a {
@@ -209,7 +208,8 @@
     color: #5c5c5c;
     border-radius: 20px;
     text-align: center;
-    width: 100%;
+    min-width: 120px;
+    max-width: 150px;
     padding: 12px;
     float: left;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
