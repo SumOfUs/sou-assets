@@ -18,12 +18,19 @@
     }
     .petition-bar__main {
       max-height: calc(100vh - 250px) !important;
+      @media (max-width: 580px) {
+        height: 100% !important;
+        max-height: unset !important;
+      }
     }
     .petition-bar__title-bar {
       clip-path: none;
       -webkit-clip-path: none;
       top: 0 !important;
       &::after {
+        display: none;
+      }
+      @media (max-width: 580px) {
         display: none;
       }
     }
@@ -208,7 +215,10 @@
     max-height: 60px;
     padding: 6px 26px 13px 26px;
     font-size: 16px;
-    font-weight: 400;   
+    font-weight: 400;  
+    @media (max-width: 580px) {
+      max-height: unset;
+    } 
   }
 }
 
