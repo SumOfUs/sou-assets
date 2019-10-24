@@ -1,4 +1,5 @@
-$default-fonts: 'Montserrat';
+$default-fonts: 'Montserrat', -apple-system, system-ui, BlinkMacSystemFont,
+  'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
 html {
   font-size: 16px;
@@ -9,7 +10,14 @@ body {
   color: $chalkboard;
 }
 
-h1, h2, h3, h4, h5, h6, strong, b {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
   font-weight: bold;
 }
 i {
@@ -69,13 +77,14 @@ a {
     background: $teal;
   }
 }
-.survey-typo-high-wrapper, .call-survey-high-wrapper{
+.survey-typo-high-wrapper,
+.call-survey-high-wrapper {
   height: 60px;
   padding: 0 20px;
   display: flex;
   align-items: center;
 }
-.without-image-typo-wrapper{
+.without-image-typo-wrapper {
   width: 60%;
   @media (max-width: 1100px) {
     width: 60%;
@@ -84,7 +93,7 @@ a {
     width: 100%;
   }
 }
-.without-image-typo-highlight{
+.without-image-typo-highlight {
   padding: 25px 40px;
   @media (max-width: 1100px) {
     padding: 20px 25px;
@@ -93,7 +102,7 @@ a {
     padding: 20px;
   }
 }
-.sign-share-typo-highlight-wrapper{
+.sign-share-typo-highlight-wrapper {
   width: 60%;
   @media (max-width: 900px) {
     width: 50%;
@@ -112,14 +121,19 @@ a {
     max-width: 320px;
     margin: 0 auto;
   }
-  p, span, div {
+  p,
+  span,
+  div {
     line-height: 1.5em;
   }
-  p, ul, ol {
+  p,
+  ul,
+  ol {
     margin-top: 0;
     margin-bottom: 1em;
   }
-  ul, ol {
+  ul,
+  ol {
     padding-left: 40px;
   }
   ol {
@@ -141,14 +155,19 @@ a {
     a {
       color: $teal !important;
     }
-    p, span, div {
+    p,
+    span,
+    div {
       line-height: 1.5em !important;
     }
-    p, ul, ol {
+    p,
+    ul,
+    ol {
       margin-top: 0 !important;
       margin-bottom: 0 !important;
     }
-    ul, ol {
+    ul,
+    ol {
       padding-left: 40px !important;
     }
     ol {
@@ -168,30 +187,30 @@ a {
     padding-bottom: 120px;
   }
 }
-.survey__intro{
+.survey__intro {
   width: 100%;
   padding: 0;
   padding-top: 60px;
   @media (max-width: 700px) {
-  padding: 20px 0;
+    padding: 20px 0;
   }
 }
-.inline-body-text{
-width: 100%;
-padding: 0;
-  }
-.sign-share-body-text{
+.inline-body-text {
+  width: 100%;
+  padding: 0;
+}
+.sign-share-body-text {
   width: unset;
   @media (max-width: 700px) {
-  padding: 0 20px;
-  padding-bottom: 120px;
+    padding: 0 20px;
+    padding-bottom: 120px;
   }
 }
 
-.sign-share-body-text{
+.sign-share-body-text {
   width: unset;
   @media (max-width: 700px) {
-  padding-bottom: 120px;
-  padding-top: 0;
+    padding-bottom: 120px;
+    padding-top: 0;
   }
 }
