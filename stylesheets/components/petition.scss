@@ -264,7 +264,7 @@
     margin: 0;
     height: 100%;
     overflow-y: visible;
-    background: $chalk-gray;
+    background: $w;
     @include transition(top 0.40s ease-in-out);
 
     &--closed {
