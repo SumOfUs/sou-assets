@@ -41,11 +41,8 @@
       padding: 21px;
       width: 100%;
     }
-    @media (min-width: $mobile-width) {
-      // form, .petition-bar__petition-text, .thermometer,
-      // .fundraiser-bar__steps, .fundraiser-bar__step-panel,
-      // .petition-bar__fine-print, .petition-bar__target {
-      // }
+    @media (min-width: $mobile-width + 1) {
+      max-width: 500px;
       .fundraiser-bar__steps {
         margin-left: 0;
       }
