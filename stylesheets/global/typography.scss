@@ -117,9 +117,16 @@ a {
   @media only screen and (min-width: 500px) and (max-width: 1100px) {
     min-height: 40vh;
   }
-  @media (max-width: 500px) {
-    max-width: 320px;
-    margin: 0 auto;
+  @media (max-width: 1100px) {
+    width: 50%;
+  }
+  @media (max-width: 700px) {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
+    text-align: left;
+    padding-bottom: 120px;
   }
   p,
   span,
@@ -176,15 +183,6 @@ a {
     ul {
       list-style-type: disc !important;
     }
-  }
-  @media (max-width: 1100px) {
-    width: 50%;
-  }
-  @media (max-width: 700px) {
-    width: 100%;
-    padding: 0;
-    text-align: left;
-    padding-bottom: 120px;
   }
 }
 .survey__intro {

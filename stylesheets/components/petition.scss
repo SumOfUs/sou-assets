@@ -1,5 +1,6 @@
-.petition-bar, .fundraiser-bar, .action-form {
-
+.petition-bar,
+.fundraiser-bar,
+.action-form {
   color: $navy;
 
   $padding: 26px;
@@ -40,11 +41,8 @@
       padding: 21px;
       width: 100%;
     }
-    @media(min-width: $mobile-width) {
-      // form, .petition-bar__petition-text, .thermometer,
-      // .fundraiser-bar__steps, .fundraiser-bar__step-panel,
-      // .petition-bar__fine-print, .petition-bar__target {
-      // }
+    @media (min-width: $mobile-width + 1) {
+      max-width: 500px;
       .fundraiser-bar__steps {
         margin-left: 0;
       }
@@ -131,19 +129,19 @@
     max-width: 500px;
     float: left;
     overflow: hidden;
-    padding:0;
+    padding: 0;
     padding-bottom: 16px;
     @include box-sizing(border-box);
     position: relative;
   }
   &__user-icon {
-    color: #00C0CF;
+    color: #00c0cf;
     font-size: 26px;
   }
 
   &__welcome-name {
     padding-left: 10px;
-    font-weight: 600 ;
+    font-weight: 600;
   }
 
   &__clear-form {
@@ -184,7 +182,7 @@
       right: 0;
       top: 0;
       background: $dark-teal;
-      content: "";
+      content: '';
     }
   }
   &__title {
@@ -215,17 +213,16 @@
     max-height: 60px;
     padding: 6px 26px 13px 26px;
     font-size: 16px;
-    font-weight: 400;  
+    font-weight: 400;
     @media (max-width: 580px) {
       max-height: unset;
-    } 
+    }
   }
 }
 
 .overlay-toggle {
   &__mobile-ui {
-
-    @media(min-width: $mobile-width + 1) {
+    @media (min-width: $mobile-width + 1) {
       display: none;
     }
 
@@ -241,7 +238,7 @@
 
       text-align: center;
       background-color: $overcast-gray;
-      @include transition(bottom 0.20s ease-in-out);
+      @include transition(bottom 0.2s ease-in-out);
     }
   }
 
@@ -254,7 +251,7 @@
   }
 }
 
-@media(max-width: $mobile-width) {
+@media (max-width: $mobile-width) {
   .overlay-toggle__mobile-view {
     position: fixed;
     width: 100%;
@@ -265,7 +262,7 @@
     height: 100%;
     overflow-y: visible;
     background: white;
-    @include transition(top 0.40s ease-in-out);
+    @include transition(top 0.4s ease-in-out);
 
     &--closed {
       top: 2000px;
@@ -277,12 +274,13 @@
         bottom: -100px;
       }
     }
-    h1{
+    h1 {
       padding: 40px 0;
     }
   }
 
-  .petition-bar__content, .fundraiser-bar__content {
+  .petition-bar__content,
+  .fundraiser-bar__content {
     height: 100%;
     width: 100%;
     overflow-y: scroll;
