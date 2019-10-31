@@ -11,7 +11,7 @@
   }
 
   &.petition-bar.stuck-right {
-    margin-top: 17px;
+    margin-top: 0;
   }
   &.stuck-right {
     .fundraiser-bar__main {
@@ -283,5 +283,16 @@
     width: 100%;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+  }
+}
+.layout__inline-plugin {
+  .petition-bar {
+    &__target {
+      padding: 5px 0;
+    }
+    &__petition-text {
+      padding: 20px 0;
+      max-height: unset;
+    }
   }
 }
