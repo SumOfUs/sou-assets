@@ -29,15 +29,18 @@
     width: 100%;
   }
   &__title {
+    padding: 20px 20px 20px 40px;
     font-size: 36px;
     @media(max-width: 900px) {
       font-size: 34px;
     }
     @media(max-width: 700px) {
       font-size: 30px;
+      padding: 20px 20px;
     }
     @media(max-width: 500px) {
       font-size: 25px;
+      padding: 20px 20px;
     }
   }
   &__target {
@@ -69,7 +72,7 @@
   @media(min-width: $mobile-width + 1) {
     display: none;
   }
-  padding: 20px 0;
+  margin-bottom: 25px;
   background: $teal;
   color: white;
   float: left;
@@ -79,23 +82,17 @@
 }
 
 .cover-photo--small, .header-logo__left-constraint, .mobile-title {
-  float: right;
-  max-width: 900px;
-  width: 67%;
-  margin-right: 33%;
+  width: 65%;
   &.header-logo__left-constraint {
     max-width: 880px; // creates padding
   }
   @media(max-width: 1100px) {
-    width: 61%;
-    margin-right: 39%;
+    width: 58%;
   }
-  @media(max-width: 900px) {
-    width: 53%;
-    margin-right: 47%;
+  @media(max-width: 700px) {
+    width: 50%;
   }
   @media(max-width: $mobile-width) {
     width: 100%;
-    margin-right: 0%;
   }
 }

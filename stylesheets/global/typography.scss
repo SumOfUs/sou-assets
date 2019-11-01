@@ -1,4 +1,5 @@
-$default-fonts: 'Helvetica Nueue', Helvetica, Arial, sans;
+$default-fonts: 'Montserrat', -apple-system, system-ui, BlinkMacSystemFont,
+  'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
 html {
   font-size: 16px;
@@ -9,7 +10,14 @@ body {
   color: $chalkboard;
 }
 
-h1, h2, h3, h4, h5, h6, strong, b {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
   font-weight: bold;
 }
 i {
@@ -33,16 +41,14 @@ a {
 
 .typography {
   &__highlight {
-    display: inline;
-    border-style: solid;
-    border-width: 0.25em 0;
-    position: relative;
+    display: block;
     line-height: 1.1em;
     // can't get the box shadow working on this :/
-
     background: $teal;
-    border-color: $teal;
+    backdrop-filter: blur(2px);
     color: white;
+    font-size: 28px;
+    font-weight: bold;
 
     span {
       position: relative;
@@ -66,23 +72,74 @@ a {
     }
   }
   &__highlight-wrapper {
-    border-left: 15px solid $teal;
     overflow: hidden;
-    padding: 8px 0;
     margin: 0;
   }
 }
-
+.survey-typo-high-wrapper,
+.call-survey-high-wrapper {
+  height: 60px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+.without-image-typo-wrapper {
+  width: 60%;
+  @media (max-width: 1100px) {
+    width: 60%;
+  }
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+}
+.without-image-typo-highlight {
+  padding: 25px 40px;
+  @media (max-width: 1100px) {
+    padding: 20px 25px;
+  }
+  @media (max-width: 700px) {
+    padding: 20px;
+  }
+}
+.sign-share-typo-highlight-wrapper {
+  width: 60%;
+  @media (max-width: 900px) {
+    width: 50%;
+  }
+}
 .body-text {
+  width: 60%;
+  padding: 45px 20px 45px 40px;
   line-height: 1.6em;
-  p, span, div {
+  min-height: 50vh;
+  margin-bottom: 150px;
+  @media only screen and (min-width: 500px) and (max-width: 1100px) {
+    min-height: 40vh;
+  }
+  @media (max-width: 1100px) {
+    width: 50%;
+  }
+  @media (max-width: 700px) {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
+    text-align: left;
+    padding-bottom: 120px;
+  }
+  p,
+  span,
+  div {
     line-height: 1.5em;
   }
-  p, ul, ol {
+  p,
+  ul,
+  ol {
     margin-top: 0;
     margin-bottom: 1em;
   }
-  ul, ol {
+  ul,
+  ol {
     padding-left: 40px;
   }
   ol {
@@ -104,14 +161,19 @@ a {
     a {
       color: $teal !important;
     }
-    p, span, div {
+    p,
+    span,
+    div {
       line-height: 1.5em !important;
     }
-    p, ul, ol {
+    p,
+    ul,
+    ol {
       margin-top: 0 !important;
       margin-bottom: 0 !important;
     }
-    ul, ol {
+    ul,
+    ol {
       padding-left: 40px !important;
     }
     ol {
@@ -120,5 +182,35 @@ a {
     ul {
       list-style-type: disc !important;
     }
+  }
+}
+.survey__intro {
+  width: 100%;
+  padding: 0;
+  padding-top: 60px;
+  @media (max-width: 700px) {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding: 0;
+    text-align: left;
+    padding-bottom: 120px;  
+  }
+}
+.inline-body-text {
+  width: 100%;
+  padding: 0;
+}
+
+.sign-share-body-text {
+  width: unset;
+  @media (max-width: 700px) {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
+    text-align: left;
+    padding-bottom: 120px;
   }
 }

@@ -7,12 +7,7 @@
 <div id="test-fa"></div>
 <div id="fa-optimisation" data-value="post-donate"></div>
 
-<div class="header-logo header-logo--dark checks-top--at-top">
-  <a href="{{ 'footer.home_url' | t }}">
-    <div class="header-logo__logo sumofus-logo--positive"></div>
-  </a>
-  <div class="header-logo__tagline sumofus-logo--tagline">{{ 'branding.tagline' | t }}</div>
-</div>
+ {% include 'Top Bar' %}
 
 <div class="cover-photo" style="background-image: url(https://storage.googleapis.com/fa-assets/sou/sou-post-donate-bg.jpg); background-position:top;">
 	<div class="cover-photo__overlay"></div>
@@ -36,7 +31,7 @@
 	<div id="share-ask">
     <div class="center-content">
       <div class="center-content__one-column">
-        <div class="center-content__central-square">
+        <div class="center-content__central-square center-content-post-monthly">
           <h1 class="thank-you__thanks">{{ message }}</h1>
           <div class="thank-you__cta">{{ 'fundraiser.upgrading.becoming_stronger' | t }} </div>
           <div class="center-content__centered-element">
@@ -45,11 +40,18 @@
       </div>
     </div>
 	</div>
-  <div class="center-content__one-column">
-    <div class="center-content__central-square body-text" id="thankyou-container">
-      <div id="donate-ask">
-		  </div>
-	  </div>
-  </div>
 </div>
 {% include 'Simple Footer', extra_class: 'simple-footer--stuck-to-bottom' %}
+
+<style>
+  .center-content-post-monthly{
+    display: block;
+    min-height: 32vh;
+    padding: 150px 0;
+  }
+  @media (max-width: 700px) {
+      .center-content-post-monthly{
+margin-top: 0;
+  }
+  }
+</style>

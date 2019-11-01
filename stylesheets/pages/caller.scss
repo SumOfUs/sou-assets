@@ -40,18 +40,37 @@
   }
 
   #call-tool-component {
+    position: fixed;
+    left: 70%;
+    top: 40%;
+    z-index: 999;
+    border-radius: 2px;
+    box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.07);
+    border: solid 0.4px #dfdfdf;
+    background-color: #ffffff;
+    margin-right: 20px;
+    padding: 20px 0;
+    @media (max-width: 1100px) {
+      margin: 0 auto;
+      position: relative;
+      left: 0;
+      width: 90%;
+    }
     h1 {
       @include mobile-full-width();
-      font-size: 24px;
+      font-size: 20px;
       line-height: 1.2em;
-      text-align: center;
-      margin-bottom: 0.2em;
+      text-align: left;
+      margin-bottom: 0.7em;
+      @media (max-width: 1100px) {
+        text-align: center;
+      }
     }
 
     .base-errors {
       max-width: 350px;
       @include mobile-full-width();
-      margin-bottom: 1em;
+      margin: 0.5em 0;
       color: #f8492e;
       ul {
         width: 92%;
@@ -63,11 +82,13 @@
       @include legacy-pie-clearfix();
       @include mobile-full-width();
       max-width: 350px;
-      margin: 30px auto 0 auto;
+      margin: 10px auto;
       z-index: 0;
-
       .form__group {
         margin-bottom: 15px;
+      }
+      .SweetPhoneInput__title {
+        margin-left: 0;
       }
     }
 
@@ -146,12 +167,34 @@
     }
 
     p.instructions {
-      text-align: center;
+      text-align: left;
+      font-size: 18px;
+      font-weight: 500;
       max-width: 600px;
       margin: auto;
       padding: 0 1em;
       line-height: 1.2em;
+      @media (max-width: 1100px) {
+        text-align: center;
+      }
     }
 
   } // #call-tool-component
+  .body-text.text-top, .body-text.text-bottom {
+    min-height: unset;
+    width: 60%;
+    margin: 0;
+    @media (max-width: 1100px) {
+      width: 85%;
+      margin: 0 auto;
+      text-align: left;
+    }
+    p, div {
+      font-size: 16px;
+    }
+  }
+
+  .body-text.text-bottom {
+    margin-bottom: 180px;
+  }
 }
