@@ -32,6 +32,11 @@
     overflow: hidden;
     margin-top: 120px;
   }
+  .body-text {
+    width: 100%;
+    padding: 0;
+    margin: 40px 0 200px 0;
+  }
   @media (max-width: 580px) {
     .tight-column {
       margin-top: 60px;
@@ -42,14 +47,13 @@
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
     }  
-    .body-text {
-      text-align: left;
-    }
-  }
-  .body-text {
-    width: 100%;
+    .body-text {  
+      width: calc(100% - 40px);
+      margin-left: 20px;
+      margin-right: 20px;
       padding: 0;
-    margin-top: 40px;
-    margin-bottom: 200px;
+      text-align: left;
+      padding-bottom: 120px;
+    }
   }
 </style>

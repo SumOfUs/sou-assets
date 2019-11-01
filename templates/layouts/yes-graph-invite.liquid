@@ -83,16 +83,6 @@
     margin-top: 65px;
     padding: 0 40px;
   }
-  @media (max-width: 700px) {
-      .yes-pre-text{
-        margin-top: 0px;
-    padding: 0 32px;
-  }
-    .center-grey-box{
-      margin: 0;
-    }
-    
-  }
   .center-body-content{
     width: 100%;
     padding: 0;
@@ -157,6 +147,25 @@
     overflow: hidden;
     margin-left: 1%;
   }
+  @media (max-width: 700px) {
+    .yes-pre-text{
+      margin-top: 0px;
+      padding: 0 32px;
+    } 
+    .center-body-content{
+      width: calc(100% - 40px) !important;
+    }
+    .center-grey-box{
+      border: none;
+      background: white;
+      width: calc(100% - 40px) !important;
+      margin: 0;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding: 0;
+      text-align: left;
+      padding-bottom: 120px;
+    }
 </style>
 
 {% include 'Simple Footer' %}

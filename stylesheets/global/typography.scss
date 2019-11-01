@@ -189,25 +189,28 @@ a {
   padding: 0;
   padding-top: 60px;
   @media (max-width: 700px) {
-    padding: 20px 0;
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding: 0;
+    text-align: left;
+    padding-bottom: 120px;  
   }
 }
 .inline-body-text {
   width: 100%;
   padding: 0;
 }
-.sign-share-body-text {
-  width: unset;
-  @media (max-width: 700px) {
-    padding: 0 20px;
-    padding-bottom: 120px;
-  }
-}
 
 .sign-share-body-text {
   width: unset;
   @media (max-width: 700px) {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
+    text-align: left;
     padding-bottom: 120px;
-    padding-top: 0;
   }
 }
