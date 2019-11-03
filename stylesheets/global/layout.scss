@@ -7,39 +7,36 @@ html {
 
 .center-content {
   @include legacy-pie-clearfix();
-  @include centered-to-full(1080px);
+  @include centered-to-full(100%);
 
   &--accomodates-stuck-footer {
-    margin-bottom: 150px;
+    min-height: 40vh;
   }
   &__fixed-right {
     position: fixed;
     right: 0;
-    top: 0;
-    width: 33%;
+    top: 0px;
+    width: 32%;
+    margin: 0 36px;
     z-index: 400;
+    margin: 15px;
     @media (max-width: 1100px) {
-      width: 39%;
+      width: 38%;
     }
     @media (max-width: 900px) {
-      width: 47%;
+      width: 38%;
     }
   }
   &__big-column {
-    width: 59%;
-    margin-left: 4%;
+    width: 100%;
     float: left;
-    @media (max-width: 1100px) {
-      width: 53%;
-    }
-    @media (max-width: 900px) {
-      width: 46%;
-    }
   }
   &__small-column {
     width: 29%;
     margin-left: 4%;
     float: left;
+    position: relative;
+    top: 60px;
     @media (max-width: 1100px) {
       width: 35%;
     }
@@ -51,18 +48,16 @@ html {
   &__small-column,
   &__big-column {
     @media (max-width: $mobile-width) {
-      width: 92%;
+      width: 100%;
     }
   }
   &__one-column {
-    width: 92%;
-    margin-left: 4%;
-    float: left;
+    max-width: 100%; // For FUNDRAISING PLUGIN
   }
   &__central-square {
     text-align: center;
-    max-width: 700px;
-    margin: 100px auto 140px;
+    margin-top: 120px;
+    min-height: 82vh;
     @media (max-width: $mobile-width) {
       margin-top: 80px;
     }
@@ -70,12 +65,55 @@ html {
       margin-bottom: 20px;
     }
   }
+  &__with-ask{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
   &__centered-element {
     margin-left: auto;
     margin-right: auto;
   }
   &--push-down {
-    margin-top: 50px;
+  }
+
+}
+.center-content--share-and-donate {
+  margin-top: 100px;
+}
+.without-image-sidebar {
+  right: 38px;
+  @media (max-width: 900px) {
+    right: 0;
+  }
+
+}
+.without-image-center-content {
+  margin-top: 60px;
+  min-height: 84.6vh;
+  @media (max-width: 700px) {
+    margin-top: 30px;
+  }
+}
+.sign-share-big-column{
+  width: 60%;
+  min-height: 57vh;
+  @media (max-width: 900px) {
+    width: 50%;
+  }
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+}
+
+.sign-share-big-column{
+  width: 60%;
+  min-height: 57vh;
+  @media (max-width: 900px) {
+    width: 50%;
+  }
+  @media (max-width: 700px) {
+    width: 100%;
   }
 }
 

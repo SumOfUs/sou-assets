@@ -1,13 +1,13 @@
 .thermometer {
 
-  $graphic-height: 12px;
-  $graphic-border-radius: 4px;
+  $graphic-height: 10px;
+  $graphic-border-radius: 15px;
   &__bg {
     width: 100%;
     height: $graphic-height;
     border-radius: $graphic-border-radius;
-    background-color: white;
-    margin: 5px 0 25px;
+    background-color: #e2dbdb;
+    margin: 25px 0;
     float: left;
   }
   &__mercury {
@@ -20,6 +20,10 @@
 
   &__stats {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
   &__signatures {
     float: left;
