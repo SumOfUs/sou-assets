@@ -9,13 +9,13 @@
 {% include 'Top Bar' %}
 <div class="cover-photo" style="background-image: url(https://storage.googleapis.com/fa-assets/sou/sou-post-donate-bg.jpg); background-position:top;">
 	<div class="cover-photo__overlay"></div>
-	<div class="cover-photo__titles" style="bottom: 50px;">
-		<div class="center-content">
-			<div class="center-content__big-column" style="float:none; margin-left:0px; width:100%; text-align:center;">
-				<div class="typography__highlight-wrapper" style="border-left:none;">
-					<h1 class="cover-photo__title typography__highlight youre-awesome-container" style="padding-left:8px; font-size:50px;"><span>You're awesome!</span>
-					</h1>
-				</div>
+</div>
+<div class="cover-photo__titles">
+	<div class="center-content">
+		<div class="center-content__big-column" style="float:none; margin-left:0px; width:100%; text-align:center;">
+			<div class="typography__highlight-wrapper" style="border-left:none;">
+				<h1 class="cover-photo__title typography__highlight youre-awesome-container" style="font-size:50px;"><span>You're awesome!</span>
+				</h1>
 			</div>
 		</div>
 	</div>
@@ -89,6 +89,23 @@
 
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 <style>
+	.cover-photo {
+		height: 50vh;
+	}
+	@media (max-width: 700px) {
+		.cover-photo {
+			height: 250px;
+		}
+	}
+	.cover-photo__titles {
+		position: relative;
+	}
+	.cover-photo__title {
+		padding: 20px;
+	}
+	.typography__highlight-wrapper {
+		display: inline-block;
+	}
 	.center-content__one-column{
 		max-width: 100% !important;
 	}
@@ -107,9 +124,9 @@
 	.fundraiser-bar__amount-buttons.long-button-container{
 		max-width:100% !important;
 	}
-.body-text {
-	padding: 0;
-}
+	.body-text {
+		padding: 0;
+	}
 	.body-text p{
 		margin-bottom:15px;
 		padding: 0 20px;
@@ -144,11 +161,11 @@
 	}
 
 	.share-modal-open {
-font-size:17px;
-max-width:150px;
-background-color:#adabab;
-margin:0 auto;
-}
+		font-size:17px;
+		max-width:150px;
+		background-color:#adabab;
+		margin:0 auto;
+	}
 
 .share-modal-open:hover,.share-modal-open:active {
 background-color:#adabab;
