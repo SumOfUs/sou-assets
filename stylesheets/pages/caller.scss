@@ -10,7 +10,7 @@
 
 .caller {
   @include clearfix();
-  background-color: #ececec;
+  background-color: white;
   width: 100%;
 
   @mixin mobile-full-width() {
@@ -30,6 +30,8 @@
     @include centered-to-full(900px);
     background: white;
     padding-bottom: 60px;
+    max-width: 70ch;
+    margin: 0 auto;
   }
 
   .text-top, .text-bottom {
@@ -40,15 +42,17 @@
   }
 
   #call-tool-component {
-    position: fixed;
-    left: 70%;
-    top: 40%;
+    // position: fixed;
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    // left: 70%;
+    // top: 40%;
     z-index: 999;
     border-radius: 2px;
     box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.07);
     border: solid 0.4px #dfdfdf;
     background-color: #ffffff;
-    margin-right: 20px;
     padding: 20px 0;
     @media (max-width: 1100px) {
       margin: 0 auto;
@@ -64,6 +68,9 @@
       margin-bottom: 0.7em;
       @media (max-width: 1100px) {
         text-align: center;
+      }
+      @media (max-width: 700px) {
+        font-size: 16px;
       }
     }
 
@@ -177,12 +184,15 @@
       @media (max-width: 1100px) {
         text-align: center;
       }
+      @media (max-width: 700px) {
+        font-size: 14px;
+      }
     }
 
   } // #call-tool-component
   .body-text.text-top, .body-text.text-bottom {
     min-height: unset;
-    width: 60%;
+    // width: 60%;
     margin: 0;
     @media (max-width: 1100px) {
       width: 85%;
