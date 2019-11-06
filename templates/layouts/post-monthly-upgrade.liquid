@@ -44,6 +44,14 @@
 {% include 'Simple Footer', extra_class: 'simple-footer--stuck-to-bottom' %}
 
 <style>
+  .cover-photo {
+    height: 50vh;
+  }
+  @media (max-width: 700px) {
+    .cover-photo {
+      height: 250px;
+    }
+  }
   .center-content-post-monthly{
     display: block;
     min-height: 32vh;
@@ -59,6 +67,8 @@
   }
   .center-content__central-square {
     margin-top: 0;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .typography__highlight-wrapper {
     display: inline-block;
