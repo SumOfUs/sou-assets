@@ -8,9 +8,11 @@
     .mobile-title {
         display: block !important;
     }
-</style>
 
-{% include 'Small Header' %}
+</style>
+{% assign scroll_to_donate = 'true' %}
+{% assign end_of_year = 'true' %}
+{% include 'Small Header With Progress Tracker' %}
 
 <div class="center-content center-content--accomodates-stuck-footer">
     <div class="center-content__big-column">
@@ -25,15 +27,29 @@
     </div>
 </div>
 
+<div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-consent__consent-question-wrapper">
+    <div class="center-content__one-column">
+
+        <div class="center-content__central-square">
+            <h1 class="thank-you__thanks">
+                {{ 'petition.before_you_sign' | val: 'petition_title', title | t }}
+            </h1>
+            <p class="opt-in-reason">{{ 'consent.opt_in_reason' | t }}</p>
+            <button id="opt-in-button" class="button">{{ 'consent.accept_alt' | t }}</button>
+            <a id="opt-out-button">{{ 'consent.decline_alt' | t }}</a>
+            <p class="how-to-opt-out">{{ 'consent.how_to_opt_out' | t }}</p>
+        </div>
+
+    </div>
+</div>
+
 <div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__yes-no-question-wrapper">
     <div class="center-content__one-column">
 
         <div class="center-content__central-square">
             {% capture message %}{{ 'petition.thank_you' | val: 'petition_title', title | t }}{% endcapture %}
             <h1 class="thank-you__thanks">{{ message }}</h1>
-
-            {% include 'Donation Ask With Thermometer' %}
-
+            {% include 'Donation Ask With Eoy Thermometer' %}
         </div>
     </div>
 </div>
@@ -41,13 +57,12 @@
 <div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__fundraiser-wrapper ">
     <h1 class="thank-you__cta intro"> {{ 'petition_and_scroll.fundraiser_intro' | t }} </h1>
     {% capture fundraiser_title %} {{ 'share_and_donate.fundraiser_title' | t }} {% endcapture %}
-    {% include 'Fundraiser', one_click: false, freestanding: true, fundraiser_title: fundraiser_title, mobile_title: true %}
+    {% include 'Fundraiser', freestanding: true, fundraiser_title: fundraiser_title %}
 </div>
 
 <div class="center-content center-content--accomodates-stuck-footer petition-and-scroll-to-share__share-wrapper">
     <div class="center-content__one-column">
         <div class="center-content__central-square">
-            <h1 style='display:none;' class="thank-you__cta intro"> {{ 'fundraiser.thank_you' | t }}</h1>
 
             <div class="thank-you__cta">{{ 'share.cta' | t }}</div>
 
@@ -68,7 +83,6 @@
         var petitionSidebar = $('.center-content__fixed-right');
         var yesNoQuestion = $('.petition-and-scroll-to-share__yes-no-question-wrapper');
         var shareStep = $('.petition-and-scroll-to-share__share-wrapper');
-        window.shareStep = shareStep;
         var fundraiserStep = $('.petition-and-scroll-to-share__fundraiser-wrapper');
 
         window.champaign.myPetition = new window.champaign.PetitionAndScrollToConsent({
@@ -101,16 +115,12 @@
         }
 
         function displayAndScrollToShare() {
-            // makeStepFullScreen(shareStep);
-            fundraiserStep.hide();
+            makeStepFullScreen(shareStep);
             shareStep.fadeIn();
             scrollTo(shareStep);
         }
 
         function displayAndScrollToDonate() {
-            // delete these two lines
-            petitionSidebar.fadeOut();
-            petitionOverlayButton.fadeOut();
             makeStepFullScreen(fundraiserStep);
             fundraiserStep.fadeIn();
             scrollTo(fundraiserStep);
@@ -129,14 +139,7 @@
                 currency: fundraiserData.currency,
                 value: fundraiserData.donationAmount
             });
-
-            $('.thank-you__cta.intro').show();
             window.champaign.redirectors.AfterDonationRedirector.attemptRedirect("{{ follow_up_url }}", formData);
-        });
-
-        window.ee.on('action:submitted_success', function () {
-            var formData = window.champaign.myActionForm.formData();
-            $('.inject-name').text(formData.name.split(' ')[0]);
         });
 
         var interval = setInterval(function() {
@@ -157,5 +160,6 @@
                 }
             }
         }, 100);
+
     });
 </script>
