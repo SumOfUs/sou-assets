@@ -1,21 +1,30 @@
+{% assign step_1 = 'progress_tracker.signed' | t %}
+{% if scroll_to_donate == 'true' %}
+  {% assign step_2 = 'progress_tracker.donated' | t %}
+  {% assign step_3 = 'progress_tracker.shared' | t %}
+{% else %}
+  {% assign step_2 = 'progress_tracker.shared' | t %}
+  {% assign step_3 = 'progress_tracker.donated' | t %}
+{% endif %}
+
 <div class="progress-tracker hidden-closed">
   <div class="progress-tracker__step">
     <div
       class="progress-tracker__circle progress-tracker__circle--signed"
     ></div>
-    <span class="progress-tracker__label">{{ 'progress_tracker.signed' | t }}</span>
+    <span class="progress-tracker__label">{{ step_1 }}</span>
   </div>
   <div class="progress-tracker__step">
     <div
       class="progress-tracker__circle progress-tracker__circle--shared"
     ></div>
-    <span class="progress-tracker__label">{{ 'progress_tracker.shared' | t }}</span>
+    <span class="progress-tracker__label">{{ step_2 }}</span>
   </div>
   <div class="progress-tracker__step">
     <div
       class="progress-tracker__circle progress-tracker__circle--donated"
     ></div>
-    <span class="progress-tracker__label">{{ 'progress_tracker.donated' | t }}</span>
+    <span class="progress-tracker__label">{{ step_3 }}</span>
   </div>
 </div>
 
