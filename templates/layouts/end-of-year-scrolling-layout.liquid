@@ -139,8 +139,14 @@
                 currency: fundraiserData.currency,
                 value: fundraiserData.donationAmount
             });
-            window.champaign.redirectors.AfterDonationRedirector.attemptRedirect("{{ follow_up_url }}", formData);
+            displayAndScrollToShare();
         });
+
+        window.addEventListener('share', function (e) {
+            formData = window.champaign.personalization.formValues;
+            window.champaign.redirectors.AfterDonationRedirector.attemptRedirect("{{ follow_up_url }}", formData);
+        }, false);
+
 
         var interval = setInterval(function() {
             if(window.SharePop && window.SharePop.FB){
