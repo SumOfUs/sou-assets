@@ -67,9 +67,6 @@
     $(document).ready(function(){
       var chmp = window.champaign; // convenience binding
 
-      // Remove floating button if the petition component doesnt have any scroll (if the screen is large enough then entire of petition component is visible)
-      if($(petitionComponent).prop('scrollHeight') === $(petitionComponent).prop('clientHeight')) {removeFloatingProp();}
-
       chmp.myActionForm  = new chmp.ActionForm({
         variant:          "{{ variant }}",
         member:           chmp.personalization.member,
@@ -92,6 +89,10 @@
       window.champaign.mySticky = new window.champaign.DesktopSticky({extra_class: 'petition'});
     });
 
+    $(petitionComponent).ready(function() {
+    	// Remove floating button if the petition component doesnt have any scroll (if the screen is large enough then entire of petition component is visible)
+      	if($(petitionComponent).prop('scrollHeight') === $(petitionComponent).prop('clientHeight')) {removeFloatingProp();}
+    })
     // Attach a scrolling event to petition component
     $(petitionComponent).on('scroll', function () {
       pushButtonDown();
