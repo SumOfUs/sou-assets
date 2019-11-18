@@ -16,11 +16,13 @@
   &.stuck-right {
     .fundraiser-bar__main {
       max-height: calc(100vh - 250px) !important;
+      @media (max-width: 580px) {
+        max-height: unset !important;
+      }
     }
     .petition-bar__main {
       max-height: calc(100vh - 250px) !important;
       @media (max-width: 580px) {
-        height: 100% !important;
         max-height: unset !important;
       }
     }

@@ -18,7 +18,7 @@
             {{ plugins.petition[ref].description }}
           </p>
         </div>
-        <div class="petition-bar__main">
+        <div class="petition-bar__main" id="bar-main">
           <div class="mobile-hide">
             {% include 'Thermometer' %}
           </div>
@@ -39,6 +39,10 @@
 
     <script type="text/javascript">
       $(document).ready(function(){
+//         $('#bar-main').scroll(function (event) {
+//     console.log('scrollpos', event);
+// });
+        
         var chmp = window.champaign; // convenience binding
         chmp.myActionForm  = new chmp.ActionForm({
           variant:          "{{ variant }}",
