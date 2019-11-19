@@ -8,34 +8,6 @@ endcomment %} {% comment %} Primary layout: true {% endcomment %}
   .mobile-title {
     display: block !important;
   }
-  .petition-bar__main {
-    position: relative;
-    overflow: scroll !important;
-  }
-  .petition-bar__main form {
-    position: inherit;
-  }
-  .form-wrapper {
-    margin-bottom: 150px;
-  }
-  .button-wrapper {
-    background: rgb(239, 239, 239);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    margin: 0 auto;
-    z-index: 9;
-  }
-  .button-wrapper button {
-    position: relative;
-    left: 26px;
-    max-width: calc(100% - 56px);
-  }
-  .petition-bar__main .action-form__submit-button {
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
 </style>
 
 {% include 'Small Header With Progress Tracker' %}
@@ -77,6 +49,7 @@ endcomment %} {% comment %} Primary layout: true {% endcomment %}
   <div class="center-content__one-column">
     <div class="center-content__central-square">
       {% capture message %}{{ 'petition.thank_you' | val: 'petition_title', title | t
+
       }}{% endcapture %}
       <h1 class="thank-you__thanks">{{ message }}</h1>
       <div class="thank-you__cta">
