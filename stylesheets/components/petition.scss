@@ -182,7 +182,7 @@
       right: 0;
       top: 0;
       background: $dark-teal;
-      content: '';
+      content: "";
     }
   }
   &__title {
@@ -297,4 +297,36 @@
       max-height: unset;
     }
   }
+}
+
+// Make CTA button floating for petition layouts
+.petition-bar {
+  &__main {
+    position: relative;
+    overflow: scroll !important;
+    form {
+      position: inherit;
+    }
+  }
+}
+.form-wrapper {
+  margin-bottom: 150px;
+}
+.button-wrapper {
+  background: rgb(239, 239, 239);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 9;
+  button {
+    position: relative;
+    left: 26px;
+    max-width: calc(100% - 56px);
+  }
+}
+.petition-bar__main .action-form__submit-button {
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
