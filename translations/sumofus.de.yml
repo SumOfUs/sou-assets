@@ -40,13 +40,13 @@ de:
       body: "Vielen Dank, dass Sie die Petition unterschrieben haben. Das war großartig! Jede Stimme zählt, wenn wir uns weltweit mit Großkonzernen anlegen. Doch es gibt noch viel zu tun! Dafür benötigen wir Geld. SumOfUs finanziert sich fast ausschließlich aus den Spenden unserer Mitglieder – und jeder kleine Beitrag hilft. Dank Ihrer Spende können wir es mit den größten und skrupellosesten Konzernen aufnehmen und sie zur Verantwortung ziehen. Unterstützen Sie uns bitte heute mit einer Spende!"
     two_step:
       cta:
-        "<p>Damit wir auch 2019 Kampagnen gewinnen können, brauchen wir heute Ihre Unterstützung, <span class='inject-name'></span>.</p>
+        "<p>Damit wir auch 2020 Kampagnen gewinnen können, brauchen wir heute Ihre Unterstützung, <span class='inject-name'></span>.</p>
         <br/>
-        <p>Helfen Sie mit Ihrer Spende dabei, SumOfUs für 2019 stark zu machen?</p>"
+        <p>Helfen Sie mit Ihrer Spende dabei, SumOfUs für 2020 stark zu machen?</p>"
       cta_eoy:
-        "<p><b><span class='inject-name'>2018 ist fast zu Ende</span>, uns fehlen noch <span class='donations-thermometer-remainder'></span>, um unser Fundraisingziel für dieses Jahr zu erreichen.</b> Wir brauchen Ihre Unterstützung, damit wir auch 2019 Kampagnen gegen skrupellose Konzerne gewinnen.
+        "<p><b><span class='inject-name'>2018 ist fast zu Ende</span>, uns fehlen noch <span class='donations-thermometer-remainder'></span>, um unser Fundraisingziel für dieses Jahr zu erreichen.</b> Wir brauchen Ihre Unterstützung, damit wir auch 2020 Kampagnen gegen skrupellose Konzerne gewinnen.
         <br>
-        <p>Helfen Sie uns mit einer Spende dabei, SumOfUs 2019 erfolgreich zu machen?</p>"
+        <p>Helfen Sie uns mit einer Spende dabei, SumOfUs 2020 erfolgreich zu machen?</p>"
     upgrade_monthly_gift: "Ich erhöhe meine <span class='js-current'></span> monatliche Spende auf "
     update: "Spende erhöhen"
     processing: "Ihre Änderung wird bearbeitet..."
@@ -82,7 +82,7 @@ de:
   share_and_donate:
     fundraiser_title: "Jetzt spenden und SumOfUs unterstützen!"
   petition_and_scroll:
-    fundraiser_intro: "Danke, Sie sind fantastisch! Wussten Sie schon: SumOfUs finanziert sich ausschließlich über die Spenden von Mitgliedern wie Ihnen."
+    fundraiser_intro: "Wussten Sie schon: SumOfUs finanziert sich fast ausschließlich über die Spenden von Mitgliedern wie Ihnen."
   footer:
     home: Start
     about: Über Uns

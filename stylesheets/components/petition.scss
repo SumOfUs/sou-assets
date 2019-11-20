@@ -16,11 +16,13 @@
   &.stuck-right {
     .fundraiser-bar__main {
       max-height: calc(100vh - 250px) !important;
+      @media (max-width: 580px) {
+        max-height: unset !important;
+      }
     }
     .petition-bar__main {
       max-height: calc(100vh - 250px) !important;
       @media (max-width: 580px) {
-        height: 100% !important;
         max-height: unset !important;
       }
     }
@@ -180,7 +182,7 @@
       right: 0;
       top: 0;
       background: $dark-teal;
-      content: '';
+      content: "";
     }
   }
   &__title {
@@ -210,7 +212,7 @@
     min-height: 30px;
     max-height: 60px;
     padding: 6px 26px 13px 26px;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
     @media (max-width: 580px) {
       max-height: unset;
@@ -295,4 +297,36 @@
       max-height: unset;
     }
   }
+}
+
+// Make CTA button floating for petition layouts
+.petition-bar {
+  &__main {
+    position: relative;
+    overflow: scroll !important;
+    form {
+      position: inherit;
+    }
+  }
+}
+.form-wrapper {
+  margin-bottom: 150px;
+}
+.button-wrapper {
+  background: rgb(239, 239, 239);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 9;
+  button {
+    position: relative;
+    left: 26px;
+    max-width: calc(100% - 56px);
+  }
+}
+.petition-bar__main .action-form__submit-button {
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
