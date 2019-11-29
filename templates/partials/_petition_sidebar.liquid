@@ -43,17 +43,20 @@
     var petitionButton = '.button-wrapper button';
     var petitionButtonWrapper = '.button-wrapper';
     var petitionFinePrint = '.petition-bar__fine-print';
+    var petitionFormWrapper = ".form-wrapper";
 
     function removeFloatingProp() {
       $(petitionFinePrint).css('margin-bottom', '0');
       $(petitionButtonWrapper).css('position', 'relative');
       $(petitionButton).css({'left': 'unset', 'max-width': 'unset'});
+      $(petitionFormWrapper).css("margin-bottom", "0");
     }
 
     function applyFloatingProp() {
       $(petitionFinePrint).css('margin-bottom', '110px');
       $(petitionButtonWrapper).css('position', 'absolute');
       $(petitionButton).css({'left': '26px', 'max-width': 'calc(100% - 56px)'});
+      $(petitionFormWrapper).css("margin-bottom", "150px");
     }
 
     // Function to apply floating property to button or remove it based on the scroll position
