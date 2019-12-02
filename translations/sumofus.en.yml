@@ -44,7 +44,7 @@ en:
         <br/>
         <p>Can you chip in to help power SumOfUs?</p>"
       cta_eoy:
-        "<p><b><span class='inject-name'>Dear friend</span>, we're <span class='donations-thermometer-remainder'></span> short of our end of year fundraising goal.</b> We need your support today to win campaigns against corporate power in 2020.
+        "<p><b><span class='inject-name'>Dear friend</span>, we're short of our end of year fundraising goal.</b> We need your support today to win campaigns against corporate power in 2020.
         <br/>
         <p>Can you chip in to help power SumOfUs?</p>"
     upgrade_monthly_gift: "I would like to upgrade my <span class='js-current'></span> monthly gift to"
